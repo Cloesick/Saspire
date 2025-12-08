@@ -76,26 +76,60 @@ document.addEventListener('DOMContentLoaded', function() {
     counters.forEach(c => counterObserver.observe(c));
 
 
-    // --- Contact Form Submission ---
+    // --- Contact Form Submission with Formspree ---
     const contactForm = document.getElementById('contact-form');
     const successMessage = document.getElementById('form-success-message');
+    const errorMessage = document.getElementById('form-error-message');
 
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent actual form submission
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
         
         // Basic validation
-        const firstName = document.getElementById('firstName').value;
-        const lastName = document.getElementById('lastName').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
+        const firstName = document.getElementById('firstName').value.trim();
+        const lastName = document.getElementById('lastName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
 
-        if (firstName && lastName && email && message) {
-            // Hide form and show success message
-            contactForm.style.display = 'none';
-            successMessage.classList.remove('hidden');
-        } else {
-            // Simple alert for demo purposes. A more robust solution would show inline errors.
+        if (!firstName || !lastName || !email || !message) {
             alert('Please fill out all required fields.');
+            return;
+        }
+
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+
+        // Submit to Formspree
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
+        submitButton.textContent = 'Sending...';
+        submitButton.disabled = true;
+
+        try {
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: new FormData(contactForm),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                contactForm.style.display = 'none';
+                successMessage.classList.remove('hidden');
+                errorMessage.classList.add('hidden');
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            errorMessage.classList.remove('hidden');
+            successMessage.classList.add('hidden');
+            submitButton.textContent = originalButtonText;
+            submitButton.disabled = false;
         }
     });
 });
