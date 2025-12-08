@@ -78,6 +78,7 @@
             <ul class="hidden md:flex items-center space-x-8 font-medium">
                 <li><a href="#about-us" class="text-gray-600 hover:text-gray-900 transition">About Us</a></li>
                 <li><a href="#services" class="text-gray-600 hover:text-gray-900 transition">Services</a></li>
+                <li><a href="#portfolio" class="text-gray-600 hover:text-gray-900 transition">Portfolio</a></li>
                 <li><a href="#success-stories" class="text-gray-600 hover:text-gray-900 transition">Success Stories</a></li>
                 <li><a href="#faq" class="text-gray-600 hover:text-gray-900 transition">FAQ</a></li>
                 <li><a href="#contact" class="text-gray-600 hover:text-gray-900 transition">Contact</a></li>
@@ -100,6 +101,7 @@
             <ul class="flex flex-col space-y-4">
                 <li><a href="#about-us" class="block text-gray-600 hover:text-gray-900 transition">About Us</a></li>
                 <li><a href="#services" class="block text-gray-600 hover:text-gray-900 transition">Services</a></li>
+                <li><a href="#portfolio" class="block text-gray-600 hover:text-gray-900 transition">Portfolio</a></li>
                 <li><a href="#success-stories" class="block text-gray-600 hover:text-gray-900 transition">Success Stories</a></li>
                 <li><a href="#faq" class="block text-gray-600 hover:text-gray-900 transition">FAQ</a></li>
                 <li><a href="#contact" class="block text-gray-600 hover:text-gray-900 transition">Contact</a></li>
@@ -269,8 +271,114 @@
             </div>
         </section>
 
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in-up-on-scroll">
+                    <h2 class="text-4xl font-bold text-gray-800">Our Portfolio</h2>
+                    <p class="text-lg text-gray-600 mt-4">A selection of projects we've delivered for our clients.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll">
+                        <div class="aspect-video bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+                            <span class="text-6xl">🛒</span>
+                        </div>
+                        <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-xl font-bold text-white mb-2">B2B Wholesale Webshop</h3>
+                            <p class="text-blue-200 text-sm text-center mb-4">Complete e-commerce platform with customer accounts, bulk ordering, and ERP integration.</p>
+                            <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">E-commerce</span>
+                        </div>
+                        <div class="p-4 bg-white">
+                            <h3 class="font-bold text-gray-800">B2B Wholesale Webshop</h3>
+                            <p class="text-sm text-gray-500">Industrial Supplies</p>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.1s;">
+                        <div class="aspect-video bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center">
+                            <span class="text-6xl">📄</span>
+                        </div>
+                        <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-xl font-bold text-white mb-2">Digital Product Catalog</h3>
+                            <p class="text-blue-200 text-sm text-center mb-4">500+ page PDF catalog converted to searchable online database with filtering and quick order.</p>
+                            <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">Catalog Digitalization</span>
+                        </div>
+                        <div class="p-4 bg-white">
+                            <h3 class="font-bold text-gray-800">Digital Product Catalog</h3>
+                            <p class="text-sm text-gray-500">Manufacturing Company</p>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.2s;">
+                        <div class="aspect-video bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
+                            <span class="text-6xl">🏠</span>
+                        </div>
+                        <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-xl font-bold text-white mb-2">Client Self-Service Portal</h3>
+                            <p class="text-blue-200 text-sm text-center mb-4">Custom portal with order tracking, invoice management, and support ticket system.</p>
+                            <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">Customer Portal</span>
+                        </div>
+                        <div class="p-4 bg-white">
+                            <h3 class="font-bold text-gray-800">Client Self-Service Portal</h3>
+                            <p class="text-sm text-gray-500">Service Company</p>
+                        </div>
+                    </div>
+                    <!-- Project 4 -->
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.3s;">
+                        <div class="aspect-video bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center">
+                            <span class="text-6xl">🛍️</span>
+                        </div>
+                        <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-xl font-bold text-white mb-2">Fashion Boutique Webshop</h3>
+                            <p class="text-blue-200 text-sm text-center mb-4">Stylish online store with size guides, wishlist, and integrated payment solutions.</p>
+                            <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">E-commerce</span>
+                        </div>
+                        <div class="p-4 bg-white">
+                            <h3 class="font-bold text-gray-800">Fashion Boutique Webshop</h3>
+                            <p class="text-sm text-gray-500">Retail Fashion</p>
+                        </div>
+                    </div>
+                    <!-- Project 5 -->
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.4s;">
+                        <div class="aspect-video bg-gradient-to-br from-cyan-500 to-cyan-700 flex items-center justify-center">
+                            <span class="text-6xl">📊</span>
+                        </div>
+                        <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-xl font-bold text-white mb-2">Inventory Management System</h3>
+                            <p class="text-blue-200 text-sm text-center mb-4">Real-time stock tracking with automated reorder alerts and supplier integration.</p>
+                            <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">Business Automation</span>
+                        </div>
+                        <div class="p-4 bg-white">
+                            <h3 class="font-bold text-gray-800">Inventory Management System</h3>
+                            <p class="text-sm text-gray-500">Wholesale Distributor</p>
+                        </div>
+                    </div>
+                    <!-- Project 6 -->
+                    <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.5s;">
+                        <div class="aspect-video bg-gradient-to-br from-pink-500 to-pink-700 flex items-center justify-center">
+                            <span class="text-6xl">🌐</span>
+                        </div>
+                        <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-xl font-bold text-white mb-2">Multi-language Corporate Site</h3>
+                            <p class="text-blue-200 text-sm text-center mb-4">Professional website with CMS, blog, and lead generation forms in 3 languages.</p>
+                            <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">Website Development</span>
+                        </div>
+                        <div class="p-4 bg-white">
+                            <h3 class="font-bold text-gray-800">Multi-language Corporate Site</h3>
+                            <p class="text-sm text-gray-500">Consulting Firm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12 fade-in-up-on-scroll">
+                    <p class="text-gray-600 mb-6">Want to see more examples or discuss a similar project?</p>
+                    <a href="#schedule" class="inline-block bg-blue-900 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-800 transition">Let's Talk About Your Project</a>
+                </div>
+            </div>
+        </section>
+
         <!-- Success Stories Section -->
-        <section id="success-stories" class="py-24 bg-white">
+        <section id="success-stories" class="py-24 bg-gray-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16 fade-in-up-on-scroll">
                     <h2 class="text-4xl font-bold text-gray-800">Digital Transformation Results</h2>
