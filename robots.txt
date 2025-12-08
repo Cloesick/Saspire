@@ -1,0 +1,10 @@
+# Robots.txt for saspire.org
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://saspire.org/sitemap.xml
+
+# Disallow admin or sensitive paths (none currently)
+# Disallow: /admin/

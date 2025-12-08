@@ -40,6 +40,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // --- FAQ Accordion ---
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        const icon = item.querySelector('.faq-icon');
+        
+        if (question && answer) {
+            question.addEventListener('click', () => {
+                // Close other open items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.querySelector('.faq-answer')?.classList.add('hidden');
+                        otherItem.querySelector('.faq-icon')?.classList.remove('rotate-180');
+                    }
+                });
+                
+                // Toggle current item
+                answer.classList.toggle('hidden');
+                icon?.classList.toggle('rotate-180');
+            });
+        }
+    });
+
     // --- Mobile Menu Toggle ---
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
