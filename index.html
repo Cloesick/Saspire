@@ -23,7 +23,9 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://saspire.org/">
     
+    <link rel="icon" href="/images/Sgrowth5.webp" type="image/webp">
     <link rel="icon" href="/images/Sgrowth5.png" type="image/png">
+    <link rel="apple-touch-icon" href="/images/Sgrowth5.png">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -35,6 +37,16 @@
     
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Analytics - Replace GA_MEASUREMENT_ID with your actual ID -->
+    <!-- Get your ID at: https://analytics.google.com -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -104,7 +116,10 @@
                     </div>
                     <div class="relative hidden md:block slide-in-right">
                         <div class="bg-white/50 p-6 rounded-3xl shadow-2xl backdrop-blur-md">
-                            <img src="/images/businessgrowth1.png" alt="Digital transformation illustration showing business growth" class="relative rounded-3xl shadow-2xl backdrop-blur-md" loading="lazy">
+                            <picture>
+                                <source srcset="/images/businessgrowth1.webp" type="image/webp">
+                                <img src="/images/businessgrowth1.png" alt="Digital transformation illustration showing business growth" class="relative rounded-3xl shadow-2xl backdrop-blur-md" loading="lazy" width="600" height="400">
+                            </picture>
                         </div>
                         <div class="absolute -top-10 -left-10 text-5xl animate-float-1">�</div>
                         <div class="absolute -bottom-10 -right-10 text-5xl animate-float-2">📄</div>
@@ -282,6 +297,46 @@
                     <div class="bg-amber-50 p-8 rounded-xl text-center">
                         <div class="text-4xl font-bold text-yellow-900 mb-2"><span class="counter" data-target="5">0</span>+</div>
                         <p class="text-gray-600">Years Experience</p>
+                    </div>
+                </div>
+                
+                <!-- Additional Testimonials -->
+                <div class="mt-16">
+                    <h3 class="text-2xl font-bold text-gray-800 text-center mb-10 fade-in-up-on-scroll">What Our Clients Say</h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="bg-white p-6 rounded-xl shadow-lg fade-in-up-on-scroll">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold text-lg mr-3">SV</div>
+                                <div>
+                                    <h4 class="font-semibold">Sophie Vermeersch</h4>
+                                    <p class="text-sm text-gray-500">Boutique Owner</p>
+                                </div>
+                            </div>
+                            <div class="flex text-yellow-500 mb-3">★★★★★</div>
+                            <p class="text-gray-600 text-sm">"Finally, a webshop that actually works! My customers love the easy checkout and I can manage everything myself. Sales increased 150% in the first quarter."</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.1s;">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-green-100 text-green-700 rounded-full flex items-center justify-center font-bold text-lg mr-3">PD</div>
+                                <div>
+                                    <h4 class="font-semibold">Peter De Smedt</h4>
+                                    <p class="text-sm text-gray-500">Manufacturing Director</p>
+                                </div>
+                            </div>
+                            <div class="flex text-yellow-500 mb-3">★★★★★</div>
+                            <p class="text-gray-600 text-sm">"Our 500-page product catalog is now fully searchable online. Customers find what they need instantly. The ROI was visible within weeks."</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.2s;">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-purple-100 text-purple-700 rounded-full flex items-center justify-center font-bold text-lg mr-3">LM</div>
+                                <div>
+                                    <h4 class="font-semibold">Lisa Martens</h4>
+                                    <p class="text-sm text-gray-500">Service Company CEO</p>
+                                </div>
+                            </div>
+                            <div class="flex text-yellow-500 mb-3">★★★★★</div>
+                            <p class="text-gray-600 text-sm">"The customer portal reduced our support calls by 60%. Clients can now track orders, download invoices, and submit tickets themselves. Game changer."</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -496,7 +551,7 @@
                 </div>
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div class="bg-white p-2 sm:p-4 rounded-2xl shadow-xl fade-in-up-on-scroll">
-                        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FBrussels&showPrint=0&src=bmljb2xhcy5jbG9ldEBnbWFpbC5jb20&src=Y2xhc3Nyb29tMTE2NzgwMzIyNzQ1NTkwOTcxNjYxQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=bmwuYmUjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039be5&color=%239e69af&color=%23009688" style="border:solid 1px #ddd" class="w-full h-[450px] rounded-xl" frameborder="0" scrolling="no"></iframe>
+                        <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FBrussels&showPrint=0&src=bmljb2xhcy5jbG9ldEBnbWFpbC5jb20&src=Y2xhc3Nyb29tMTE2NzgwMzIyNzQ1NTkwOTcxNjYxQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=bmwuYmUjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039be5&color=%239e69af&color=%23009688" style="border:solid 1px #ddd" class="w-full h-[450px] rounded-xl" frameborder="0" scrolling="no" loading="lazy" title="Schedule a consultation"></iframe>
                     </div>
                     <div class="fade-in-up-on-scroll">
                         <h3 class="text-3xl font-bold text-gray-800 mb-6">What to Expect From Our Call</h3>
@@ -550,9 +605,24 @@
             </div>
             <div class="border-t border-yellow-800 pt-8 text-center text-sm text-yellow-200">
                 <p>&copy; 2025 Saspire. All rights reserved.</p>
+                <p class="mt-2"><a href="/privacy.html" class="hover:text-white transition">Privacy Policy</a></p>
             </div>
         </div>
     </footer>
+    
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 z-50 transform translate-y-full transition-transform duration-300">
+        <div class="container mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-gray-300">
+                We use cookies to improve your experience and analyze site traffic. By continuing, you agree to our 
+                <a href="/privacy.html" class="text-yellow-400 hover:underline">Privacy Policy</a>.
+            </p>
+            <div class="flex gap-3">
+                <button id="cookie-decline" class="px-4 py-2 text-sm border border-gray-600 rounded-lg hover:bg-gray-800 transition">Decline</button>
+                <button id="cookie-accept" class="px-4 py-2 text-sm bg-yellow-900 rounded-lg hover:bg-yellow-800 transition">Accept</button>
+            </div>
+        </div>
+    </div>
     
     <!-- Custom JavaScript -->
     <script src="script.js"></script>

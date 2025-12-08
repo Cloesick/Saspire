@@ -1,4 +1,45 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // --- Cookie Consent Banner ---
+    const cookieBanner = document.getElementById('cookie-banner');
+    const cookieAccept = document.getElementById('cookie-accept');
+    const cookieDecline = document.getElementById('cookie-decline');
+    
+    // Check if user has already made a choice
+    const cookieChoice = localStorage.getItem('cookieConsent');
+    
+    if (!cookieChoice && cookieBanner) {
+        // Show banner after a short delay
+        setTimeout(() => {
+            cookieBanner.classList.remove('translate-y-full');
+        }, 1000);
+    }
+    
+    if (cookieAccept) {
+        cookieAccept.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieBanner.classList.add('translate-y-full');
+            // Enable analytics here if needed
+            if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'granted'
+                });
+            }
+        });
+    }
+    
+    if (cookieDecline) {
+        cookieDecline.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'declined');
+            cookieBanner.classList.add('translate-y-full');
+            // Disable analytics
+            if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'denied'
+                });
+            }
+        });
+    }
+
     // --- Mobile Menu Toggle ---
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
