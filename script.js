@@ -18,13 +18,14 @@ document.addEventListener('DOMContentLoaded', function() {
         cookieAccept.addEventListener('click', () => {
             localStorage.setItem('cookieConsent', 'accepted');
             cookieBanner.classList.add('translate-y-full');
-            // Enable analytics here if needed
             if (typeof gtag === 'function') {
                 gtag('consent', 'update', {
-                    'analytics_storage': 'granted'
+                    'analytics_storage': 'granted',
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted'
                 });
             }
-            if (typeof loadGA === 'function') { loadGA(); }
         });
     }
     
@@ -32,10 +33,12 @@ document.addEventListener('DOMContentLoaded', function() {
         cookieDecline.addEventListener('click', () => {
             localStorage.setItem('cookieConsent', 'declined');
             cookieBanner.classList.add('translate-y-full');
-            // Disable analytics
             if (typeof gtag === 'function') {
                 gtag('consent', 'update', {
-                    'analytics_storage': 'denied'
+                    'analytics_storage': 'denied',
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied'
                 });
             }
         });
