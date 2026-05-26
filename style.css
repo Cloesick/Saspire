@@ -348,16 +348,11 @@ footer {
     background-color: #fafafa;
 }
 
-/* Smooth color transitions */
-* {
+/* Smooth color transitions on interactive elements only */
+a, button, input, select, textarea, [role="button"] {
     transition-property: background-color, border-color, color, fill, stroke;
     transition-duration: 0.2s;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Override for elements that shouldn't transition */
-*:where(:not(.no-transition)) {
-    transition-property: background-color, border-color, color, fill, stroke;
 }
 
 /* Text selection styling */

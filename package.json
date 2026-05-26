@@ -1,0 +1,27 @@
+{
+  "name": "saspire",
+  "version": "1.0.0",
+  "description": "Landing page for [saspire.org](https://saspire.org), a digitalization consultancy based in Brussels, Belgium.",
+  "main": "script.js",
+  "scripts": {
+    "build:css": "tailwindcss -i src/input.css -o dist/tailwind.css --minify",
+    "watch:css": "tailwindcss -i src/input.css -o dist/tailwind.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cloesick/Saspire.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Cloesick/Saspire/issues"
+  },
+  "homepage": "https://github.com/Cloesick/Saspire#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "tailwindcss": "^4.3.0"
+  }
+}

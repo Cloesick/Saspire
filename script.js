@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     'analytics_storage': 'granted'
                 });
             }
+            if (typeof loadGA === 'function') { loadGA(); }
         });
     }
     
@@ -67,26 +68,30 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Mobile Menu Toggle ---
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-    
-    // Close mobile menu when a link is clicked
-    mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
-    });
+        
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    }
 
     // --- Sticky Navigation ---
     const header = document.getElementById('main-header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('nav-sticky');
-        } else {
-            header.classList.remove('nav-sticky');
-        }
-    });
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('nav-sticky');
+            } else {
+                header.classList.remove('nav-sticky');
+            }
+        });
+    }
 
     // --- Animate on Scroll ---
     const animatedElements = document.querySelectorAll('.fade-in-up-on-scroll');
@@ -146,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const successMessage = document.getElementById('form-success-message');
     const errorMessage = document.getElementById('form-error-message');
 
-    contactForm.addEventListener('submit', async function(e) {
+    if (contactForm) contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
         // Basic validation

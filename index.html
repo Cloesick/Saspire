@@ -34,7 +34,7 @@
     <link rel="apple-touch-icon" href="/images/Sgrowth5.png">
     
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="dist/tailwind.css">
     
     <!-- Google Fonts: Inter & Playfair Display for Logo -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,13 +44,22 @@
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-39TS19BPY0"></script>
+    <!-- Google Analytics (loaded after cookie consent) -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-39TS19BPY0');
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied'
+        });
+        function loadGA() {
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-39TS19BPY0';
+            document.head.appendChild(s);
+            gtag('js', new Date());
+            gtag('config', 'G-39TS19BPY0');
+        }
+        if (localStorage.getItem('cookieConsent') === 'accepted') { loadGA(); }
     </script>
     
     <!-- Structured Data -->
@@ -237,7 +246,7 @@
                 </div>
 
                 <!-- Mission & Values -->
-                <div class="bg-gradient-to-br from-blue-50 to-sky-50 rounded-3xl p-12 mb-20 fade-in-up-on-scroll">
+                <div class="bg-linear-to-br from-blue-50 to-sky-50 rounded-3xl p-12 mb-20 fade-in-up-on-scroll">
                     <div class="text-center mb-12">
                         <h3 class="text-3xl font-bold text-gray-800 mb-4">Our Mission & Values</h3>
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">We believe every business, regardless of size, deserves access to cutting-edge digital solutions that drive real results.</p>
@@ -269,7 +278,7 @@
                     </div>
                     <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                         <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition">
-                            <div class="w-24 h-24 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-3xl font-bold">NC</div>
+                            <div class="w-24 h-24 bg-linear-to-br from-blue-500 to-blue-700 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-3xl font-bold">NC</div>
                             <h4 class="text-xl font-bold text-gray-800 mb-2">Nicolas Cloet</h4>
                             <p class="text-blue-900 font-semibold mb-3">Founder & Lead Developer</p>
                             <p class="text-gray-600 text-sm mb-4">Full-stack developer with 5+ years of experience in digital transformation and e-commerce solutions.</p>
@@ -280,13 +289,13 @@
                             </div>
                         </div>
                         <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition">
-                            <div class="w-24 h-24 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-3xl font-bold">ST</div>
+                            <div class="w-24 h-24 bg-linear-to-br from-emerald-500 to-emerald-700 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-3xl font-bold">ST</div>
                             <h4 class="text-xl font-bold text-gray-800 mb-2">Strategy Team</h4>
                             <p class="text-blue-900 font-semibold mb-3">Digital Strategy & UX</p>
                             <p class="text-gray-600 text-sm mb-4">Experts in user experience design, conversion optimization, and digital marketing strategy.</p>
                         </div>
                         <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition">
-                            <div class="w-24 h-24 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-3xl font-bold">DT</div>
+                            <div class="w-24 h-24 bg-linear-to-br from-purple-500 to-purple-700 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-3xl font-bold">DT</div>
                             <h4 class="text-xl font-bold text-gray-800 mb-2">Development Team</h4>
                             <p class="text-blue-900 font-semibold mb-3">Technical Excellence</p>
                             <p class="text-gray-600 text-sm mb-4">Skilled developers specializing in modern web technologies, security, and scalable architectures.</p>
@@ -297,7 +306,7 @@
         </section>
 
         <!-- Skills & Technologies Section -->
-        <section id="skills" class="py-24 bg-gradient-to-br from-slate-50 to-blue-50">
+        <section id="skills" class="py-24 bg-linear-to-br from-slate-50 to-blue-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16 fade-in-up-on-scroll">
                     <h2 class="text-4xl font-bold text-gray-800">Our Technical Expertise</h2>
@@ -437,13 +446,13 @@
                         <div class="text-5xl mb-4 text-center">🛒</div>
                         <h3 class="text-2xl font-bold text-center text-gray-800">Webshop Development</h3>
                         <p class="text-gray-500 text-center mt-2 mb-6">Enterprise e-commerce with multi-tenant & ERP integration</p>
-                        <ul class="space-y-4 flex-grow">
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Multi-tenant architecture (B2B/B2C)</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>ERP integration (Odoo, Exact, SAP)</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Advanced product catalog (30+ tables)</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Real-time inventory sync</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Bulk ordering & pricing tiers</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Monorepo architecture (Turborepo)</li>
+                        <ul class="space-y-4 grow">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Multi-tenant architecture (B2B/B2C)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>ERP integration (Odoo, Exact, SAP)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Advanced product catalog (30+ tables)</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Real-time inventory sync</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Bulk ordering & pricing tiers</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Monorepo architecture (Turborepo)</li>
                         </ul>
                         <div class="mt-8 pt-6 border-t border-gray-100">
                             <p class="text-sm text-gray-500 text-center mb-4">Starting from</p>
@@ -452,18 +461,18 @@
                         <a href="#contact" class="mt-6 w-full text-center bg-blue-900 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-800 transition">Start Selling</a>
                     </div>
                     <!-- Catalog Digitalization -->
-                    <div class="bg-blue-900 text-white p-8 rounded-2xl shadow-2xl flex flex-col transform md:scale-105 fade-in-up-on-scroll" style="animation-delay: 0.1s;">
+                    <div class="relative bg-blue-900 text-white p-8 rounded-2xl shadow-2xl flex flex-col transform md:scale-105 fade-in-up-on-scroll" style="animation-delay: 0.1s;">
                         <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-500 text-blue-900 text-xs font-bold px-3 py-1 rounded-full">MOST POPULAR</div>
                         <div class="text-5xl mb-4 text-center">📄</div>
                         <h3 class="text-2xl font-bold text-center">Catalog Digitalization</h3>
                         <p class="text-blue-200 text-center mt-2 mb-6">AI-powered PDF extraction & structured data</p>
-                        <ul class="space-y-4 flex-grow">
-                            <li class="flex items-center"><svg class="w-5 h-5 text-blue-300 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>AI-powered PDF text extraction</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-blue-300 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Automated product data structuring</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-blue-300 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Image extraction & optimization</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-blue-300 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>JSON/CSV data export</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-blue-300 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Category & attribute mapping</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-blue-300 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>500+ page catalogs processed</li>
+                        <ul class="space-y-4 grow">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>AI-powered PDF text extraction</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Automated product data structuring</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Image extraction & optimization</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>JSON/CSV data export</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Category & attribute mapping</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>500+ page catalogs processed</li>
                         </ul>
                         <div class="mt-8 pt-6 border-t border-blue-800">
                             <p class="text-sm text-blue-200 text-center mb-4">Starting from</p>
@@ -476,13 +485,13 @@
                         <div class="text-5xl mb-4 text-center">🏠</div>
                         <h3 class="text-2xl font-bold text-center text-gray-800">Customer Portal</h3>
                         <p class="text-gray-500 text-center mt-2 mb-6">Self-service platforms for your clients</p>
-                        <ul class="space-y-4 flex-grow">
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Secure login system</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Order history & tracking</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Document management</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Invoice & payment portal</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Support ticket system</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Custom branding</li>
+                        <ul class="space-y-4 grow">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Secure login system</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Order history & tracking</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Document management</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Invoice & payment portal</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Support ticket system</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Custom branding</li>
                         </ul>
                         <div class="mt-8 pt-6 border-t border-gray-100">
                             <p class="text-sm text-gray-500 text-center mb-4">Starting from</p>
@@ -494,7 +503,7 @@
                 <!-- Additional Services Grid -->
                 <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Business Automation -->
-                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl fade-in-up-on-scroll hover:shadow-lg transition">
+                    <div class="bg-linear-to-br from-purple-50 to-purple-100 p-6 rounded-xl fade-in-up-on-scroll hover:shadow-lg transition">
                         <div class="text-4xl mb-3">🤖</div>
                         <h4 class="text-xl font-bold text-gray-800 mb-2">Business Automation</h4>
                         <p class="text-gray-600 text-sm mb-4">Make.com scenarios, webhooks, API integrations, workflow automation</p>
@@ -506,7 +515,7 @@
                     </div>
                     
                     <!-- AI/ML Solutions -->
-                    <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 p-6 rounded-xl fade-in-up-on-scroll hover:shadow-lg transition" style="animation-delay: 0.1s;">
+                    <div class="bg-linear-to-br from-emerald-50 to-emerald-100 p-6 rounded-xl fade-in-up-on-scroll hover:shadow-lg transition" style="animation-delay: 0.1s;">
                         <div class="text-4xl mb-3">🧠</div>
                         <h4 class="text-xl font-bold text-gray-800 mb-2">AI/ML Integration</h4>
                         <p class="text-gray-600 text-sm mb-4">Predictive analytics, sentiment analysis, pattern recognition, NLP</p>
@@ -518,7 +527,7 @@
                     </div>
                     
                     <!-- Financial Systems -->
-                    <div class="bg-gradient-to-br from-amber-50 to-amber-100 p-6 rounded-xl fade-in-up-on-scroll hover:shadow-lg transition" style="animation-delay: 0.2s;">
+                    <div class="bg-linear-to-br from-amber-50 to-amber-100 p-6 rounded-xl fade-in-up-on-scroll hover:shadow-lg transition" style="animation-delay: 0.2s;">
                         <div class="text-4xl mb-3">📈</div>
                         <h4 class="text-xl font-bold text-gray-800 mb-2">Trading & Analytics</h4>
                         <p class="text-gray-600 text-sm mb-4">Technical indicators, portfolio management, risk analysis, real-time data</p>
@@ -530,7 +539,7 @@
                     </div>
                     
                     <!-- GDPR Compliance -->
-                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl fade-in-up-on-scroll hover:shadow-lg transition" style="animation-delay: 0.3s;">
+                    <div class="bg-linear-to-br from-red-50 to-red-100 p-6 rounded-xl fade-in-up-on-scroll hover:shadow-lg transition" style="animation-delay: 0.3s;">
                         <div class="text-4xl mb-3">🔒</div>
                         <h4 class="text-xl font-bold text-gray-800 mb-2">GDPR & Compliance</h4>
                         <p class="text-gray-600 text-sm mb-4">Consent management, data subject rights, suppression lists, DPA</p>
@@ -542,7 +551,7 @@
                     </div>
                     
                     <!-- Lead Generation -->
-                    <div class="bg-gradient-to-br from-cyan-50 to-cyan-100 p-6 rounded-xl fade-in-up-on-scroll hover:shadow-lg transition" style="animation-delay: 0.4s;">
+                    <div class="bg-linear-to-br from-cyan-50 to-cyan-100 p-6 rounded-xl fade-in-up-on-scroll hover:shadow-lg transition" style="animation-delay: 0.4s;">
                         <div class="text-4xl mb-3">🎯</div>
                         <h4 class="text-xl font-bold text-gray-800 mb-2">Lead Generation</h4>
                         <p class="text-gray-600 text-sm mb-4">LinkedIn automation, email campaigns, CRM integration, deliverability</p>
@@ -554,7 +563,7 @@
                     </div>
                     
                     <!-- Data Processing -->
-                    <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-xl fade-in-up-on-scroll hover:shadow-lg transition" style="animation-delay: 0.5s;">
+                    <div class="bg-linear-to-br from-indigo-50 to-indigo-100 p-6 rounded-xl fade-in-up-on-scroll hover:shadow-lg transition" style="animation-delay: 0.5s;">
                         <div class="text-4xl mb-3">📊</div>
                         <h4 class="text-xl font-bold text-gray-800 mb-2">Data Processing</h4>
                         <p class="text-gray-600 text-sm mb-4">ETL pipelines, data enrichment, validation, reporting, CSV/Excel</p>
@@ -567,7 +576,7 @@
                 </div>
                 
                 <!-- CTA Banner -->
-                <div class="mt-12 bg-gradient-to-r from-blue-50 to-sky-50 p-8 rounded-2xl fade-in-up-on-scroll">
+                <div class="mt-12 bg-linear-to-r from-blue-50 to-sky-50 p-8 rounded-2xl fade-in-up-on-scroll">
                     <div class="text-center">
                         <h3 class="text-2xl font-bold text-gray-800 mb-4">Need Something Custom?</h3>
                         <p class="text-gray-600 mb-6 max-w-2xl mx-auto">We also offer contract drafting systems, auction platforms, booking systems, and specialized industry solutions. Every business is unique—let's discuss your specific needs.</p>
@@ -587,22 +596,22 @@
                 <div class="grid md:grid-cols-3 gap-8">
                     <!-- Project 1 -->
                     <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll">
-                        <div class="aspect-video bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
-                            <span class="text-6xl">🛒</span>
+                        <div class="aspect-video bg-linear-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+                            <span class="text-6xl">🏗️</span>
                         </div>
                         <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <h3 class="text-xl font-bold text-white mb-2">B2B Wholesale Webshop</h3>
-                            <p class="text-blue-200 text-sm text-center mb-4">Complete e-commerce platform with customer accounts, bulk ordering, and ERP integration.</p>
-                            <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">E-commerce</span>
+                            <h3 class="text-xl font-bold text-white mb-2">Multi-Company E-commerce Platform</h3>
+                            <p class="text-blue-200 text-sm text-center mb-4">Turborepo monorepo powering 5 B2B webshops with shared UI, auth, and a 30+ table database.</p>
+                            <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">Enterprise E-commerce</span>
                         </div>
                         <div class="p-4 bg-white">
-                            <h3 class="font-bold text-gray-800">B2B Wholesale Webshop</h3>
-                            <p class="text-sm text-gray-500">Industrial Supplies</p>
+                            <h3 class="font-bold text-gray-800">Multi-Company E-commerce Platform</h3>
+                            <p class="text-sm text-gray-500">DEMA Group — Industrial Distribution</p>
                         </div>
                     </div>
                     <!-- Project 2 -->
                     <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.1s;">
-                        <div class="aspect-video bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center">
+                        <div class="aspect-video bg-linear-to-br from-emerald-500 to-emerald-700 flex items-center justify-center">
                             <span class="text-6xl">📄</span>
                         </div>
                         <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -617,7 +626,7 @@
                     </div>
                     <!-- Project 3 -->
                     <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.2s;">
-                        <div class="aspect-video bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
+                        <div class="aspect-video bg-linear-to-br from-purple-500 to-purple-700 flex items-center justify-center">
                             <span class="text-6xl">🏠</span>
                         </div>
                         <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -632,7 +641,7 @@
                     </div>
                     <!-- Project 4 -->
                     <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.3s;">
-                        <div class="aspect-video bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center">
+                        <div class="aspect-video bg-linear-to-br from-orange-500 to-orange-700 flex items-center justify-center">
                             <span class="text-6xl">🛍️</span>
                         </div>
                         <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -647,7 +656,7 @@
                     </div>
                     <!-- Project 5 -->
                     <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.4s;">
-                        <div class="aspect-video bg-gradient-to-br from-cyan-500 to-cyan-700 flex items-center justify-center">
+                        <div class="aspect-video bg-linear-to-br from-cyan-500 to-cyan-700 flex items-center justify-center">
                             <span class="text-6xl">📊</span>
                         </div>
                         <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -662,7 +671,7 @@
                     </div>
                     <!-- Project 6 -->
                     <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.5s;">
-                        <div class="aspect-video bg-gradient-to-br from-pink-500 to-pink-700 flex items-center justify-center">
+                        <div class="aspect-video bg-linear-to-br from-pink-500 to-pink-700 flex items-center justify-center">
                             <span class="text-6xl">🌐</span>
                         </div>
                         <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -694,33 +703,43 @@
                 <!-- Featured Case Study 1 -->
                 <div class="bg-white rounded-2xl shadow-xl overflow-hidden md:grid md:grid-cols-3 fade-in-up-on-scroll mb-12">
                     <div class="p-8 md:p-12 bg-blue-900 text-white flex flex-col justify-center items-center text-center">
-                        <div class="text-7xl font-extrabold">
-                            <span class="counter" data-target="300">0</span>%
-                        </div>
-                        <div class="text-xl font-semibold mt-2">Online Sales Increase</div>
+                        <div class="text-7xl font-extrabold">5</div>
+                        <div class="text-xl font-semibold mt-2">Companies, One Platform</div>
                     </div>
                     <div class="p-8 md:p-12 md:col-span-2">
-                        <h3 class="text-2xl font-bold text-gray-800">From PDF Catalog to Thriving Webshop</h3>
+                        <h3 class="text-2xl font-bold text-gray-800">Multi-Company B2B E-commerce Platform</h3>
                         <div class="flex items-center my-6">
-                            <div class="w-16 h-16 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold text-2xl mr-4">BH</div>
+                            <div class="w-16 h-16 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold text-2xl mr-4">DG</div>
                             <div>
-                                <h4 class="font-bold text-lg">Belgian Hardware Supplies</h4>
-                                <p class="text-gray-500">Industrial equipment distributor</p>
+                                <h4 class="font-bold text-lg">DEMA Group</h4>
+                                <p class="text-gray-500">Industrial equipment — pumps, valves, conveyor belts, irrigation</p>
                             </div>
                         </div>
-                        <p class="text-gray-600 mb-6">This traditional B2B distributor was sending 200-page PDF catalogs to customers. We digitalized their entire product range into a searchable webshop with customer accounts, order history, and automated invoicing. Within 6 months, online orders tripled.</p>
-                        <blockquote class="border-l-4 border-blue-800 pl-4 italic text-gray-700 my-6">
-                            <p>"Our customers can now find products in seconds instead of scrolling through PDFs. Orders come in 24/7, and our team spends less time on manual data entry. Saspire transformed how we do business."</p>
-                            <cite class="block mt-2 not-italic font-semibold">Marc Janssens, <span class="font-normal text-gray-500">Operations Director</span></cite>
-                        </blockquote>
+                        <p class="text-gray-600 mb-6">Built a unified e-commerce platform for 5 industrial supply companies using a Turborepo monorepo architecture. Each brand (DEMA, Fluxer, Beltz247, De Visschere, Accu) runs its own Next.js 14 storefront backed by a shared PostgreSQL database with 30+ tables, shared UI components, and centralized authentication — all connected to Odoo and Exact Online ERP systems.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Next.js 14</span>
+                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">TypeScript</span>
+                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Prisma</span>
+                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">PostgreSQL</span>
+                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">tRPC</span>
+                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Turborepo</span>
+                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Stripe</span>
+                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Tailwind CSS</span>
+                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">NextAuth</span>
+                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Vercel</span>
+                        </div>
                         <div class="flex gap-4 flex-wrap">
                             <div class="bg-blue-50 px-4 py-2 rounded-lg">
-                                <span class="text-sm text-gray-600">Project Duration:</span>
-                                <span class="font-bold text-blue-900 ml-1">6 weeks</span>
+                                <span class="text-sm text-gray-600">Database Tables:</span>
+                                <span class="font-bold text-blue-900 ml-1">30+</span>
                             </div>
                             <div class="bg-blue-50 px-4 py-2 rounded-lg">
                                 <span class="text-sm text-gray-600">Products Digitalized:</span>
                                 <span class="font-bold text-blue-900 ml-1">2,500+</span>
+                            </div>
+                            <div class="bg-blue-50 px-4 py-2 rounded-lg">
+                                <span class="text-sm text-gray-600">Business Features:</span>
+                                <span class="font-bold text-blue-900 ml-1">84</span>
                             </div>
                         </div>
                     </div>
@@ -1282,7 +1301,7 @@
                 </div>
             </div>
             <div class="border-t border-blue-800 pt-8 text-center text-sm text-blue-200">
-                <p>&copy; 2025 Saspire. All rights reserved.</p>
+                <p>&copy; 2026 Saspire. All rights reserved.</p>
                 <p class="mt-2"><a href="/privacy.html" class="hover:text-white transition">Privacy Policy</a></p>
             </div>
         </div>
@@ -1305,21 +1324,5 @@
     <!-- Custom JavaScript -->
     <script src="script.js"></script>
     
-    <!-- Tawk.to Live Chat Widget -->
-    <!-- Get your own widget at: https://www.tawk.to - it's free! -->
-    <!-- Replace the script below with your Tawk.to embed code -->
-    <!--
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/YOUR_TAWK_ID/YOUR_WIDGET_ID';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    -->
 </body>
 </html>
