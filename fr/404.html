@@ -1,80 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Non Trouvée | Saspire</title>
-    <meta name="robots" content="noindex">
-    
-    <link rel="icon" href="/images/Sgrowth5.webp" type="image/webp">
-    <link rel="icon" href="/images/Sgrowth5.png" type="image/png">
-    
-    <link rel="stylesheet" href="../dist/tailwind.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
-    
-    <!-- Google Consent Mode v2 (defaults before GTM) -->
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('consent', 'default', {
-            'analytics_storage': 'denied',
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied'
-        });
-        if (localStorage.getItem('cookieConsent') === 'accepted') {
-            gtag('consent', 'update', {
-                'analytics_storage': 'granted',
-                'ad_storage': 'granted',
-                'ad_user_data': 'granted',
-                'ad_personalization': 'granted'
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Page Non Trouvée | Saspire</title>
+        <meta name="robots" content="noindex" />
+
+        <!-- Security Headers -->
+        <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+        <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+        <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; frame-src https://www.googletagmanager.com;"
+        />
+
+        <link rel="icon" href="/images/Sgrowth5.webp" type="image/webp" />
+        <link rel="icon" href="/images/Sgrowth5.png" type="image/png" />
+
+        <link rel="stylesheet" href="../dist/tailwind.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="../style.css" />
+
+        <!-- Google Consent Mode v2 (defaults before GTM) -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("consent", "default", {
+                analytics_storage: "denied",
+                ad_storage: "denied",
+                ad_user_data: "denied",
+                ad_personalization: "denied",
             });
-        }
-    </script>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-59MQCMPB');</script>
-    <!-- End Google Tag Manager -->
-</head>
-<body class="antialiased bg-gray-50 min-h-screen flex flex-col">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59MQCMPB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <!-- Header -->
-    <header class="py-4 bg-white shadow-sm">
-        <nav class="container mx-auto px-6 flex justify-between items-center">
-            <a href="/fr/" class="flex flex-col items-start group">
-                <div class="text-3xl font-bold text-gray-800" style="font-family: 'Playfair Display', serif;">Saspire</div>
-                <span class="text-xs text-blue-800/80 font-semibold tracking-wider -mt-1 ml-px">Service to aspire</span>
-            </a>
-        </nav>
-    </header>
+            if (localStorage.getItem("cookieConsent") === "accepted") {
+                gtag("consent", "update", {
+                    analytics_storage: "granted",
+                    ad_storage: "granted",
+                    ad_user_data: "granted",
+                    ad_personalization: "granted",
+                });
+            }
+        </script>
+        <!-- Google Tag Manager -->
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != "dataLayer" ? "&l=" + l : "";
+                j.async = true;
+                j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, "script", "dataLayer", "GTM-59MQCMPB");
+        </script>
+        <!-- End Google Tag Manager -->
+    </head>
+    <body class="antialiased bg-gray-50 min-h-screen flex flex-col">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59MQCMPB" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <!-- Header -->
+        <header class="py-4 bg-white shadow-sm">
+            <nav class="container mx-auto px-6 flex justify-between items-center">
+                <a href="/fr/" class="flex flex-col items-start group">
+                    <div class="text-3xl font-bold text-gray-800" style="font-family: &quot;Playfair Display&quot;, serif">Saspire</div>
+                    <span class="text-xs text-blue-800/80 font-semibold tracking-wider -mt-1 ml-px">Service to aspire</span>
+                </a>
+            </nav>
+        </header>
 
-    <main class="grow flex items-center justify-center px-6">
-        <div class="text-center max-w-lg">
-            <div class="text-8xl mb-6">🔍</div>
-            <h1 class="text-6xl font-bold text-gray-800 mb-4">404</h1>
-            <h2 class="text-2xl font-semibold text-gray-700 mb-4">Page Non Trouvée</h2>
-            <p class="text-gray-600 mb-8">La page que vous recherchez n'existe pas ou a été déplacée. Laissez-nous vous remettre sur la bonne voie.</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/fr/" class="bg-blue-900 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-800 transition">Retour à l'Accueil</a>
-                <a href="/fr/#contact" class="bg-white text-blue-900 font-semibold py-3 px-8 rounded-lg border-2 border-blue-900 hover:bg-blue-50 transition">Nous Contacter</a>
+        <main class="grow flex items-center justify-center px-6">
+            <div class="text-center max-w-lg">
+                <div class="text-8xl mb-6">🔍</div>
+                <h1 class="text-6xl font-bold text-gray-800 mb-4">404</h1>
+                <h2 class="text-2xl font-semibold text-gray-700 mb-4">Page Non Trouvée</h2>
+                <p class="text-gray-600 mb-8">La page que vous recherchez n'existe pas ou a été déplacée. Laissez-nous vous remettre sur la bonne voie.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/fr/" class="bg-blue-900 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-800 transition">Retour à l'Accueil</a>
+                    <a href="/fr/#contact" class="bg-white text-blue-900 font-semibold py-3 px-8 rounded-lg border-2 border-blue-900 hover:bg-blue-50 transition">Nous Contacter</a>
+                </div>
             </div>
-        </div>
-    </main>
+        </main>
 
-    <!-- Footer -->
-    <footer class="bg-blue-900 text-white py-6 mt-auto">
-        <div class="container mx-auto px-6 text-center">
-            <p class="text-blue-200">&copy; 2026 Saspire. Tous droits réservés.</p>
-        </div>
-    </footer>
-    <script src="../script.js"></script>
-</body>
+        <!-- Footer -->
+        <footer class="bg-blue-900 text-white py-6 mt-auto">
+            <div class="container mx-auto px-6 text-center">
+                <p class="text-blue-200">&copy; 2026 Saspire. Tous droits réservés.</p>
+            </div>
+        </footer>
+        <script src="../script.js"></script>
+    </body>
 </html>

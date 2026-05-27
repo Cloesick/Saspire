@@ -1,902 +1,1242 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saspire | Conseil en Digitalisation - Webshops, Catalogues & Portails Clients</title>
-    <meta name="description" content="Saspire aide les entreprises à se digitaliser. Nous créons des webshops, digitalisons vos catalogues PDF et développons des portails clients. Transformez votre entreprise dès aujourd'hui.">
-    <meta name="keywords" content="digitalization, webshop development, catalog digitalization, PDF to digital, customer portal, business transformation, Belgium">
-    <meta name="author" content="Saspire">
-    
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://saspire.org/">
-    <meta property="og:title" content="Saspire | Digitalization Consultancy">
-    <meta property="og:description" content="We build webshops, digitalize catalogs, and create customer portals. Transform your business operations today.">
-    <meta property="og:image" content="https://saspire.org/images/Sgrowth5.png">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Saspire | Digitalization Consultancy">
-    <meta name="twitter:description" content="We build webshops, digitalize catalogs, and create customer portals.">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://saspire.org/fr/">
-    
-    <!-- Hreflang for multi-language SEO -->
-    <link rel="alternate" hreflang="en" href="https://saspire.org/">
-    <link rel="alternate" hreflang="fr" href="https://saspire.org/fr/">
-    <link rel="alternate" hreflang="nl" href="https://saspire.org/nl/">
-    <link rel="alternate" hreflang="x-default" href="https://saspire.org/">
-    
-    <link rel="icon" href="/images/Sgrowth5.webp" type="image/webp">
-    <link rel="icon" href="/images/Sgrowth5.png" type="image/png">
-    <link rel="apple-touch-icon" href="/images/Sgrowth5.png">
-    
-    <!-- Tailwind CSS -->
-    <link rel="stylesheet" href="../dist/tailwind.css">
-    
-    <!-- Google Fonts: Inter & Playfair Display for Logo -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    
-    <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="../style.css">
-    
-    <!-- Google Consent Mode v2 (defaults before GTM) -->
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('consent', 'default', {
-            'analytics_storage': 'denied',
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied'
-        });
-        if (localStorage.getItem('cookieConsent') === 'accepted') {
-            gtag('consent', 'update', {
-                'analytics_storage': 'granted',
-                'ad_storage': 'granted',
-                'ad_user_data': 'granted',
-                'ad_personalization': 'granted'
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Saspire | Conseil en Digitalisation - Webshops, Catalogues & Portails Clients</title>
+        <meta
+            name="description"
+            content="Saspire aide les entreprises à se digitaliser. Nous créons des webshops, digitalisons vos catalogues PDF et développons des portails clients. Transformez votre entreprise dès aujourd'hui."
+        />
+        <meta name="keywords" content="digitalization, webshop development, catalog digitalization, PDF to digital, customer portal, business transformation, Belgium" />
+        <meta name="author" content="Saspire" />
+
+        <!-- Security Headers -->
+        <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+        <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+        <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; frame-src https://www.googletagmanager.com;"
+        />
+
+        <!-- Open Graph / Social Media -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://saspire.org/" />
+        <meta property="og:title" content="Saspire | Digitalization Consultancy" />
+        <meta property="og:description" content="We build webshops, digitalize catalogs, and create customer portals. Transform your business operations today." />
+        <meta property="og:image" content="https://saspire.org/images/Sgrowth5.png" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Saspire | Digitalization Consultancy" />
+        <meta name="twitter:description" content="We build webshops, digitalize catalogs, and create customer portals." />
+
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://saspire.org/fr/" />
+
+        <!-- Hreflang for multi-language SEO -->
+        <link rel="alternate" hreflang="en" href="https://saspire.org/" />
+        <link rel="alternate" hreflang="fr" href="https://saspire.org/fr/" />
+        <link rel="alternate" hreflang="nl" href="https://saspire.org/nl/" />
+        <link rel="alternate" hreflang="x-default" href="https://saspire.org/" />
+
+        <link rel="icon" href="/images/Sgrowth5.webp" type="image/webp" />
+        <link rel="icon" href="/images/Sgrowth5.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/images/Sgrowth5.png" />
+
+        <!-- Tailwind CSS -->
+        <link rel="stylesheet" href="../dist/tailwind.css" />
+
+        <!-- Google Fonts: Inter & Playfair Display for Logo -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+
+        <!-- Custom Stylesheet -->
+        <link rel="stylesheet" href="../style.css" />
+
+        <!-- Google Consent Mode v2 (defaults before GTM) -->
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("consent", "default", {
+                analytics_storage: "denied",
+                ad_storage: "denied",
+                ad_user_data: "denied",
+                ad_personalization: "denied",
             });
-        }
-    </script>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-59MQCMPB');</script>
-    <!-- End Google Tag Manager -->
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Saspire",
-        "description": "Digitalization consultancy specializing in webshops, catalog digitalization, and customer portals",
-        "url": "https://saspire.org",
-        "telephone": "+32471261475",
-        "email": "nicolas.cloet@gmail.com",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Brussels, Antwerp, Roeselare",
-            "addressCountry": "BE"
-        },
-        "serviceType": ["Webshop Development", "Catalog Digitalization", "Customer Portal Development", "Digital Transformation"]
-    }
-    </script>
-</head>
-<body class="antialiased">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59MQCMPB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+            if (localStorage.getItem("cookieConsent") === "accepted") {
+                gtag("consent", "update", {
+                    analytics_storage: "granted",
+                    ad_storage: "granted",
+                    ad_user_data: "granted",
+                    ad_personalization: "granted",
+                });
+            }
+        </script>
+        <!-- Google Tag Manager -->
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != "dataLayer" ? "&l=" + l : "";
+                j.async = true;
+                j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, "script", "dataLayer", "GTM-59MQCMPB");
+        </script>
+        <!-- End Google Tag Manager -->
 
-    <!-- Header & Navigation -->
-    <header id="main-header" class="py-4 transition-all duration-300 sticky top-0 z-50 bg-slate-50/90 backdrop-blur-lg shadow-sm">
-        <nav class="container mx-auto px-6 flex justify-between items-center">
-            <a href="#" class="flex flex-col items-start group">
-                <div class="text-3xl font-bold text-gray-800" style="font-family: 'Playfair Display', serif;">Saspire</div>
-                <span class="text-xs text-blue-800/80 font-semibold tracking-wider -mt-1 ml-px group-hover:text-blue-900 transition-colors">Service to aspire</span>
-            </a>
-            <ul class="hidden md:flex items-center space-x-8 font-medium">
-                <li><a href="#about-us" class="text-gray-600 hover:text-gray-900 transition">À Propos</a></li>
-                <li><a href="#services" class="text-gray-600 hover:text-gray-900 transition">Services</a></li>
-                <li><a href="#portfolio" class="text-gray-600 hover:text-gray-900 transition">Portfolio</a></li>
-                <li><a href="#success-stories" class="text-gray-600 hover:text-gray-900 transition">Réussites</a></li>
-                <li><a href="#faq" class="text-gray-600 hover:text-gray-900 transition">FAQ</a></li>
-                <li><a href="#contact" class="text-gray-600 hover:text-gray-900 transition">Contact</a></li>
-            </ul>
-            <!-- Language Switcher -->
-            <div class="hidden md:flex items-center gap-2 mr-4">
-                <a href="/" class="flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-blue-900 transition"><span class="text-base">🇬🇧</span>EN</a>
-                <span class="text-gray-300">|</span>
-                <a href="/fr/" class="flex items-center gap-1 text-sm font-semibold text-blue-900 border-b-2 border-blue-900"><span class="text-base">🇫🇷</span>FR</a>
-                <span class="text-gray-300">|</span>
-                <a href="/nl/" class="flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-blue-900 transition"><span class="text-base">🇳🇱</span>NL</a>
-            </div>
-            <a href="#schedule" class="hidden md:inline-block bg-blue-900 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-blue-800 transition">Planifier un Appel</a>
-            <button id="mobile-menu-button" class="md:hidden p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
-            </button>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden container mx-auto px-6 mt-4">
-            <ul class="flex flex-col space-y-4">
-                <li><a href="#about-us" class="block text-gray-600 hover:text-gray-900 transition">À Propos</a></li>
-                <li><a href="#services" class="block text-gray-600 hover:text-gray-900 transition">Services</a></li>
-                <li><a href="#portfolio" class="block text-gray-600 hover:text-gray-900 transition">Portfolio</a></li>
-                <li><a href="#success-stories" class="block text-gray-600 hover:text-gray-900 transition">Réussites</a></li>
-                <li><a href="#faq" class="block text-gray-600 hover:text-gray-900 transition">FAQ</a></li>
-                <li><a href="#contact" class="block text-gray-600 hover:text-gray-900 transition">Contact</a></li>
-                <li><a href="#schedule" class="block bg-blue-900 text-white font-semibold px-6 py-3 rounded-lg text-center hover:bg-blue-800 transition">Planifier un Appel</a></li>
-                <!-- Mobile Language Switcher -->
-                <li class="flex justify-center gap-4 pt-2 border-t border-gray-200">
-                    <a href="/" class="flex items-center gap-1 text-sm text-gray-500 hover:text-blue-900"><span>🇬🇧</span>EN</a>
-                    <a href="/fr/" class="flex items-center gap-1 text-sm font-semibold text-blue-900"><span>🇫🇷</span>FR</a>
-                    <a href="/nl/" class="flex items-center gap-1 text-sm text-gray-500 hover:text-blue-900"><span>🇳🇱</span>NL</a>
-                </li>
-            </ul>
-        </div>
-    </header>
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "ProfessionalService",
+                "name": "Saspire",
+                "description": "Digitalization consultancy specializing in webshops, catalog digitalization, and customer portals",
+                "url": "https://saspire.org",
+                "telephone": "+32471261475",
+                "email": "nicolas.cloet@gmail.com",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Brussels, Antwerp, Roeselare",
+                    "addressCountry": "BE"
+                },
+                "serviceType": ["Webshop Development", "Catalog Digitalization", "Customer Portal Development", "Digital Transformation"]
+            }
+        </script>
+    </head>
+    <body class="antialiased">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59MQCMPB" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
 
-    <main>
-        <!-- Hero Section -->
-        <section id="hero" class="relative py-20 md:py-32 overflow-hidden">
-            <div class="hero-background"></div>
-            <div class="container mx-auto px-6">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="text-center md:text-left slide-in-left">
-                        <span class="inline-block bg-blue-100 text-blue-900 text-sm font-semibold px-4 py-1 rounded-full mb-4">Conseil en Digitalisation</span>
-                        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-800 leading-tight mb-6">Transformez Votre Entreprise en Puissance Digitale</h1>
-                        <p class="text-lg md:text-xl text-gray-600 mb-10">Nous digitalisons vos opérations—des catalogues papier aux webshops en ligne, des documents éparpillés aux portails clients optimisés. Votre transformation digitale commence ici.</p>
-                        <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4 flex-wrap">
-                            <a href="#schedule" class="bg-blue-900 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-800 transform hover:scale-105 transition text-center">Réserver une Consultation</a>
-                            <a href="#services" class="bg-white text-blue-900 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-100 transform hover:scale-105 transition text-center">Voir Nos Services</a>
-                            <a href="#contact" class="bg-transparent text-blue-900 font-bold py-3 px-8 rounded-lg border-2 border-blue-900 hover:bg-blue-900 hover:text-white transform hover:scale-105 transition text-center">Nous Contacter</a>
-                        </div>
-                    </div>
-                    <div class="relative hidden md:block slide-in-right">
-                        <div class="bg-white/50 p-6 rounded-3xl shadow-2xl backdrop-blur-md">
-                            <picture>
-                                <source srcset="/images/businessgrowth1.webp" type="image/webp">
-                                <img src="/images/businessgrowth1.png" alt="Digital transformation illustration showing business growth" class="relative rounded-3xl shadow-2xl backdrop-blur-md" loading="lazy" width="600" height="400">
-                            </picture>
-                        </div>
-                        <div class="absolute -top-10 -left-10 text-5xl animate-float-1">🛒</div>
-                        <div class="absolute -bottom-10 -right-10 text-5xl animate-float-2">📄</div>
-                        <div class="absolute top-1/2 -right-16 text-5xl animate-float-3">💻</div>
-                        <div class="absolute top-0 right-10 text-4xl animate-float-2">📈</div>
-                        <div class="absolute bottom-20 -left-8 text-4xl animate-float-3">⚙️</div>
-                        <div class="absolute top-1/3 left-0 text-3xl animate-float-1">🔒</div>
-                        <div class="absolute bottom-0 right-1/4 text-4xl animate-float-2">🌐</div>
-                    </div>
+        <!-- Header & Navigation -->
+        <header id="main-header" class="py-4 transition-all duration-300 sticky top-0 z-50 bg-slate-50/90 backdrop-blur-lg shadow-sm">
+            <nav class="container mx-auto px-6 flex justify-between items-center">
+                <a href="#" class="flex flex-col items-start group">
+                    <div class="text-3xl font-bold text-gray-800" style="font-family: &quot;Playfair Display&quot;, serif">Saspire</div>
+                    <span class="text-xs text-blue-800/80 font-semibold tracking-wider -mt-1 ml-px group-hover:text-blue-900 transition-colors">Service to aspire</span>
+                </a>
+                <ul class="hidden md:flex items-center space-x-8 font-medium">
+                    <li><a href="#about-us" class="text-gray-600 hover:text-gray-900 transition">À Propos</a></li>
+                    <li><a href="#services" class="text-gray-600 hover:text-gray-900 transition">Services</a></li>
+                    <li><a href="#portfolio" class="text-gray-600 hover:text-gray-900 transition">Portfolio</a></li>
+                    <li><a href="#success-stories" class="text-gray-600 hover:text-gray-900 transition">Réussites</a></li>
+                    <li><a href="#faq" class="text-gray-600 hover:text-gray-900 transition">FAQ</a></li>
+                    <li><a href="#contact" class="text-gray-600 hover:text-gray-900 transition">Contact</a></li>
+                </ul>
+                <!-- Language Switcher -->
+                <div class="hidden md:flex items-center gap-2 mr-4">
+                    <a href="/" class="flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-blue-900 transition">
+                        <span class="text-base">🇬🇧</span>
+                        EN
+                    </a>
+                    <span class="text-gray-300">|</span>
+                    <a href="/fr/" class="flex items-center gap-1 text-sm font-semibold text-blue-900 border-b-2 border-blue-900">
+                        <span class="text-base">🇫🇷</span>
+                        FR
+                    </a>
+                    <span class="text-gray-300">|</span>
+                    <a href="/nl/" class="flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-blue-900 transition">
+                        <span class="text-base">🇳🇱</span>
+                        NL
+                    </a>
                 </div>
+                <a href="#schedule" class="hidden md:inline-block bg-blue-900 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-blue-800 transition">Planifier un Appel</a>
+                <button id="mobile-menu-button" class="md:hidden p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </nav>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden container mx-auto px-6 mt-4">
+                <ul class="flex flex-col space-y-4">
+                    <li><a href="#about-us" class="block text-gray-600 hover:text-gray-900 transition">À Propos</a></li>
+                    <li><a href="#services" class="block text-gray-600 hover:text-gray-900 transition">Services</a></li>
+                    <li><a href="#portfolio" class="block text-gray-600 hover:text-gray-900 transition">Portfolio</a></li>
+                    <li><a href="#success-stories" class="block text-gray-600 hover:text-gray-900 transition">Réussites</a></li>
+                    <li><a href="#faq" class="block text-gray-600 hover:text-gray-900 transition">FAQ</a></li>
+                    <li><a href="#contact" class="block text-gray-600 hover:text-gray-900 transition">Contact</a></li>
+                    <li><a href="#schedule" class="block bg-blue-900 text-white font-semibold px-6 py-3 rounded-lg text-center hover:bg-blue-800 transition">Planifier un Appel</a></li>
+                    <!-- Mobile Language Switcher -->
+                    <li class="flex justify-center gap-4 pt-2 border-t border-gray-200">
+                        <a href="/" class="flex items-center gap-1 text-sm text-gray-500 hover:text-blue-900">
+                            <span>🇬🇧</span>
+                            EN
+                        </a>
+                        <a href="/fr/" class="flex items-center gap-1 text-sm font-semibold text-blue-900">
+                            <span>🇫🇷</span>
+                            FR
+                        </a>
+                        <a href="/nl/" class="flex items-center gap-1 text-sm text-gray-500 hover:text-blue-900">
+                            <span>🇳🇱</span>
+                            NL
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <div class="absolute bottom-10 left-1/2 -translate-x-1/2">
-                <div class="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center pt-2">
-                    <div class="w-1 h-2 bg-gray-400 rounded-full scroll-indicator-arrow"></div>
-                </div>
-            </div>
-        </section>
+        </header>
 
-        <!-- About Us Section -->
-        <section id="about-us" class="py-24 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16 fade-in-up-on-scroll">
-                    <h2 class="text-4xl font-bold text-gray-800">Pourquoi Choisir Saspire ?</h2>
-                    <p class="text-lg text-gray-600 mt-4">Nous sommes des spécialistes de la digitalisation qui transforment le chaos analogique en efficacité digitale.</p>
-                </div>
-                <div class="grid md:grid-cols-2 gap-16 items-center">
-                    <div class="fade-in-up-on-scroll">
-                        <h3 class="text-3xl font-bold text-gray-800 mb-4">Votre Partenaire de Transformation Digitale</h3>
-                        <p class="text-gray-600 mb-4">Vous gérez encore vos stocks sur des tableurs ? Vous envoyez des catalogues PDF par email ? Vous perdez des clients parce que vous n'êtes pas en ligne ? Nous réglons ça.</p>
-                        <p class="text-gray-600 mb-4">Saspire se spécialise dans l'accompagnement des entreprises traditionnelles vers l'ère digitale. Nous ne construisons pas simplement des sites web—nous créons des écosystèmes digitaux complets qui automatisent vos flux de travail, élargissent votre portée et ravissent vos clients.</p>
-                        <p class="text-gray-600 mb-8">Basés à Bruxelles, Anvers et Roulers, nous accompagnons les entreprises en Belgique et en Europe prêtes à embrasser la transformation digitale.</p>
-                        <a href="#services" class="bg-blue-900 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-800 transition">Découvrir Nos Services</a>
-                    </div>
-                    <div class="grid grid-cols-2 gap-6 fade-in-up-on-scroll">
-                        <div class="bg-blue-50 p-6 rounded-xl text-center hover:shadow-lg transition">
-                            <div class="text-4xl mb-3">🛒</div>
-                            <h4 class="font-bold text-lg">Experts Webshop</h4>
-                            <p class="text-sm text-gray-600">Solutions e-commerce qui vendent.</p>
-                        </div>
-                        <div class="bg-blue-50 p-6 rounded-xl text-center hover:shadow-lg transition">
-                            <div class="text-4xl mb-3">📄</div>
-                            <h4 class="font-bold text-lg">Digitalisation PDF</h4>
-                            <p class="text-sm text-gray-600">Des catalogues qui prennent vie en ligne.</p>
-                        </div>
-                        <div class="bg-blue-50 p-6 rounded-xl text-center hover:shadow-lg transition">
-                            <div class="text-4xl mb-3">🏠</div>
-                            <h4 class="font-bold text-lg">Portails Clients</h4>
-                            <p class="text-sm text-gray-600">Plateformes en libre-service pour vos clients.</p>
-                        </div>
-                        <div class="bg-blue-50 p-6 rounded-xl text-center hover:shadow-lg transition">
-                            <div class="text-4xl mb-3">⚡</div>
-                            <h4 class="font-bold text-lg">Livraison Rapide</h4>
-                            <p class="text-sm text-gray-600">Lancement en semaines, pas en mois.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services" class="py-24">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16 fade-in-up-on-scroll">
-                    <h2 class="text-4xl font-bold text-gray-800">Nos Services</h2>
-                    <p class="text-lg text-gray-600 mt-4">Solutions de digitalisation complètes adaptées aux besoins de votre entreprise.</p>
-                </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Webshop Development -->
-                    <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col fade-in-up-on-scroll hover:shadow-xl transition">
-                        <div class="text-5xl mb-4 text-center">🛒</div>
-                        <h3 class="text-2xl font-bold text-center text-gray-800">Développement Webshop</h3>
-                        <p class="text-gray-500 text-center mt-2 mb-6">Vendez en ligne avec une plateforme e-commerce professionnelle</p>
-                        <ul class="space-y-4 grow">
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Design webshop personnalisé</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Gestion du catalogue produits</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Intégration paiement sécurisé</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Suivi des stocks</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Paiement optimisé mobile</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Configuration livraison & taxes</li>
-                        </ul>
-                        <div class="mt-8 pt-6 border-t border-gray-100">
-                            <p class="text-sm text-gray-500 text-center mb-4">À partir de</p>
-                            <p class="text-3xl font-bold text-center text-gray-900">€2,499</p>
-                        </div>
-                        <a href="#contact" class="mt-6 w-full text-center bg-blue-900 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-800 transition">Demander un Devis</a>
-                    </div>
-                    <!-- Catalog Digitalization -->
-                    <div class="bg-blue-900 text-white p-8 rounded-2xl shadow-2xl flex flex-col transform md:scale-105 fade-in-up-on-scroll" style="animation-delay: 0.1s;">
-                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-500 text-blue-900 text-xs font-bold px-3 py-1 rounded-full">LE PLUS POPULAIRE</div>
-                        <div class="text-5xl mb-4 text-center">📄</div>
-                        <h3 class="text-2xl font-bold text-center">Digitalisation de Catalogues</h3>
-                        <p class="text-blue-200 text-center mt-2 mb-6">Transformez vos PDF en expériences digitales interactives</p>
-                        <ul class="space-y-4 grow">
-                            <li class="flex items-center"><svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Conversion PDF vers web</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Base de données produits recherchable</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Catalogues flipbook interactifs</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Mises à jour de contenu faciles</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Pages optimisées SEO</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Analytiques & suivi</li>
-                        </ul>
-                        <div class="mt-8 pt-6 border-t border-blue-800">
-                            <p class="text-sm text-blue-200 text-center mb-4">À partir de</p>
-                            <p class="text-3xl font-bold text-center">€1,499</p>
-                        </div>
-                        <a href="#contact" class="mt-6 w-full text-center bg-white text-blue-900 font-bold py-3 px-6 rounded-lg hover:bg-blue-100 transition">Demander un Devis</a>
-                    </div>
-                    <!-- Customer Portal -->
-                    <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col fade-in-up-on-scroll hover:shadow-xl transition" style="animation-delay: 0.2s;">
-                        <div class="text-5xl mb-4 text-center">🏠</div>
-                        <h3 class="text-2xl font-bold text-center text-gray-800">Portail Client</h3>
-                        <p class="text-gray-500 text-center mt-2 mb-6">Plateformes en libre-service pour vos clients</p>
-                        <ul class="space-y-4 grow">
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Système de connexion sécurisé</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Historique & suivi des commandes</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Gestion documentaire</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Portail factures & paiements</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Système de tickets support</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Personnalisation de marque</li>
-                        </ul>
-                        <div class="mt-8 pt-6 border-t border-gray-100">
-                            <p class="text-sm text-gray-500 text-center mb-4">À partir de</p>
-                            <p class="text-3xl font-bold text-center text-gray-900">€3,999</p>
-                        </div>
-                        <a href="#contact" class="mt-6 w-full text-center bg-blue-900 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-800 transition">Demander un Devis</a>
-                    </div>
-                </div>
-                <!-- Additional Services Banner -->
-                <div class="mt-16 bg-linear-to-r from-blue-50 to-sky-50 p-8 rounded-2xl fade-in-up-on-scroll">
-                    <div class="text-center">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Besoin de Quelque Chose de Personnalisé ?</h3>
-                        <p class="text-gray-600 mb-6 max-w-2xl mx-auto">Nous proposons également le développement de sites web, l'automatisation des processus métier, l'intégration CRM et des forfaits de maintenance. Chaque entreprise est unique—discutons de vos besoins spécifiques.</p>
-                        <a href="#schedule" class="inline-block bg-blue-900 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-800 transition">Planifier une Consultation Gratuite</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Portfolio Section -->
-        <section id="portfolio" class="py-24 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16 fade-in-up-on-scroll">
-                    <h2 class="text-4xl font-bold text-gray-800">Notre Portfolio</h2>
-                    <p class="text-lg text-gray-600 mt-4">Une sélection de projets réalisés pour nos clients.</p>
-                </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Project 1 -->
-                    <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll">
-                        <div class="aspect-video bg-linear-to-br from-blue-500 to-blue-700 flex items-center justify-center">
-                            <span class="text-6xl">🏗️</span>
-                        </div>
-                        <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <h3 class="text-xl font-bold text-white mb-2">Plateforme E-commerce Multi-Entreprises</h3>
-                            <p class="text-blue-200 text-sm text-center mb-4">Monorepo Turborepo alimentant 5 webshops B2B avec UI partagée, auth et base de données 30+ tables.</p>
-                            <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">E-commerce Entreprise</span>
-                        </div>
-                        <div class="p-4 bg-white">
-                            <h3 class="font-bold text-gray-800">Plateforme E-commerce Multi-Entreprises</h3>
-                            <p class="text-sm text-gray-500">DEMA Group — Distribution Industrielle</p>
-                        </div>
-                    </div>
-                    <!-- Project 2 -->
-                    <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.1s;">
-                        <div class="aspect-video bg-linear-to-br from-emerald-500 to-emerald-700 flex items-center justify-center">
-                            <span class="text-6xl">📄</span>
-                        </div>
-                        <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <h3 class="text-xl font-bold text-white mb-2">Catalogue Produits Digital</h3>
-                            <p class="text-blue-200 text-sm text-center mb-4">Catalogue PDF de 500+ pages converti en base de données en ligne avec filtrage et commande rapide.</p>
-                            <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">Digitalisation Catalogue</span>
-                        </div>
-                        <div class="p-4 bg-white">
-                            <h3 class="font-bold text-gray-800">Catalogue Produits Digital</h3>
-                            <p class="text-sm text-gray-500">Entreprise Manufacturière</p>
-                        </div>
-                    </div>
-                    <!-- Project 3 -->
-                    <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.2s;">
-                        <div class="aspect-video bg-linear-to-br from-purple-500 to-purple-700 flex items-center justify-center">
-                            <span class="text-6xl">🏠</span>
-                        </div>
-                        <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <h3 class="text-xl font-bold text-white mb-2">Portail Client Self-Service</h3>
-                            <p class="text-blue-200 text-sm text-center mb-4">Portail personnalisé avec suivi des commandes, gestion des factures et système de tickets support.</p>
-                            <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">Portail Client</span>
-                        </div>
-                        <div class="p-4 bg-white">
-                            <h3 class="font-bold text-gray-800">Portail Client Self-Service</h3>
-                            <p class="text-sm text-gray-500">Entreprise de Services</p>
-                        </div>
-                    </div>
-                    <!-- Project 4 -->
-                    <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.3s;">
-                        <div class="aspect-video bg-linear-to-br from-orange-500 to-orange-700 flex items-center justify-center">
-                            <span class="text-6xl">🛍️</span>
-                        </div>
-                        <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <h3 class="text-xl font-bold text-white mb-2">Boutique Mode en Ligne</h3>
-                            <p class="text-blue-200 text-sm text-center mb-4">Boutique élégante avec guides de tailles, liste de souhaits et solutions de paiement intégrées.</p>
-                            <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">E-commerce</span>
-                        </div>
-                        <div class="p-4 bg-white">
-                            <h3 class="font-bold text-gray-800">Boutique Mode en Ligne</h3>
-                            <p class="text-sm text-gray-500">Commerce de Détail Mode</p>
-                        </div>
-                    </div>
-                    <!-- Project 5 -->
-                    <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.4s;">
-                        <div class="aspect-video bg-linear-to-br from-cyan-500 to-cyan-700 flex items-center justify-center">
-                            <span class="text-6xl">📊</span>
-                        </div>
-                        <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <h3 class="text-xl font-bold text-white mb-2">Système de Gestion des Stocks</h3>
-                            <p class="text-blue-200 text-sm text-center mb-4">Suivi des stocks en temps réel avec alertes de réapprovisionnement et intégration fournisseurs.</p>
-                            <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">Automatisation</span>
-                        </div>
-                        <div class="p-4 bg-white">
-                            <h3 class="font-bold text-gray-800">Système de Gestion des Stocks</h3>
-                            <p class="text-sm text-gray-500">Distributeur Grossiste</p>
-                        </div>
-                    </div>
-                    <!-- Project 6 -->
-                    <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.5s;">
-                        <div class="aspect-video bg-linear-to-br from-pink-500 to-pink-700 flex items-center justify-center">
-                            <span class="text-6xl">🌐</span>
-                        </div>
-                        <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <h3 class="text-xl font-bold text-white mb-2">Site Corporate Multilingue</h3>
-                            <p class="text-blue-200 text-sm text-center mb-4">Site professionnel avec CMS, blog et formulaires de génération de leads en 3 langues.</p>
-                            <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">Développement Web</span>
-                        </div>
-                        <div class="p-4 bg-white">
-                            <h3 class="font-bold text-gray-800">Site Corporate Multilingue</h3>
-                            <p class="text-sm text-gray-500">Cabinet de Conseil</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center mt-12 fade-in-up-on-scroll">
-                    <p class="text-gray-600 mb-6">Vous souhaitez voir plus d'exemples ou discuter d'un projet similaire ?</p>
-                    <a href="#schedule" class="inline-block bg-blue-900 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-800 transition">Parlons de Votre Projet</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Success Stories Section -->
-        <section id="success-stories" class="py-24 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16 fade-in-up-on-scroll">
-                    <h2 class="text-4xl font-bold text-gray-800">Résultats de Transformation Digitale</h2>
-                    <p class="text-lg text-gray-600 mt-4">De vraies entreprises, de vrais résultats. Découvrez ce que la digitalisation peut faire.</p>
-                </div>
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden md:grid md:grid-cols-3 fade-in-up-on-scroll">
-                    <div class="p-8 md:p-12 bg-blue-900 text-white flex flex-col justify-center items-center text-center">
-                        <div class="text-7xl font-extrabold">5</div>
-                        <div class="text-xl font-semibold mt-2">Entreprises, Une Plateforme</div>
-                    </div>
-                    <div class="p-8 md:p-12 md:col-span-2">
-                        <h3 class="text-2xl font-bold text-gray-800">Plateforme E-commerce B2B Multi-Entreprises</h3>
-                        <div class="flex items-center my-6">
-                            <div class="w-16 h-16 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold text-2xl mr-4">DG</div>
-                            <div>
-                                <h4 class="font-bold text-lg">DEMA Group</h4>
-                                <p class="text-gray-500">Équipement industriel — pompes, vannes, convoyeurs, irrigation</p>
+        <main>
+            <!-- Hero Section -->
+            <section id="hero" class="relative py-20 md:py-32 overflow-hidden">
+                <div class="hero-background"></div>
+                <div class="container mx-auto px-6">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="text-center md:text-left slide-in-left">
+                            <span class="inline-block bg-blue-100 text-blue-900 text-sm font-semibold px-4 py-1 rounded-full mb-4">Conseil en Digitalisation</span>
+                            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-800 leading-tight mb-6">Transformez Votre Entreprise en Puissance Digitale</h1>
+                            <p class="text-lg md:text-xl text-gray-600 mb-10">
+                                Nous digitalisons vos opérations—des catalogues papier aux webshops en ligne, des documents éparpillés aux portails clients optimisés. Votre transformation digitale
+                                commence ici.
+                            </p>
+                            <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4 flex-wrap">
+                                <a href="#schedule" class="bg-blue-900 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-800 transform hover:scale-105 transition text-center">
+                                    Réserver une Consultation
+                                </a>
+                                <a href="#services" class="bg-white text-blue-900 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-100 transform hover:scale-105 transition text-center">
+                                    Voir Nos Services
+                                </a>
+                                <a
+                                    href="#contact"
+                                    class="bg-transparent text-blue-900 font-bold py-3 px-8 rounded-lg border-2 border-blue-900 hover:bg-blue-900 hover:text-white transform hover:scale-105 transition text-center"
+                                >
+                                    Nous Contacter
+                                </a>
                             </div>
                         </div>
-                        <p class="text-gray-600 mb-6">Construction d'une plateforme e-commerce unifiée pour 5 entreprises de fournitures industrielles avec une architecture monorepo Turborepo. Chaque marque (DEMA, Fluxer, Beltz247, De Visschere, Accu) exploite sa propre vitrine Next.js 14 sur une base de données PostgreSQL partagée de 30+ tables, des composants UI partagés et une authentification centralisée — le tout connecté aux systèmes ERP Odoo et Exact Online.</p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Next.js 14</span>
-                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">TypeScript</span>
-                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Prisma</span>
-                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">PostgreSQL</span>
-                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">tRPC</span>
-                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Turborepo</span>
-                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Stripe</span>
-                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Tailwind CSS</span>
-                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">NextAuth</span>
-                            <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Vercel</span>
+                        <div class="relative hidden md:block slide-in-right">
+                            <div class="bg-white/50 p-6 rounded-3xl shadow-2xl backdrop-blur-md">
+                                <picture>
+                                    <source srcset="/images/businessgrowth1.webp" type="image/webp" />
+                                    <img
+                                        src="/images/businessgrowth1.png"
+                                        alt="Digital transformation illustration showing business growth"
+                                        class="relative rounded-3xl shadow-2xl backdrop-blur-md"
+                                        loading="lazy"
+                                        width="600"
+                                        height="400"
+                                    />
+                                </picture>
+                            </div>
+                            <div class="absolute -top-10 -left-10 text-5xl animate-float-1">🛒</div>
+                            <div class="absolute -bottom-10 -right-10 text-5xl animate-float-2">📄</div>
+                            <div class="absolute top-1/2 -right-16 text-5xl animate-float-3">💻</div>
+                            <div class="absolute top-0 right-10 text-4xl animate-float-2">📈</div>
+                            <div class="absolute bottom-20 -left-8 text-4xl animate-float-3">⚙️</div>
+                            <div class="absolute top-1/3 left-0 text-3xl animate-float-1">🔒</div>
+                            <div class="absolute bottom-0 right-1/4 text-4xl animate-float-2">🌐</div>
                         </div>
-                        <div class="flex gap-4 flex-wrap">
-                            <div class="bg-blue-50 px-4 py-2 rounded-lg">
-                                <span class="text-sm text-gray-600">Tables Base de Données:</span>
-                                <span class="font-bold text-blue-900 ml-1">30+</span>
+                    </div>
+                </div>
+                <div class="absolute bottom-10 left-1/2 -translate-x-1/2">
+                    <div class="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center pt-2">
+                        <div class="w-1 h-2 bg-gray-400 rounded-full scroll-indicator-arrow"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Us Section -->
+            <section id="about-us" class="py-24 bg-white">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16 fade-in-up-on-scroll">
+                        <h2 class="text-4xl font-bold text-gray-800">Pourquoi Choisir Saspire ?</h2>
+                        <p class="text-lg text-gray-600 mt-4">Nous sommes des spécialistes de la digitalisation qui transforment le chaos analogique en efficacité digitale.</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-16 items-center">
+                        <div class="fade-in-up-on-scroll">
+                            <h3 class="text-3xl font-bold text-gray-800 mb-4">Votre Partenaire de Transformation Digitale</h3>
+                            <p class="text-gray-600 mb-4">
+                                Vous gérez encore vos stocks sur des tableurs ? Vous envoyez des catalogues PDF par email ? Vous perdez des clients parce que vous n'êtes pas en ligne ? Nous réglons
+                                ça.
+                            </p>
+                            <p class="text-gray-600 mb-4">
+                                Saspire se spécialise dans l'accompagnement des entreprises traditionnelles vers l'ère digitale. Nous ne construisons pas simplement des sites web—nous créons des
+                                écosystèmes digitaux complets qui automatisent vos flux de travail, élargissent votre portée et ravissent vos clients.
+                            </p>
+                            <p class="text-gray-600 mb-8">
+                                Basés à Bruxelles, Anvers et Roulers, nous accompagnons les entreprises en Belgique et en Europe prêtes à embrasser la transformation digitale.
+                            </p>
+                            <a href="#services" class="bg-blue-900 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-800 transition">Découvrir Nos Services</a>
+                        </div>
+                        <div class="grid grid-cols-2 gap-6 fade-in-up-on-scroll">
+                            <div class="bg-blue-50 p-6 rounded-xl text-center hover:shadow-lg transition">
+                                <div class="text-4xl mb-3">🛒</div>
+                                <h4 class="font-bold text-lg">Experts Webshop</h4>
+                                <p class="text-sm text-gray-600">Solutions e-commerce qui vendent.</p>
                             </div>
-                            <div class="bg-blue-50 px-4 py-2 rounded-lg">
-                                <span class="text-sm text-gray-600">Produits Digitalisés:</span>
-                                <span class="font-bold text-blue-900 ml-1">2 500+</span>
+                            <div class="bg-blue-50 p-6 rounded-xl text-center hover:shadow-lg transition">
+                                <div class="text-4xl mb-3">📄</div>
+                                <h4 class="font-bold text-lg">Digitalisation PDF</h4>
+                                <p class="text-sm text-gray-600">Des catalogues qui prennent vie en ligne.</p>
                             </div>
-                            <div class="bg-blue-50 px-4 py-2 rounded-lg">
-                                <span class="text-sm text-gray-600">Business Features:</span>
-                                <span class="font-bold text-blue-900 ml-1">84</span>
+                            <div class="bg-blue-50 p-6 rounded-xl text-center hover:shadow-lg transition">
+                                <div class="text-4xl mb-3">🏠</div>
+                                <h4 class="font-bold text-lg">Portails Clients</h4>
+                                <p class="text-sm text-gray-600">Plateformes en libre-service pour vos clients.</p>
+                            </div>
+                            <div class="bg-blue-50 p-6 rounded-xl text-center hover:shadow-lg transition">
+                                <div class="text-4xl mb-3">⚡</div>
+                                <h4 class="font-bold text-lg">Livraison Rapide</h4>
+                                <p class="text-sm text-gray-600">Lancement en semaines, pas en mois.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Stats Row -->
-                <div class="grid md:grid-cols-3 gap-8 mt-12 fade-in-up-on-scroll">
-                    <div class="bg-blue-50 p-8 rounded-xl text-center">
-                        <div class="text-4xl font-bold text-blue-900 mb-2"><span class="counter" data-target="50">0</span>+</div>
-                        <p class="text-gray-600">Projets Livrés</p>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services" class="py-24">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16 fade-in-up-on-scroll">
+                        <h2 class="text-4xl font-bold text-gray-800">Nos Services</h2>
+                        <p class="text-lg text-gray-600 mt-4">Solutions de digitalisation complètes adaptées aux besoins de votre entreprise.</p>
                     </div>
-                    <div class="bg-blue-50 p-8 rounded-xl text-center">
-                        <div class="text-4xl font-bold text-blue-900 mb-2"><span class="counter" data-target="98">0</span>%</div>
-                        <p class="text-gray-600">Satisfaction Client</p>
-                    </div>
-                    <div class="bg-blue-50 p-8 rounded-xl text-center">
-                        <div class="text-4xl font-bold text-blue-900 mb-2"><span class="counter" data-target="5">0</span>+</div>
-                        <p class="text-gray-600">Années d'Expérience</p>
-                    </div>
-                </div>
-                
-                <!-- Additional Testimonials -->
-                <div class="mt-16">
-                    <h3 class="text-2xl font-bold text-gray-800 text-center mb-10 fade-in-up-on-scroll">Ce Que Disent Nos Clients</h3>
                     <div class="grid md:grid-cols-3 gap-8">
-                        <div class="bg-white p-6 rounded-xl shadow-lg fade-in-up-on-scroll">
-                            <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold text-lg mr-3">SV</div>
-                                <div>
-                                    <h4 class="font-semibold">Sophie Vermeersch</h4>
-                                    <p class="text-sm text-gray-500">Propriétaire de Boutique</p>
-                                </div>
+                        <!-- Webshop Development -->
+                        <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col fade-in-up-on-scroll hover:shadow-xl transition">
+                            <div class="text-5xl mb-4 text-center">🛒</div>
+                            <h3 class="text-2xl font-bold text-center text-gray-800">Développement Webshop</h3>
+                            <p class="text-gray-500 text-center mt-2 mb-6">Vendez en ligne avec une plateforme e-commerce professionnelle</p>
+                            <ul class="space-y-4 grow">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Design webshop personnalisé
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Gestion du catalogue produits
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Intégration paiement sécurisé
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Suivi des stocks
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Paiement optimisé mobile
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Configuration livraison & taxes
+                                </li>
+                            </ul>
+                            <div class="mt-8 pt-6 border-t border-gray-100">
+                                <p class="text-sm text-gray-500 text-center mb-4">À partir de</p>
+                                <p class="text-3xl font-bold text-center text-gray-900">€2,499</p>
                             </div>
-                            <div class="flex text-yellow-500 mb-3">★★★★★</div>
-                            <p class="text-gray-600 text-sm">"Enfin, un webshop qui fonctionne vraiment ! Mes clients adorent le paiement facile et je peux tout gérer moi-même. Les ventes ont augmenté de 150% au premier trimestre."</p>
+                            <a href="#contact" class="mt-6 w-full text-center bg-blue-900 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-800 transition">Demander un Devis</a>
                         </div>
-                        <div class="bg-white p-6 rounded-xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.1s;">
-                            <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 bg-green-100 text-green-700 rounded-full flex items-center justify-center font-bold text-lg mr-3">PD</div>
-                                <div>
-                                    <h4 class="font-semibold">Peter De Smedt</h4>
-                                    <p class="text-sm text-gray-500">Directeur de Production</p>
-                                </div>
+                        <!-- Catalog Digitalization -->
+                        <div class="bg-blue-900 text-white p-8 rounded-2xl shadow-2xl flex flex-col transform md:scale-105 fade-in-up-on-scroll" style="animation-delay: 0.1s">
+                            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-500 text-blue-900 text-xs font-bold px-3 py-1 rounded-full">LE PLUS POPULAIRE</div>
+                            <div class="text-5xl mb-4 text-center">📄</div>
+                            <h3 class="text-2xl font-bold text-center">Digitalisation de Catalogues</h3>
+                            <p class="text-blue-200 text-center mt-2 mb-6">Transformez vos PDF en expériences digitales interactives</p>
+                            <ul class="space-y-4 grow">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Conversion PDF vers web
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Base de données produits recherchable
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Catalogues flipbook interactifs
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Mises à jour de contenu faciles
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Pages optimisées SEO
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Analytiques & suivi
+                                </li>
+                            </ul>
+                            <div class="mt-8 pt-6 border-t border-blue-800">
+                                <p class="text-sm text-blue-200 text-center mb-4">À partir de</p>
+                                <p class="text-3xl font-bold text-center">€1,499</p>
                             </div>
-                            <div class="flex text-yellow-500 mb-3">★★★★★</div>
-                            <p class="text-gray-600 text-sm">"Notre catalogue de 500 pages est maintenant entièrement recherchable en ligne. Les clients trouvent ce dont ils ont besoin instantanément. Le ROI était visible en quelques semaines."</p>
+                            <a href="#contact" class="mt-6 w-full text-center bg-white text-blue-900 font-bold py-3 px-6 rounded-lg hover:bg-blue-100 transition">Demander un Devis</a>
                         </div>
-                        <div class="bg-white p-6 rounded-xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.2s;">
-                            <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 bg-purple-100 text-purple-700 rounded-full flex items-center justify-center font-bold text-lg mr-3">LM</div>
-                                <div>
-                                    <h4 class="font-semibold">Lisa Martens</h4>
-                                    <p class="text-sm text-gray-500">PDG d'Entreprise de Services</p>
-                                </div>
+                        <!-- Customer Portal -->
+                        <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col fade-in-up-on-scroll hover:shadow-xl transition" style="animation-delay: 0.2s">
+                            <div class="text-5xl mb-4 text-center">🏠</div>
+                            <h3 class="text-2xl font-bold text-center text-gray-800">Portail Client</h3>
+                            <p class="text-gray-500 text-center mt-2 mb-6">Plateformes en libre-service pour vos clients</p>
+                            <ul class="space-y-4 grow">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Système de connexion sécurisé
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Historique & suivi des commandes
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Gestion documentaire
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Portail factures & paiements
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Système de tickets support
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    Personnalisation de marque
+                                </li>
+                            </ul>
+                            <div class="mt-8 pt-6 border-t border-gray-100">
+                                <p class="text-sm text-gray-500 text-center mb-4">À partir de</p>
+                                <p class="text-3xl font-bold text-center text-gray-900">€3,999</p>
                             </div>
-                            <div class="flex text-yellow-500 mb-3">★★★★★</div>
-                            <p class="text-gray-600 text-sm">"Le portail client a réduit nos appels support de 60%. Les clients peuvent maintenant suivre leurs commandes, télécharger leurs factures et soumettre des tickets eux-mêmes. Un vrai changement."</p>
+                            <a href="#contact" class="mt-6 w-full text-center bg-blue-900 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-800 transition">Demander un Devis</a>
+                        </div>
+                    </div>
+                    <!-- Additional Services Banner -->
+                    <div class="mt-16 bg-linear-to-r from-blue-50 to-sky-50 p-8 rounded-2xl fade-in-up-on-scroll">
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Besoin de Quelque Chose de Personnalisé ?</h3>
+                            <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+                                Nous proposons également le développement de sites web, l'automatisation des processus métier, l'intégration CRM et des forfaits de maintenance. Chaque entreprise est
+                                unique—discutons de vos besoins spécifiques.
+                            </p>
+                            <a href="#schedule" class="inline-block bg-blue-900 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-800 transition">Planifier une Consultation Gratuite</a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- FAQ Section -->
-        <section id="faq" class="py-24 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16 fade-in-up-on-scroll">
-                    <h2 class="text-4xl font-bold text-gray-800">Questions Fréquemment Posées</h2>
-                    <p class="text-lg text-gray-600 mt-4">Réponses rapides aux questions courantes sur nos services.</p>
+            <!-- Portfolio Section -->
+            <section id="portfolio" class="py-24 bg-white">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16 fade-in-up-on-scroll">
+                        <h2 class="text-4xl font-bold text-gray-800">Notre Portfolio</h2>
+                        <p class="text-lg text-gray-600 mt-4">Une sélection de projets réalisés pour nos clients.</p>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Project 1 -->
+                        <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll">
+                            <div class="aspect-video bg-linear-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+                                <span class="text-6xl">🏗️</span>
+                            </div>
+                            <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <h3 class="text-xl font-bold text-white mb-2">Plateforme E-commerce Multi-Entreprises</h3>
+                                <p class="text-blue-200 text-sm text-center mb-4">Monorepo Turborepo alimentant 5 webshops B2B avec UI partagée, auth et base de données 30+ tables.</p>
+                                <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">E-commerce Entreprise</span>
+                            </div>
+                            <div class="p-4 bg-white">
+                                <h3 class="font-bold text-gray-800">Plateforme E-commerce Multi-Entreprises</h3>
+                                <p class="text-sm text-gray-500">DEMA Group — Distribution Industrielle</p>
+                            </div>
+                        </div>
+                        <!-- Project 2 -->
+                        <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.1s">
+                            <div class="aspect-video bg-linear-to-br from-emerald-500 to-emerald-700 flex items-center justify-center">
+                                <span class="text-6xl">📄</span>
+                            </div>
+                            <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <h3 class="text-xl font-bold text-white mb-2">Catalogue Produits Digital</h3>
+                                <p class="text-blue-200 text-sm text-center mb-4">Catalogue PDF de 500+ pages converti en base de données en ligne avec filtrage et commande rapide.</p>
+                                <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">Digitalisation Catalogue</span>
+                            </div>
+                            <div class="p-4 bg-white">
+                                <h3 class="font-bold text-gray-800">Catalogue Produits Digital</h3>
+                                <p class="text-sm text-gray-500">Entreprise Manufacturière</p>
+                            </div>
+                        </div>
+                        <!-- Project 3 -->
+                        <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.2s">
+                            <div class="aspect-video bg-linear-to-br from-purple-500 to-purple-700 flex items-center justify-center">
+                                <span class="text-6xl">🏠</span>
+                            </div>
+                            <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <h3 class="text-xl font-bold text-white mb-2">Portail Client Self-Service</h3>
+                                <p class="text-blue-200 text-sm text-center mb-4">Portail personnalisé avec suivi des commandes, gestion des factures et système de tickets support.</p>
+                                <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">Portail Client</span>
+                            </div>
+                            <div class="p-4 bg-white">
+                                <h3 class="font-bold text-gray-800">Portail Client Self-Service</h3>
+                                <p class="text-sm text-gray-500">Entreprise de Services</p>
+                            </div>
+                        </div>
+                        <!-- Project 4 -->
+                        <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.3s">
+                            <div class="aspect-video bg-linear-to-br from-orange-500 to-orange-700 flex items-center justify-center">
+                                <span class="text-6xl">🛍️</span>
+                            </div>
+                            <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <h3 class="text-xl font-bold text-white mb-2">Boutique Mode en Ligne</h3>
+                                <p class="text-blue-200 text-sm text-center mb-4">Boutique élégante avec guides de tailles, liste de souhaits et solutions de paiement intégrées.</p>
+                                <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">E-commerce</span>
+                            </div>
+                            <div class="p-4 bg-white">
+                                <h3 class="font-bold text-gray-800">Boutique Mode en Ligne</h3>
+                                <p class="text-sm text-gray-500">Commerce de Détail Mode</p>
+                            </div>
+                        </div>
+                        <!-- Project 5 -->
+                        <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.4s">
+                            <div class="aspect-video bg-linear-to-br from-cyan-500 to-cyan-700 flex items-center justify-center">
+                                <span class="text-6xl">📊</span>
+                            </div>
+                            <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <h3 class="text-xl font-bold text-white mb-2">Système de Gestion des Stocks</h3>
+                                <p class="text-blue-200 text-sm text-center mb-4">Suivi des stocks en temps réel avec alertes de réapprovisionnement et intégration fournisseurs.</p>
+                                <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">Automatisation</span>
+                            </div>
+                            <div class="p-4 bg-white">
+                                <h3 class="font-bold text-gray-800">Système de Gestion des Stocks</h3>
+                                <p class="text-sm text-gray-500">Distributeur Grossiste</p>
+                            </div>
+                        </div>
+                        <!-- Project 6 -->
+                        <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.5s">
+                            <div class="aspect-video bg-linear-to-br from-pink-500 to-pink-700 flex items-center justify-center">
+                                <span class="text-6xl">🌐</span>
+                            </div>
+                            <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <h3 class="text-xl font-bold text-white mb-2">Site Corporate Multilingue</h3>
+                                <p class="text-blue-200 text-sm text-center mb-4">Site professionnel avec CMS, blog et formulaires de génération de leads en 3 langues.</p>
+                                <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">Développement Web</span>
+                            </div>
+                            <div class="p-4 bg-white">
+                                <h3 class="font-bold text-gray-800">Site Corporate Multilingue</h3>
+                                <p class="text-sm text-gray-500">Cabinet de Conseil</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-12 fade-in-up-on-scroll">
+                        <p class="text-gray-600 mb-6">Vous souhaitez voir plus d'exemples ou discuter d'un projet similaire ?</p>
+                        <a href="#schedule" class="inline-block bg-blue-900 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-800 transition">Parlons de Votre Projet</a>
+                    </div>
                 </div>
-                <div class="max-w-3xl mx-auto space-y-4">
-                    <!-- FAQ Item 1 -->
-                    <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden fade-in-up-on-scroll">
-                        <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
-                            <span class="font-semibold text-gray-800">Combien de temps faut-il pour créer un webshop ?</span>
-                            <svg class="faq-icon w-5 h-5 text-blue-900 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </button>
-                        <div class="faq-answer hidden px-6 pb-4">
-                            <p class="text-gray-600">Un webshop standard prend généralement 2 à 4 semaines du début au lancement. Cela inclut le design, le développement, la configuration des produits et les tests. Les projets plus complexes avec des fonctionnalités personnalisées peuvent prendre 4 à 8 semaines.</p>
-                        </div>
-                    </div>
-                    <!-- FAQ Item 2 -->
-                    <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden fade-in-up-on-scroll" style="animation-delay: 0.1s;">
-                        <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
-                            <span class="font-semibold text-gray-800">Que comprend la digitalisation de catalogue ?</span>
-                            <svg class="faq-icon w-5 h-5 text-blue-900 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </button>
-                        <div class="faq-answer hidden px-6 pb-4">
-                            <p class="text-gray-600">Nous convertissons vos catalogues PDF en pages web interactives et recherchables. Cela inclut l'extraction des données produits, l'optimisation des images, la fonctionnalité de recherche, les options de filtrage et un système de gestion de contenu pour que vous puissiez mettre à jour les produits vous-même.</p>
-                        </div>
-                    </div>
-                    <!-- FAQ Item 3 -->
-                    <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden fade-in-up-on-scroll" style="animation-delay: 0.2s;">
-                        <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
-                            <span class="font-semibold text-gray-800">Proposez-vous un support et une maintenance continus ?</span>
-                            <svg class="faq-icon w-5 h-5 text-blue-900 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </button>
-                        <div class="faq-answer hidden px-6 pb-4">
-                            <p class="text-gray-600">Oui ! Nous proposons des forfaits de maintenance mensuels à partir de 99€/mois qui incluent les mises à jour de sécurité, les sauvegardes, les modifications mineures de contenu et le support prioritaire. Nous fournissons également une formation pour que votre équipe puisse gérer les mises à jour quotidiennes.</p>
-                        </div>
-                    </div>
-                    <!-- FAQ Item 4 -->
-                    <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden fade-in-up-on-scroll" style="animation-delay: 0.3s;">
-                        <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
-                            <span class="font-semibold text-gray-800">Quels moyens de paiement pouvez-vous intégrer ?</span>
-                            <svg class="faq-icon w-5 h-5 text-blue-900 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </button>
-                        <div class="faq-answer hidden px-6 pb-4">
-                            <p class="text-gray-600">Nous intégrons tous les principaux fournisseurs de paiement dont Stripe, PayPal, Mollie (populaire en Belgique/Pays-Bas), Bancontact, iDEAL, cartes de crédit et virements bancaires. Nous recommanderons les meilleures options pour votre marché cible.</p>
-                        </div>
-                    </div>
-                    <!-- FAQ Item 5 -->
-                    <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden fade-in-up-on-scroll" style="animation-delay: 0.4s;">
-                        <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
-                            <span class="font-semibold text-gray-800">Puis-je mettre à jour le site moi-même après le lancement ?</span>
-                            <svg class="faq-icon w-5 h-5 text-blue-900 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </button>
-                        <div class="faq-answer hidden px-6 pb-4">
-                            <p class="text-gray-600">Absolument ! Toutes nos solutions sont livrées avec un panneau d'administration facile à utiliser. Nous fournissons une formation et une documentation pour que vous puissiez ajouter des produits, mettre à jour le contenu et gérer les commandes sans aucune connaissance technique.</p>
-                        </div>
-                    </div>
-                    <!-- FAQ Item 6 -->
-                    <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden fade-in-up-on-scroll" style="animation-delay: 0.5s;">
-                        <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
-                            <span class="font-semibold text-gray-800">Travaillez-vous avec des clients en dehors de la Belgique ?</span>
-                            <svg class="faq-icon w-5 h-5 text-blue-900 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </button>
-                        <div class="faq-answer hidden px-6 pb-4">
-                            <p class="text-gray-600">Oui ! Nous sommes basés à Bruxelles, Anvers et Roulers, et travaillons avec des clients dans toute l'Europe. Toute la communication et la gestion de projet se fait en ligne via appels vidéo, email et outils collaboratifs. La langue n'est pas une barrière—nous travaillons en anglais, néerlandais et français.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-24">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16 fade-in-up-on-scroll">
-                    <h2 class="text-4xl font-bold text-gray-800">Commencez Votre Parcours Digital</h2>
-                    <p class="text-lg text-gray-600 mt-4">Parlez-nous de votre projet et nous vous recontacterons dans les 24 heures.</p>
+            <!-- Success Stories Section -->
+            <section id="success-stories" class="py-24 bg-gray-50">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16 fade-in-up-on-scroll">
+                        <h2 class="text-4xl font-bold text-gray-800">Résultats de Transformation Digitale</h2>
+                        <p class="text-lg text-gray-600 mt-4">De vraies entreprises, de vrais résultats. Découvrez ce que la digitalisation peut faire.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden md:grid md:grid-cols-3 fade-in-up-on-scroll">
+                        <div class="p-8 md:p-12 bg-blue-900 text-white flex flex-col justify-center items-center text-center">
+                            <div class="text-7xl font-extrabold">5</div>
+                            <div class="text-xl font-semibold mt-2">Entreprises, Une Plateforme</div>
+                        </div>
+                        <div class="p-8 md:p-12 md:col-span-2">
+                            <h3 class="text-2xl font-bold text-gray-800">Plateforme E-commerce B2B Multi-Entreprises</h3>
+                            <div class="flex items-center my-6">
+                                <div class="w-16 h-16 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold text-2xl mr-4">DG</div>
+                                <div>
+                                    <h4 class="font-bold text-lg">DEMA Group</h4>
+                                    <p class="text-gray-500">Équipement industriel — pompes, vannes, convoyeurs, irrigation</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-6">
+                                Construction d'une plateforme e-commerce unifiée pour 5 entreprises de fournitures industrielles avec une architecture monorepo Turborepo. Chaque marque (DEMA, Fluxer,
+                                Beltz247, De Visschere, Accu) exploite sa propre vitrine Next.js 14 sur une base de données PostgreSQL partagée de 30+ tables, des composants UI partagés et une
+                                authentification centralisée — le tout connecté aux systèmes ERP Odoo et Exact Online.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Next.js 14</span>
+                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">TypeScript</span>
+                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Prisma</span>
+                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">PostgreSQL</span>
+                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">tRPC</span>
+                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Turborepo</span>
+                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Stripe</span>
+                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Tailwind CSS</span>
+                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">NextAuth</span>
+                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Vercel</span>
+                            </div>
+                            <div class="flex gap-4 flex-wrap">
+                                <div class="bg-blue-50 px-4 py-2 rounded-lg">
+                                    <span class="text-sm text-gray-600">Tables Base de Données:</span>
+                                    <span class="font-bold text-blue-900 ml-1">30+</span>
+                                </div>
+                                <div class="bg-blue-50 px-4 py-2 rounded-lg">
+                                    <span class="text-sm text-gray-600">Produits Digitalisés:</span>
+                                    <span class="font-bold text-blue-900 ml-1">2 500+</span>
+                                </div>
+                                <div class="bg-blue-50 px-4 py-2 rounded-lg">
+                                    <span class="text-sm text-gray-600">Business Features:</span>
+                                    <span class="font-bold text-blue-900 ml-1">84</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Stats Row -->
+                    <div class="grid md:grid-cols-3 gap-8 mt-12 fade-in-up-on-scroll">
+                        <div class="bg-blue-50 p-8 rounded-xl text-center">
+                            <div class="text-4xl font-bold text-blue-900 mb-2">
+                                <span class="counter" data-target="50">0</span>
+                                +
+                            </div>
+                            <p class="text-gray-600">Projets Livrés</p>
+                        </div>
+                        <div class="bg-blue-50 p-8 rounded-xl text-center">
+                            <div class="text-4xl font-bold text-blue-900 mb-2">
+                                <span class="counter" data-target="98">0</span>
+                                %
+                            </div>
+                            <p class="text-gray-600">Satisfaction Client</p>
+                        </div>
+                        <div class="bg-blue-50 p-8 rounded-xl text-center">
+                            <div class="text-4xl font-bold text-blue-900 mb-2">
+                                <span class="counter" data-target="5">0</span>
+                                +
+                            </div>
+                            <p class="text-gray-600">Années d'Expérience</p>
+                        </div>
+                    </div>
+
+                    <!-- Additional Testimonials -->
+                    <div class="mt-16">
+                        <h3 class="text-2xl font-bold text-gray-800 text-center mb-10 fade-in-up-on-scroll">Ce Que Disent Nos Clients</h3>
+                        <div class="grid md:grid-cols-3 gap-8">
+                            <div class="bg-white p-6 rounded-xl shadow-lg fade-in-up-on-scroll">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold text-lg mr-3">SV</div>
+                                    <div>
+                                        <h4 class="font-semibold">Sophie Vermeersch</h4>
+                                        <p class="text-sm text-gray-500">Propriétaire de Boutique</p>
+                                    </div>
+                                </div>
+                                <div class="flex text-yellow-500 mb-3">★★★★★</div>
+                                <p class="text-gray-600 text-sm">
+                                    "Enfin, un webshop qui fonctionne vraiment ! Mes clients adorent le paiement facile et je peux tout gérer moi-même. Les ventes ont augmenté de 150% au premier
+                                    trimestre."
+                                </p>
+                            </div>
+                            <div class="bg-white p-6 rounded-xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.1s">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-green-100 text-green-700 rounded-full flex items-center justify-center font-bold text-lg mr-3">PD</div>
+                                    <div>
+                                        <h4 class="font-semibold">Peter De Smedt</h4>
+                                        <p class="text-sm text-gray-500">Directeur de Production</p>
+                                    </div>
+                                </div>
+                                <div class="flex text-yellow-500 mb-3">★★★★★</div>
+                                <p class="text-gray-600 text-sm">
+                                    "Notre catalogue de 500 pages est maintenant entièrement recherchable en ligne. Les clients trouvent ce dont ils ont besoin instantanément. Le ROI était visible en
+                                    quelques semaines."
+                                </p>
+                            </div>
+                            <div class="bg-white p-6 rounded-xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.2s">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-12 h-12 bg-purple-100 text-purple-700 rounded-full flex items-center justify-center font-bold text-lg mr-3">LM</div>
+                                    <div>
+                                        <h4 class="font-semibold">Lisa Martens</h4>
+                                        <p class="text-sm text-gray-500">PDG d'Entreprise de Services</p>
+                                    </div>
+                                </div>
+                                <div class="flex text-yellow-500 mb-3">★★★★★</div>
+                                <p class="text-gray-600 text-sm">
+                                    "Le portail client a réduit nos appels support de 60%. Les clients peuvent maintenant suivre leurs commandes, télécharger leurs factures et soumettre des tickets
+                                    eux-mêmes. Un vrai changement."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="grid md:grid-cols-5 gap-10">
-                    <div class="md:col-span-3 bg-white p-8 rounded-2xl shadow-lg fade-in-up-on-scroll">
-                        <h3 class="text-2xl font-bold mb-6">Demander un Devis</h3>
-                        <form id="contact-form" action="https://formspree.io/f/xrbnaanw" method="POST">
-                            <input type="hidden" name="_subject" value="New Saspire Contact Form Submission">
-                            <input type="hidden" name="_template" value="table">
-                            
-                            <!-- Name Fields -->
-                            <div class="grid md:grid-cols-2 gap-6 mb-6">
-                                <div>
-                                    <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">Prénom *</label>
-                                    <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition" placeholder="Jean">
-                                </div>
-                                <div>
-                                    <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Nom *</label>
-                                    <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition" placeholder="Dupont">
-                                </div>
-                            </div>
-                            
-                            <!-- Contact Fields -->
-                            <div class="grid md:grid-cols-2 gap-6 mb-6">
-                                <div>
-                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
-                                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition" placeholder="jean@entreprise.com">
-                                </div>
-                                <div>
-                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Numéro de Téléphone</label>
-                                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition" placeholder="+32 471 00 00 00">
-                                </div>
-                            </div>
-                            
-                            <!-- Company Fields -->
-                            <div class="grid md:grid-cols-2 gap-6 mb-6">
-                                <div>
-                                    <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Nom de l'Entreprise</label>
-                                    <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition" placeholder="Nom de votre entreprise">
-                                </div>
-                                <div>
-                                    <label for="website" class="block text-sm font-medium text-gray-700 mb-1">Site Web Actuel (si existant)</label>
-                                    <input type="url" id="website" name="website" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition" placeholder="https://yourcompany.com">
-                                </div>
-                            </div>
-                            
-                            <!-- Service Selection -->
-                            <div class="mb-6">
-                                <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service Souhaité *</label>
-                                <select id="service" name="service" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition">
-                                    <option value="">Sélectionnez un service...</option>
-                                    <option value="Webshop Development">Développement Webshop</option>
-                                    <option value="Catalog Digitalization">Digitalisation de Catalogue (PDF vers Web)</option>
-                                    <option value="Customer Portal">Portail Client</option>
-                                    <option value="Website Development">Développement de Site Web</option>
-                                    <option value="Business Process Automation">Automatisation des Processus</option>
-                                    <option value="Multiple Services">Plusieurs Services</option>
-                                    <option value="Other">Autre / Pas Sûr</option>
-                                </select>
-                            </div>
-                            
-                            <!-- Budget & Timeline -->
-                            <div class="grid md:grid-cols-2 gap-6 mb-6">
-                                <div>
-                                    <label for="budget" class="block text-sm font-medium text-gray-700 mb-1">Fourchette de Budget</label>
-                                    <select id="budget" name="budget" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition">
-                                        <option value="">Sélectionnez une fourchette...</option>
-                                        <option value="Under €500">Moins de €500</option>
-                                        <option value="€500 - €1,000">€500 - €1,000</option>
-                                        <option value="€1,000 - €2,500">€1,000 - €2,500</option>
-                                        <option value="€2,500 - €5,000">€2,500 - €5,000</option>
-                                        <option value="€5,000 - €10,000">€5,000 - €10,000</option>
-                                        <option value="€10,000+">€10,000+</option>
-                                        <option value="Not sure yet">Pas encore sûr</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label for="timeline" class="block text-sm font-medium text-gray-700 mb-1">Délai du Projet</label>
-                                    <select id="timeline" name="timeline" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition">
-                                        <option value="">Sélectionnez un délai...</option>
-                                        <option value="ASAP">Dès que possible - Urgent</option>
-                                        <option value="1-2 weeks">1-2 weeks</option>
-                                        <option value="1 month">Dans le mois</option>
-                                        <option value="1-3 months">1-3 months</option>
-                                        <option value="3-6 months">3-6 months</option>
-                                        <option value="Flexible">Flexible / Pas pressé</option>
-                                    </select>
-                                </div>
-                            </div>
-                            
-                            <!-- How did you hear about us -->
-                            <div class="mb-6">
-                                <label for="referral" class="block text-sm font-medium text-gray-700 mb-1">Comment nous avez-vous connu ?</label>
-                                <select id="referral" name="referral" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition">
-                                    <option value="">Sélectionnez une option...</option>
-                                    <option value="Google Search">Recherche Google</option>
-                                    <option value="Social Media">Réseaux Sociaux</option>
-                                    <option value="Referral">Recommandation / Bouche à oreille</option>
-                                    <option value="LinkedIn">LinkedIn</option>
-                                    <option value="Previous Client">Client Précédent</option>
-                                    <option value="Other">Autre</option>
-                                </select>
-                            </div>
-                            
-                            <!-- Project Details -->
-                            <div class="mb-6">
-                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Détails du Projet *</label>
-                                <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition" placeholder="Parlez-nous de votre situation actuelle, vos défis et ce que vous souhaitez accomplir. Plus vous donnez de détails, mieux nous pourrons vous aider !"></textarea>
-                            </div>
-                            
-                            <!-- Preferred Contact Method -->
-                            <div class="mb-6">
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Méthode de Contact Préférée</label>
-                                <div class="flex flex-wrap gap-4">
-                                    <label class="flex items-center cursor-pointer">
-                                        <input type="radio" name="contactMethod" value="Email" checked class="w-4 h-4 text-blue-900 focus:ring-blue-600">
-                                        <span class="ml-2 text-gray-700">Email</span>
-                                    </label>
-                                    <label class="flex items-center cursor-pointer">
-                                        <input type="radio" name="contactMethod" value="Phone" class="w-4 h-4 text-blue-900 focus:ring-blue-600">
-                                        <span class="ml-2 text-gray-700">Téléphone</span>
-                                    </label>
-                                    <label class="flex items-center cursor-pointer">
-                                        <input type="radio" name="contactMethod" value="Video Call" class="w-4 h-4 text-blue-900 focus:ring-blue-600">
-                                        <span class="ml-2 text-gray-700">Appel Vidéo</span>
-                                    </label>
-                                    <label class="flex items-center cursor-pointer">
-                                        <input type="radio" name="contactMethod" value="WhatsApp" class="w-4 h-4 text-blue-900 focus:ring-blue-600">
-                                        <span class="ml-2 text-gray-700">WhatsApp</span>
-                                    </label>
-                                </div>
-                            </div>
-                            
-                            <!-- Privacy Consent -->
-                            <div class="mb-6">
-                                <label class="flex items-start cursor-pointer">
-                                    <input type="checkbox" name="consent" value="Yes" required class="w-4 h-4 mt-1 text-blue-900 focus:ring-blue-600 rounded">
-                                    <span class="ml-2 text-sm text-gray-600">J'accepte d'être contacté concernant ma demande. Mes données seront traitées conformément aux réglementations sur la vie privée et ne seront pas partagées avec des tiers. *</span>
-                                </label>
-                            </div>
-                            
-                            <button type="submit" class="w-full bg-blue-900 text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-blue-800 transform hover:scale-[1.02] transition flex items-center justify-center gap-2">
-                                <span>Envoyer le Message</span>
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </section>
+
+            <!-- FAQ Section -->
+            <section id="faq" class="py-24 bg-gray-50">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16 fade-in-up-on-scroll">
+                        <h2 class="text-4xl font-bold text-gray-800">Questions Fréquemment Posées</h2>
+                        <p class="text-lg text-gray-600 mt-4">Réponses rapides aux questions courantes sur nos services.</p>
+                    </div>
+                    <div class="max-w-3xl mx-auto space-y-4">
+                        <!-- FAQ Item 1 -->
+                        <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden fade-in-up-on-scroll">
+                            <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
+                                <span class="font-semibold text-gray-800">Combien de temps faut-il pour créer un webshop ?</span>
+                                <svg class="faq-icon w-5 h-5 text-blue-900 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
                             </button>
-                            <p class="text-xs text-gray-500 text-center mt-3">Nous répondons généralement dans les 24 heures les jours ouvrables.</p>
-                        </form>
-                        <div id="form-success-message" class="hidden mt-6 p-4 bg-green-100 text-green-800 rounded-lg text-center">
-                            <strong>Merci !</strong> Votre message a été envoyé avec succès. Nous vous recontacterons dans les 24 heures.
+                            <div class="faq-answer hidden px-6 pb-4">
+                                <p class="text-gray-600">
+                                    Un webshop standard prend généralement 2 à 4 semaines du début au lancement. Cela inclut le design, le développement, la configuration des produits et les tests.
+                                    Les projets plus complexes avec des fonctionnalités personnalisées peuvent prendre 4 à 8 semaines.
+                                </p>
+                            </div>
                         </div>
-                        <div id="form-error-message" class="hidden mt-6 p-4 bg-red-100 text-red-800 rounded-lg text-center">
-                            <strong>Oups !</strong> Une erreur s'est produite. Veuillez réessayer ou nous envoyer un email directement.
+                        <!-- FAQ Item 2 -->
+                        <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden fade-in-up-on-scroll" style="animation-delay: 0.1s">
+                            <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
+                                <span class="font-semibold text-gray-800">Que comprend la digitalisation de catalogue ?</span>
+                                <svg class="faq-icon w-5 h-5 text-blue-900 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-4">
+                                <p class="text-gray-600">
+                                    Nous convertissons vos catalogues PDF en pages web interactives et recherchables. Cela inclut l'extraction des données produits, l'optimisation des images, la
+                                    fonctionnalité de recherche, les options de filtrage et un système de gestion de contenu pour que vous puissiez mettre à jour les produits vous-même.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- FAQ Item 3 -->
+                        <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden fade-in-up-on-scroll" style="animation-delay: 0.2s">
+                            <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
+                                <span class="font-semibold text-gray-800">Proposez-vous un support et une maintenance continus ?</span>
+                                <svg class="faq-icon w-5 h-5 text-blue-900 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-4">
+                                <p class="text-gray-600">
+                                    Oui ! Nous proposons des forfaits de maintenance mensuels à partir de 99€/mois qui incluent les mises à jour de sécurité, les sauvegardes, les modifications
+                                    mineures de contenu et le support prioritaire. Nous fournissons également une formation pour que votre équipe puisse gérer les mises à jour quotidiennes.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- FAQ Item 4 -->
+                        <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden fade-in-up-on-scroll" style="animation-delay: 0.3s">
+                            <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
+                                <span class="font-semibold text-gray-800">Quels moyens de paiement pouvez-vous intégrer ?</span>
+                                <svg class="faq-icon w-5 h-5 text-blue-900 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-4">
+                                <p class="text-gray-600">
+                                    Nous intégrons tous les principaux fournisseurs de paiement dont Stripe, PayPal, Mollie (populaire en Belgique/Pays-Bas), Bancontact, iDEAL, cartes de crédit et
+                                    virements bancaires. Nous recommanderons les meilleures options pour votre marché cible.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- FAQ Item 5 -->
+                        <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden fade-in-up-on-scroll" style="animation-delay: 0.4s">
+                            <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
+                                <span class="font-semibold text-gray-800">Puis-je mettre à jour le site moi-même après le lancement ?</span>
+                                <svg class="faq-icon w-5 h-5 text-blue-900 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-4">
+                                <p class="text-gray-600">
+                                    Absolument ! Toutes nos solutions sont livrées avec un panneau d'administration facile à utiliser. Nous fournissons une formation et une documentation pour que vous
+                                    puissiez ajouter des produits, mettre à jour le contenu et gérer les commandes sans aucune connaissance technique.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- FAQ Item 6 -->
+                        <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden fade-in-up-on-scroll" style="animation-delay: 0.5s">
+                            <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
+                                <span class="font-semibold text-gray-800">Travaillez-vous avec des clients en dehors de la Belgique ?</span>
+                                <svg class="faq-icon w-5 h-5 text-blue-900 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div class="faq-answer hidden px-6 pb-4">
+                                <p class="text-gray-600">
+                                    Oui ! Nous sommes basés à Bruxelles, Anvers et Roulers, et travaillons avec des clients dans toute l'Europe. Toute la communication et la gestion de projet se fait
+                                    en ligne via appels vidéo, email et outils collaboratifs. La langue n'est pas une barrière—nous travaillons en anglais, néerlandais et français.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="md:col-span-2 bg-blue-50 p-8 rounded-2xl fade-in-up-on-scroll">
-                        <h3 class="text-2xl font-bold mb-6">Contact Direct</h3>
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <span class="text-2xl mr-4 mt-1" aria-hidden="true">📧</span>
-                                <div>
-                                    <h4 class="font-semibold">Email</h4>
-                                    <a href="mailto:nicolas.cloet@gmail.com" class="text-blue-900 hover:underline">nicolas.cloet@gmail.com</a>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="py-24">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16 fade-in-up-on-scroll">
+                        <h2 class="text-4xl font-bold text-gray-800">Commencez Votre Parcours Digital</h2>
+                        <p class="text-lg text-gray-600 mt-4">Parlez-nous de votre projet et nous vous recontacterons dans les 24 heures.</p>
+                    </div>
+                    <div class="grid md:grid-cols-5 gap-10">
+                        <div class="md:col-span-3 bg-white p-8 rounded-2xl shadow-lg fade-in-up-on-scroll">
+                            <h3 class="text-2xl font-bold mb-6">Demander un Devis</h3>
+                            <form id="contact-form" action="https://formspree.io/f/xrbnaanw" method="POST">
+                                <input type="hidden" name="_subject" value="New Saspire Contact Form Submission" />
+                                <input type="hidden" name="_template" value="table" />
+
+                                <!-- Name Fields -->
+                                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                    <div>
+                                        <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">Prénom *</label>
+                                        <input
+                                            type="text"
+                                            id="firstName"
+                                            name="firstName"
+                                            required
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition"
+                                            placeholder="Jean"
+                                        />
+                                    </div>
+                                    <div>
+                                        <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Nom *</label>
+                                        <input
+                                            type="text"
+                                            id="lastName"
+                                            name="lastName"
+                                            required
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition"
+                                            placeholder="Dupont"
+                                        />
+                                    </div>
+                                </div>
+
+                                <!-- Contact Fields -->
+                                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                                        <input
+                                            type="email"
+                                            id="email"
+                                            name="email"
+                                            required
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition"
+                                            placeholder="jean@entreprise.com"
+                                        />
+                                    </div>
+                                    <div>
+                                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Numéro de Téléphone</label>
+                                        <input
+                                            type="tel"
+                                            id="phone"
+                                            name="phone"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition"
+                                            placeholder="+32 471 00 00 00"
+                                        />
+                                    </div>
+                                </div>
+
+                                <!-- Company Fields -->
+                                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                    <div>
+                                        <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Nom de l'Entreprise</label>
+                                        <input
+                                            type="text"
+                                            id="company"
+                                            name="company"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition"
+                                            placeholder="Nom de votre entreprise"
+                                        />
+                                    </div>
+                                    <div>
+                                        <label for="website" class="block text-sm font-medium text-gray-700 mb-1">Site Web Actuel (si existant)</label>
+                                        <input
+                                            type="url"
+                                            id="website"
+                                            name="website"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition"
+                                            placeholder="https://yourcompany.com"
+                                        />
+                                    </div>
+                                </div>
+
+                                <!-- Service Selection -->
+                                <div class="mb-6">
+                                    <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service Souhaité *</label>
+                                    <select
+                                        id="service"
+                                        name="service"
+                                        required
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition"
+                                    >
+                                        <option value="">Sélectionnez un service...</option>
+                                        <option value="Webshop Development">Développement Webshop</option>
+                                        <option value="Catalog Digitalization">Digitalisation de Catalogue (PDF vers Web)</option>
+                                        <option value="Customer Portal">Portail Client</option>
+                                        <option value="Website Development">Développement de Site Web</option>
+                                        <option value="Business Process Automation">Automatisation des Processus</option>
+                                        <option value="Multiple Services">Plusieurs Services</option>
+                                        <option value="Other">Autre / Pas Sûr</option>
+                                    </select>
+                                </div>
+
+                                <!-- Budget & Timeline -->
+                                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                    <div>
+                                        <label for="budget" class="block text-sm font-medium text-gray-700 mb-1">Fourchette de Budget</label>
+                                        <select id="budget" name="budget" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition">
+                                            <option value="">Sélectionnez une fourchette...</option>
+                                            <option value="Under €500">Moins de €500</option>
+                                            <option value="€500 - €1,000">€500 - €1,000</option>
+                                            <option value="€1,000 - €2,500">€1,000 - €2,500</option>
+                                            <option value="€2,500 - €5,000">€2,500 - €5,000</option>
+                                            <option value="€5,000 - €10,000">€5,000 - €10,000</option>
+                                            <option value="€10,000+">€10,000+</option>
+                                            <option value="Not sure yet">Pas encore sûr</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="timeline" class="block text-sm font-medium text-gray-700 mb-1">Délai du Projet</label>
+                                        <select
+                                            id="timeline"
+                                            name="timeline"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition"
+                                        >
+                                            <option value="">Sélectionnez un délai...</option>
+                                            <option value="ASAP">Dès que possible - Urgent</option>
+                                            <option value="1-2 weeks">1-2 weeks</option>
+                                            <option value="1 month">Dans le mois</option>
+                                            <option value="1-3 months">1-3 months</option>
+                                            <option value="3-6 months">3-6 months</option>
+                                            <option value="Flexible">Flexible / Pas pressé</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- How did you hear about us -->
+                                <div class="mb-6">
+                                    <label for="referral" class="block text-sm font-medium text-gray-700 mb-1">Comment nous avez-vous connu ?</label>
+                                    <select id="referral" name="referral" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition">
+                                        <option value="">Sélectionnez une option...</option>
+                                        <option value="Google Search">Recherche Google</option>
+                                        <option value="Social Media">Réseaux Sociaux</option>
+                                        <option value="Referral">Recommandation / Bouche à oreille</option>
+                                        <option value="LinkedIn">LinkedIn</option>
+                                        <option value="Previous Client">Client Précédent</option>
+                                        <option value="Other">Autre</option>
+                                    </select>
+                                </div>
+
+                                <!-- Project Details -->
+                                <div class="mb-6">
+                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Détails du Projet *</label>
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        rows="5"
+                                        required
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition"
+                                        placeholder="Parlez-nous de votre situation actuelle, vos défis et ce que vous souhaitez accomplir. Plus vous donnez de détails, mieux nous pourrons vous aider !"
+                                    ></textarea>
+                                </div>
+
+                                <!-- Preferred Contact Method -->
+                                <div class="mb-6">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Méthode de Contact Préférée</label>
+                                    <div class="flex flex-wrap gap-4">
+                                        <label class="flex items-center cursor-pointer">
+                                            <input type="radio" name="contactMethod" value="Email" checked class="w-4 h-4 text-blue-900 focus:ring-blue-600" />
+                                            <span class="ml-2 text-gray-700">Email</span>
+                                        </label>
+                                        <label class="flex items-center cursor-pointer">
+                                            <input type="radio" name="contactMethod" value="Phone" class="w-4 h-4 text-blue-900 focus:ring-blue-600" />
+                                            <span class="ml-2 text-gray-700">Téléphone</span>
+                                        </label>
+                                        <label class="flex items-center cursor-pointer">
+                                            <input type="radio" name="contactMethod" value="Video Call" class="w-4 h-4 text-blue-900 focus:ring-blue-600" />
+                                            <span class="ml-2 text-gray-700">Appel Vidéo</span>
+                                        </label>
+                                        <label class="flex items-center cursor-pointer">
+                                            <input type="radio" name="contactMethod" value="WhatsApp" class="w-4 h-4 text-blue-900 focus:ring-blue-600" />
+                                            <span class="ml-2 text-gray-700">WhatsApp</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Privacy Consent -->
+                                <div class="mb-6">
+                                    <label class="flex items-start cursor-pointer">
+                                        <input type="checkbox" name="consent" value="Yes" required class="w-4 h-4 mt-1 text-blue-900 focus:ring-blue-600 rounded" />
+                                        <span class="ml-2 text-sm text-gray-600">
+                                            J'accepte d'être contacté concernant ma demande. Mes données seront traitées conformément aux réglementations sur la vie privée et ne seront pas partagées
+                                            avec des tiers. *
+                                        </span>
+                                    </label>
+                                </div>
+
+                                <button
+                                    type="submit"
+                                    class="w-full bg-blue-900 text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-blue-800 transform hover:scale-[1.02] transition flex items-center justify-center gap-2"
+                                >
+                                    <span>Envoyer le Message</span>
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </button>
+                                <p class="text-xs text-gray-500 text-center mt-3">Nous répondons généralement dans les 24 heures les jours ouvrables.</p>
+                            </form>
+                            <div id="form-success-message" class="hidden mt-6 p-4 bg-green-100 text-green-800 rounded-lg text-center">
+                                <strong>Merci !</strong>
+                                Votre message a été envoyé avec succès. Nous vous recontacterons dans les 24 heures.
+                            </div>
+                            <div id="form-error-message" class="hidden mt-6 p-4 bg-red-100 text-red-800 rounded-lg text-center">
+                                <strong>Oups !</strong>
+                                Une erreur s'est produite. Veuillez réessayer ou nous envoyer un email directement.
+                            </div>
+                        </div>
+                        <div class="md:col-span-2 bg-blue-50 p-8 rounded-2xl fade-in-up-on-scroll">
+                            <h3 class="text-2xl font-bold mb-6">Contact Direct</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <span class="text-2xl mr-4 mt-1" aria-hidden="true">📧</span>
+                                    <div>
+                                        <h4 class="font-semibold">Email</h4>
+                                        <a href="mailto:nicolas.cloet@gmail.com" class="text-blue-900 hover:underline">nicolas.cloet@gmail.com</a>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-2xl mr-4 mt-1" aria-hidden="true">📱</span>
+                                    <div>
+                                        <h4 class="font-semibold">Phone</h4>
+                                        <a href="tel:+32471261475" class="text-blue-900 hover:underline">+32 471 26 14 75</a>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-2xl mr-4 mt-1" aria-hidden="true">📍</span>
+                                    <div>
+                                        <h4 class="font-semibold">Emplacements</h4>
+                                        <p class="text-gray-700">Bruxelles • Anvers • Roulers</p>
+                                        <p class="text-sm text-gray-500">Au service des clients en Belgique et en Europe</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="flex items-start">
-                                <span class="text-2xl mr-4 mt-1" aria-hidden="true">📱</span>
-                                <div>
-                                    <h4 class="font-semibold">Phone</h4>
-                                    <a href="tel:+32471261475" class="text-blue-900 hover:underline">+32 471 26 14 75</a>
-                                </div>
+                            <div class="mt-10 border-t border-blue-200 pt-6">
+                                <h4 class="font-bold text-lg">Préférez-vous un Appel Vidéo ?</h4>
+                                <p class="text-gray-600 my-2">Réservez une consultation gratuite de 30 minutes pour discuter de vos besoins en digitalisation.</p>
+                                <a href="#schedule" class="inline-flex items-center text-blue-900 font-bold hover:underline">
+                                    Réservez Votre Appel
+                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </a>
                             </div>
-                            <div class="flex items-start">
-                                <span class="text-2xl mr-4 mt-1" aria-hidden="true">📍</span>
-                                <div>
-                                    <h4 class="font-semibold">Emplacements</h4>
-                    <p class="text-gray-700">Bruxelles • Anvers • Roulers</p>
-                                    <p class="text-sm text-gray-500">Au service des clients en Belgique et en Europe</p>
+                            <div class="mt-6 p-4 bg-white rounded-lg">
+                                <p class="text-sm text-gray-600">
+                                    <strong>Délai de Réponse :</strong>
+                                    Nous répondons généralement dans les 24 heures les jours ouvrables.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Google Calendar Schedule Section -->
+            <section id="schedule" class="py-24 bg-white">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16 fade-in-up-on-scroll">
+                        <h2 class="text-4xl font-bold text-gray-800">Réservez Votre Consultation Gratuite</h2>
+                        <p class="text-lg text-gray-600 mt-4">Choisissez un moment qui vous convient et discutons de votre chemin vers une croissance accélérée.</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="bg-white p-6 rounded-2xl shadow-xl fade-in-up-on-scroll text-center">
+                            <div class="mb-6">
+                                <div class="text-6xl mb-4">📅</div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2">Planifiez Votre Appel</h3>
+                                <p class="text-gray-600">Choisissez un moment qui vous convient. La réservation prend moins d'une minute.</p>
+                            </div>
+                            <a
+                                href="https://calendly.com/saspire-nicolas"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-block bg-blue-900 text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-blue-800 transform hover:scale-105 transition text-lg"
+                            >
+                                Ouvrir le Calendrier de Réservation →
+                            </a>
+                            <p class="text-sm text-gray-500 mt-4">S'ouvre dans un nouvel onglet • Consultation gratuite de 30 minutes</p>
+                        </div>
+                        <div class="fade-in-up-on-scroll">
+                            <h3 class="text-3xl font-bold text-gray-800 mb-6">À Quoi S'attendre de Notre Appel</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <span class="text-2xl mr-4">📈</span>
+                                    <div>
+                                        <h4 class="font-semibold">Une Analyse Approfondie de Votre Entreprise</h4>
+                                        <p class="text-gray-600">Nous explorerons votre situation actuelle pour identifier les défis et opportunités clés.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-2xl mr-4">🔭</span>
+                                    <div>
+                                        <h4 class="font-semibold">Idées Personnalisées et Actionnables</h4>
+                                        <p class="text-gray-600">Nous réfléchirons à des stratégies adaptées spécifiquement à votre marché et vos objectifs.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-2xl mr-4">🤖</span>
+                                    <div>
+                                        <h4 class="font-semibold">Un Chemin Clair vers l'Avenir</h4>
+                                        <p class="text-gray-600">Vous repartirez avec des étapes concrètes pour stimuler votre croissance.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <span class="text-2xl mr-4">🤗</span>
+                                    <div>
+                                        <h4 class="font-semibold">Zéro Pression, Que de la Valeur</h4>
+                                        <p class="text-gray-600">C'est une discussion détendue, sans engagement, pour voir si nous sommes faits pour travailler ensemble.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-10 border-t border-blue-200 pt-6">
-                            <h4 class="font-bold text-lg">Préférez-vous un Appel Vidéo ?</h4>
-                            <p class="text-gray-600 my-2">Réservez une consultation gratuite de 30 minutes pour discuter de vos besoins en digitalisation.</p>
-                            <a href="#schedule" class="inline-flex items-center text-blue-900 font-bold hover:underline">
-                                Réservez Votre Appel 
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-blue-900 text-white pt-20 pb-8">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-4 gap-12 mb-12">
+                    <div class="md:col-span-1">
+                        <a href="#" class="flex flex-col items-start group">
+                            <div class="text-3xl font-bold text-white" style="font-family: &quot;Playfair Display&quot;, serif">Saspire</div>
+                            <span class="text-xs text-blue-300 font-semibold tracking-wider -mt-1 ml-px group-hover:text-white transition-colors">Service to aspire</span>
+                        </a>
+                        <p class="text-blue-200 text-sm mt-4">Transformer votre vision en succès mesurable grâce à des stratégies de digitalisation innovantes et sur mesure.</p>
+                        <!-- Social Links -->
+                        <div class="flex gap-4 mt-6">
+                            <a
+                                href="https://linkedin.com/company/saspire"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition"
+                                aria-label="LinkedIn"
+                            >
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                                    />
+                                </svg>
+                            </a>
+                            <a
+                                href="https://twitter.com/saspire_org"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition"
+                                aria-label="Twitter/X"
+                            >
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                                    />
+                                </svg>
+                            </a>
+                            <a href="mailto:nicolas.cloet@gmail.com" class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition" aria-label="Email">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                    />
+                                </svg>
                             </a>
                         </div>
-                        <div class="mt-6 p-4 bg-white rounded-lg">
-                            <p class="text-sm text-gray-600"><strong>Délai de Réponse :</strong> Nous répondons généralement dans les 24 heures les jours ouvrables.</p>
-                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-4">Entreprise</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#about-us" class="text-blue-200 hover:text-white transition">À Propos</a></li>
+                            <li><a href="#success-stories" class="text-blue-200 hover:text-white transition">Réussites</a></li>
+                            <li><a href="#" class="text-blue-200 hover:text-white transition">Notre Équipe</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-4">Services</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#services" class="text-blue-200 hover:text-white transition">Développement Webshop</a></li>
+                            <li><a href="#services" class="text-blue-200 hover:text-white transition">Digitalisation de Catalogues</a></li>
+                            <li><a href="#services" class="text-blue-200 hover:text-white transition">Portails Clients</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-4">Contact</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#schedule" class="text-blue-200 hover:text-white transition">Planifier un Appel</a></li>
+                            <li><a href="#contact" class="text-blue-200 hover:text-white transition">Envoyer un Message</a></li>
+                            <li><a href="mailto:nicolas.cloet@gmail.com" class="text-blue-200 hover:text-white transition">Nous Contacter</a></li>
+                        </ul>
                     </div>
                 </div>
+                <div class="border-t border-blue-800 pt-8 text-center text-sm text-blue-200">
+                    <p>&copy; 2026 Saspire. Tous droits réservés.</p>
+                    <p class="mt-2"><a href="/privacy.html" class="hover:text-white transition">Politique de Confidentialité</a></p>
+                </div>
             </div>
-        </section>
+        </footer>
 
-        <!-- Google Calendar Schedule Section -->
-        <section id="schedule" class="py-24 bg-white">
-            <div class="container mx-auto px-6">
-                 <div class="text-center mb-16 fade-in-up-on-scroll">
-                    <h2 class="text-4xl font-bold text-gray-800">Réservez Votre Consultation Gratuite</h2>
-                    <p class="text-lg text-gray-600 mt-4">Choisissez un moment qui vous convient et discutons de votre chemin vers une croissance accélérée.</p>
+        <!-- Cookie Consent Banner -->
+        <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 z-50 transform translate-y-full transition-transform duration-300">
+            <div class="container mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-sm text-gray-300">
+                    Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic du site. En continuant, vous acceptez notre
+                    <a href="/privacy.html" class="text-blue-400 hover:underline">Privacy Policy</a>
+                    .
+                </p>
+                <div class="flex gap-3">
+                    <button id="cookie-decline" class="px-4 py-2 text-sm border border-gray-600 rounded-lg hover:bg-gray-800 transition">Refuser</button>
+                    <button id="cookie-accept" class="px-4 py-2 text-sm bg-blue-900 rounded-lg hover:bg-blue-800 transition">Accepter</button>
                 </div>
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="bg-white p-6 rounded-2xl shadow-xl fade-in-up-on-scroll text-center">
-                        <div class="mb-6">
-                            <div class="text-6xl mb-4">📅</div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Planifiez Votre Appel</h3>
-                            <p class="text-gray-600">Choisissez un moment qui vous convient. La réservation prend moins d'une minute.</p>
-                        </div>
-                        <a href="https://calendly.com/saspire-nicolas" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-900 text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-blue-800 transform hover:scale-105 transition text-lg">
-                            Ouvrir le Calendrier de Réservation →
-                        </a>
-                        <p class="text-sm text-gray-500 mt-4">S'ouvre dans un nouvel onglet • Consultation gratuite de 30 minutes</p>
-                    </div>
-                    <div class="fade-in-up-on-scroll">
-                        <h3 class="text-3xl font-bold text-gray-800 mb-6">À Quoi S'attendre de Notre Appel</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-start"><span class="text-2xl mr-4">📈</span><div><h4 class="font-semibold">Une Analyse Approfondie de Votre Entreprise</h4><p class="text-gray-600">Nous explorerons votre situation actuelle pour identifier les défis et opportunités clés.</p></div></div>
-                            <div class="flex items-start"><span class="text-2xl mr-4">🔭</span><div><h4 class="font-semibold">Idées Personnalisées et Actionnables</h4><p class="text-gray-600">Nous réfléchirons à des stratégies adaptées spécifiquement à votre marché et vos objectifs.</p></div></div>
-                            <div class="flex items-start"><span class="text-2xl mr-4">🤖</span><div><h4 class="font-semibold">Un Chemin Clair vers l'Avenir</h4><p class="text-gray-600">Vous repartirez avec des étapes concrètes pour stimuler votre croissance.</p></div></div>
-                            <div class="flex items-start"><span class="text-2xl mr-4">🤗</span><div><h4 class="font-semibold">Zéro Pression, Que de la Valeur</h4><p class="text-gray-600">C'est une discussion détendue, sans engagement, pour voir si nous sommes faits pour travailler ensemble.</p></div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-blue-900 text-white pt-20 pb-8">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <div class="md:col-span-1">
-                    <a href="#" class="flex flex-col items-start group">
-                        <div class="text-3xl font-bold text-white" style="font-family: 'Playfair Display', serif;">Saspire</div>
-                        <span class="text-xs text-blue-300 font-semibold tracking-wider -mt-1 ml-px group-hover:text-white transition-colors">Service to aspire</span>
-                    </a>
-                    <p class="text-blue-200 text-sm mt-4">Transformer votre vision en succès mesurable grâce à des stratégies de digitalisation innovantes et sur mesure.</p>
-                    <!-- Social Links -->
-                    <div class="flex gap-4 mt-6">
-                        <a href="https://linkedin.com/company/saspire" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition" aria-label="LinkedIn">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        </a>
-                        <a href="https://twitter.com/saspire_org" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition" aria-label="Twitter/X">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                        </a>
-                        <a href="mailto:nicolas.cloet@gmail.com" class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition" aria-label="Email">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="font-bold text-lg mb-4">Entreprise</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#about-us" class="text-blue-200 hover:text-white transition">À Propos</a></li>
-                        <li><a href="#success-stories" class="text-blue-200 hover:text-white transition">Réussites</a></li>
-                        <li><a href="#" class="text-blue-200 hover:text-white transition">Notre Équipe</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold text-lg mb-4">Services</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#services" class="text-blue-200 hover:text-white transition">Développement Webshop</a></li>
-                        <li><a href="#services" class="text-blue-200 hover:text-white transition">Digitalisation de Catalogues</a></li>
-                        <li><a href="#services" class="text-blue-200 hover:text-white transition">Portails Clients</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold text-lg mb-4">Contact</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#schedule" class="text-blue-200 hover:text-white transition">Planifier un Appel</a></li>
-                        <li><a href="#contact" class="text-blue-200 hover:text-white transition">Envoyer un Message</a></li>
-                        <li><a href="mailto:nicolas.cloet@gmail.com" class="text-blue-200 hover:text-white transition">Nous Contacter</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-blue-800 pt-8 text-center text-sm text-blue-200">
-                <p>&copy; 2026 Saspire. Tous droits réservés.</p>
-                <p class="mt-2"><a href="/privacy.html" class="hover:text-white transition">Politique de Confidentialité</a></p>
             </div>
         </div>
-    </footer>
-    
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 z-50 transform translate-y-full transition-transform duration-300">
-        <div class="container mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-sm text-gray-300">
-                Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic du site. En continuant, vous acceptez notre 
-                <a href="/privacy.html" class="text-blue-400 hover:underline">Privacy Policy</a>.
-            </p>
-            <div class="flex gap-3">
-                <button id="cookie-decline" class="px-4 py-2 text-sm border border-gray-600 rounded-lg hover:bg-gray-800 transition">Refuser</button>
-                <button id="cookie-accept" class="px-4 py-2 text-sm bg-blue-900 rounded-lg hover:bg-blue-800 transition">Accepter</button>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Custom JavaScript -->
-    <script src="../script.js"></script>
-    
-    <!-- Tawk.to Live Chat Widget -->
-    <!-- Get your own widget at: https://www.tawk.to - it's free! -->
-    <!-- Replace the script below with your Tawk.to embed code -->
-    <!--
+
+        <!-- Custom JavaScript -->
+        <script src="../script.js"></script>
+
+        <!-- Tawk.to Live Chat Widget -->
+        <!-- Get your own widget at: https://www.tawk.to - it's free! -->
+        <!-- Replace the script below with your Tawk.to embed code -->
+        <!--
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
@@ -908,6 +1248,5 @@
     s0.parentNode.insertBefore(s1,s0);
     })();
     </script>
-    -->
-</body>
+    --></body>
 </html>
