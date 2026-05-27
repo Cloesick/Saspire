@@ -15,7 +15,52 @@ document.addEventListener("keydown", function (e) {
     if ((e.ctrlKey || e.metaKey) && (e.key === "c" || e.key === "x" || e.key === "v" || e.key === "u" || e.key === "a")) {
         e.preventDefault();
     }
+    if (e.key === "F12") {
+        e.preventDefault();
+    }
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === "I" || e.key === "i" || e.key === "J" || e.key === "j" || e.key === "C" || e.key === "c")) {
+        e.preventDefault();
+    }
 });
+
+// --- Anti-DevTools: debugger trap + console clear ---
+(function () {
+    function blockDevTools() {
+        debugger;
+    }
+    setInterval(blockDevTools, 100);
+})();
+
+(function () {
+    var c = console;
+    Object.defineProperty(window, "console", {
+        get: function () {
+            return {
+                log: function () {},
+                warn: function () {},
+                error: function () {},
+                info: function () {},
+                debug: function () {},
+                dir: function () {},
+                table: function () {},
+                clear: function () {},
+                trace: function () {},
+            };
+        },
+        set: function () {},
+    });
+})();
+
+// --- Detect DevTools open and redirect/blank page ---
+(function () {
+    var threshold = 160;
+    var check = setInterval(function () {
+        if (window.outerWidth - window.innerWidth > threshold || window.outerHeight - window.innerHeight > threshold) {
+            document.body.innerHTML = "";
+            clearInterval(check);
+        }
+    }, 1000);
+})();
 
 document.addEventListener("DOMContentLoaded", function () {
     // --- Cookie Consent Banner ---
