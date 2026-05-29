@@ -264,6 +264,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     contactForm.style.display = "none";
                     successMessage.classList.remove("hidden");
                     errorMessage.classList.add("hidden");
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({ event: "contact_form_submit" });
                 } else {
                     throw new Error("Form submission failed");
                 }
@@ -275,4 +277,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 submitButton.disabled = false;
             }
         });
+
+    // --- GTM Conversion Events ---
+    // Track "Schedule Call" clicks
+    document.querySelectorAll('a[href*="calendly"], a[href*="#schedule"]').forEach((link) => {
+        link.addEventListener("click", () => {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ event: "schedule_call_click" });
+        });
+    });
+
+    // Track pricing page view
+    if (window.location.pathname.includes("pricing")) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "pricing_page_view" });
+    }
+
+    // Track blog post view
+    if (window.location.pathname.includes("/blog/") && window.location.pathname !== "/blog/" && window.location.pathname !== "/blog/index.html") {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: "blog_post_view", blog_path: window.location.pathname });
+    }
 });
