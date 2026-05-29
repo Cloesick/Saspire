@@ -12,7 +12,33 @@
         <meta http-equiv="X-Content-Type-Options" content="nosniff" />
         <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
         <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; frame-src https://www.googletagmanager.com;" />
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; frame-src https://www.googletagmanager.com;"
+        />
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://saspire.org/pricing.html" />
+        <meta property="og:title" content="Pricing & Packages | Saspire" />
+        <meta property="og:description" content="Transparent pricing for digitalization services. Webshop development, catalog digitalization, and automation packages." />
+        <meta property="og:image" content="https://saspire.org/images/Sgrowth5.png" />
+
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Product",
+                "name": "Saspire Digitalization Services",
+                "description": "Enterprise digitalization packages including webshops, catalog digitalization, and customer portals.",
+                "brand": { "@type": "Organization", "name": "Saspire" },
+                "offers": [
+                    { "@type": "Offer", "name": "Starter", "price": "2500", "priceCurrency": "EUR", "description": "Professional website up to 5 pages with SEO and analytics" },
+                    { "@type": "Offer", "name": "Growth", "price": "7500", "priceCurrency": "EUR", "description": "E-commerce webshop with catalog digitalization and customer portal" },
+                    { "@type": "Offer", "name": "Enterprise", "price": "15000", "priceCurrency": "EUR", "description": "Multi-tenant platform with ERP integration and AI-powered extraction" }
+                ]
+            }
+        </script>
 
         <link rel="canonical" href="https://saspire.org/pricing.html" />
         <link rel="icon" href="/images/Sgrowth5.webp" type="image/webp" />
@@ -27,7 +53,9 @@
         <!-- Google Consent Mode v2 -->
         <script>
             window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
+            function gtag() {
+                dataLayer.push(arguments);
+            }
             gtag("consent", "default", { analytics_storage: "denied", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied" });
             if (localStorage.getItem("cookieConsent") === "accepted") {
                 gtag("consent", "update", { analytics_storage: "granted", ad_storage: "granted", ad_user_data: "granted", ad_personalization: "granted" });
@@ -35,7 +63,16 @@
         </script>
         <!-- Google Tag Manager -->
         <script>
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-59MQCMPB");
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != "dataLayer" ? "&l=" + l : "";
+                j.async = true;
+                j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, "script", "dataLayer", "GTM-59MQCMPB");
         </script>
     </head>
     <body class="antialiased">
@@ -45,7 +82,7 @@
         <header id="main-header" class="py-4 transition-all duration-300 sticky top-0 z-50 bg-slate-50/90 backdrop-blur-lg shadow-sm">
             <nav class="container mx-auto px-6 flex justify-between items-center">
                 <a href="/" class="flex flex-col items-start group">
-                    <div class="text-3xl font-bold text-gray-800" style="font-family: 'Playfair Display', serif">Saspire</div>
+                    <div class="text-3xl font-bold text-gray-800" style="font-family: &quot;Playfair Display&quot;, serif">Saspire</div>
                     <span class="text-xs text-blue-800/80 font-semibold tracking-wider -mt-1 ml-px group-hover:text-blue-900 transition-colors">Service to aspire</span>
                 </a>
                 <ul class="hidden lg:flex items-center space-x-8 font-medium">
@@ -89,7 +126,6 @@
             <section class="py-24">
                 <div class="container mx-auto px-6">
                     <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
                         <!-- Starter -->
                         <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 flex flex-col">
                             <div class="mb-6">
@@ -101,14 +137,34 @@
                                 <span class="text-gray-500 text-sm ml-1">starting from</span>
                             </div>
                             <ul class="space-y-3 mb-8 flex-1">
-                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">&#10003;</span><span class="text-gray-600">Professional website (up to 5 pages)</span></li>
-                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">&#10003;</span><span class="text-gray-600">Mobile responsive design</span></li>
-                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">&#10003;</span><span class="text-gray-600">SEO optimization</span></li>
-                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">&#10003;</span><span class="text-gray-600">Contact form integration</span></li>
-                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">&#10003;</span><span class="text-gray-600">Analytics setup</span></li>
-                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">&#10003;</span><span class="text-gray-600">1 month support</span></li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2 mt-0.5">&#10003;</span>
+                                    <span class="text-gray-600">Professional website (up to 5 pages)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2 mt-0.5">&#10003;</span>
+                                    <span class="text-gray-600">Mobile responsive design</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2 mt-0.5">&#10003;</span>
+                                    <span class="text-gray-600">SEO optimization</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2 mt-0.5">&#10003;</span>
+                                    <span class="text-gray-600">Contact form integration</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2 mt-0.5">&#10003;</span>
+                                    <span class="text-gray-600">Analytics setup</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2 mt-0.5">&#10003;</span>
+                                    <span class="text-gray-600">1 month support</span>
+                                </li>
                             </ul>
-                            <a href="/#schedule" class="block text-center bg-white text-blue-900 font-bold py-3 px-6 rounded-lg border-2 border-blue-900 hover:bg-blue-900 hover:text-white transition">Get Started</a>
+                            <a href="/#schedule" class="block text-center bg-white text-blue-900 font-bold py-3 px-6 rounded-lg border-2 border-blue-900 hover:bg-blue-900 hover:text-white transition">
+                                Get Started
+                            </a>
                         </div>
 
                         <!-- Growth (Popular) -->
@@ -123,13 +179,34 @@
                                 <span class="text-blue-200 text-sm ml-1">starting from</span>
                             </div>
                             <ul class="space-y-3 mb-8 flex-1">
-                                <li class="flex items-start"><span class="text-yellow-400 mr-2 mt-0.5">&#10003;</span><span class="text-blue-100">E-commerce webshop (WooCommerce/Shopify)</span></li>
-                                <li class="flex items-start"><span class="text-yellow-400 mr-2 mt-0.5">&#10003;</span><span class="text-blue-100">Product catalog digitalization</span></li>
-                                <li class="flex items-start"><span class="text-yellow-400 mr-2 mt-0.5">&#10003;</span><span class="text-blue-100">Payment gateway integration</span></li>
-                                <li class="flex items-start"><span class="text-yellow-400 mr-2 mt-0.5">&#10003;</span><span class="text-blue-100">Customer portal</span></li>
-                                <li class="flex items-start"><span class="text-yellow-400 mr-2 mt-0.5">&#10003;</span><span class="text-blue-100">Basic automation workflows</span></li>
-                                <li class="flex items-start"><span class="text-yellow-400 mr-2 mt-0.5">&#10003;</span><span class="text-blue-100">3 months support</span></li>
-                                <li class="flex items-start"><span class="text-yellow-400 mr-2 mt-0.5">&#10003;</span><span class="text-blue-100">Training & documentation</span></li>
+                                <li class="flex items-start">
+                                    <span class="text-yellow-400 mr-2 mt-0.5">&#10003;</span>
+                                    <span class="text-blue-100">E-commerce webshop (WooCommerce/Shopify)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-yellow-400 mr-2 mt-0.5">&#10003;</span>
+                                    <span class="text-blue-100">Product catalog digitalization</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-yellow-400 mr-2 mt-0.5">&#10003;</span>
+                                    <span class="text-blue-100">Payment gateway integration</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-yellow-400 mr-2 mt-0.5">&#10003;</span>
+                                    <span class="text-blue-100">Customer portal</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-yellow-400 mr-2 mt-0.5">&#10003;</span>
+                                    <span class="text-blue-100">Basic automation workflows</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-yellow-400 mr-2 mt-0.5">&#10003;</span>
+                                    <span class="text-blue-100">3 months support</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-yellow-400 mr-2 mt-0.5">&#10003;</span>
+                                    <span class="text-blue-100">Training & documentation</span>
+                                </li>
                             </ul>
                             <a href="/#schedule" class="block text-center bg-white text-blue-900 font-bold py-3 px-6 rounded-lg hover:bg-blue-50 transition">Get Started</a>
                         </div>
@@ -145,15 +222,38 @@
                                 <span class="text-gray-500 text-sm ml-1">custom quote</span>
                             </div>
                             <ul class="space-y-3 mb-8 flex-1">
-                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">&#10003;</span><span class="text-gray-600">Multi-tenant e-commerce platform</span></li>
-                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">&#10003;</span><span class="text-gray-600">ERP/CRM integration</span></li>
-                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">&#10003;</span><span class="text-gray-600">AI-powered PDF extraction</span></li>
-                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">&#10003;</span><span class="text-gray-600">Advanced automation (Make.com)</span></li>
-                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">&#10003;</span><span class="text-gray-600">Custom dashboards & analytics</span></li>
-                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">&#10003;</span><span class="text-gray-600">6 months priority support</span></li>
-                                <li class="flex items-start"><span class="text-green-500 mr-2 mt-0.5">&#10003;</span><span class="text-gray-600">Dedicated project manager</span></li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2 mt-0.5">&#10003;</span>
+                                    <span class="text-gray-600">Multi-tenant e-commerce platform</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2 mt-0.5">&#10003;</span>
+                                    <span class="text-gray-600">ERP/CRM integration</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2 mt-0.5">&#10003;</span>
+                                    <span class="text-gray-600">AI-powered PDF extraction</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2 mt-0.5">&#10003;</span>
+                                    <span class="text-gray-600">Advanced automation (Make.com)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2 mt-0.5">&#10003;</span>
+                                    <span class="text-gray-600">Custom dashboards & analytics</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2 mt-0.5">&#10003;</span>
+                                    <span class="text-gray-600">6 months priority support</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2 mt-0.5">&#10003;</span>
+                                    <span class="text-gray-600">Dedicated project manager</span>
+                                </li>
                             </ul>
-                            <a href="/#schedule" class="block text-center bg-white text-blue-900 font-bold py-3 px-6 rounded-lg border-2 border-blue-900 hover:bg-blue-900 hover:text-white transition">Contact Us</a>
+                            <a href="/#schedule" class="block text-center bg-white text-blue-900 font-bold py-3 px-6 rounded-lg border-2 border-blue-900 hover:bg-blue-900 hover:text-white transition">
+                                Contact Us
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -221,7 +321,9 @@
                 <div class="container mx-auto px-6 text-center">
                     <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your Digital Transformation?</h2>
                     <p class="text-blue-200 text-lg mb-8 max-w-xl mx-auto">Book a free 30-minute consultation and let's find the right package for your business.</p>
-                    <a href="/#schedule" class="inline-block bg-white text-blue-900 font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-blue-50 transform hover:scale-105 transition text-lg">Book Free Consultation</a>
+                    <a href="/#schedule" class="inline-block bg-white text-blue-900 font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-blue-50 transform hover:scale-105 transition text-lg">
+                        Book Free Consultation
+                    </a>
                 </div>
             </section>
         </main>
@@ -231,7 +333,7 @@
             <div class="container mx-auto px-6">
                 <div class="grid md:grid-cols-4 gap-8 mb-8">
                     <div>
-                        <div class="text-2xl font-bold mb-2" style="font-family: 'Playfair Display', serif">Saspire</div>
+                        <div class="text-2xl font-bold mb-2" style="font-family: &quot;Playfair Display&quot;, serif">Saspire</div>
                         <p class="text-blue-200 text-sm">Service to aspire</p>
                     </div>
                     <div>
@@ -269,7 +371,10 @@
         <!-- Cookie Banner -->
         <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 z-50 transform translate-y-full transition-transform duration-300">
             <div class="container mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p class="text-sm text-gray-300">We use cookies to improve your experience. <a href="/privacy.html" class="text-blue-400 hover:underline">Privacy Policy</a></p>
+                <p class="text-sm text-gray-300">
+                    We use cookies to improve your experience.
+                    <a href="/privacy.html" class="text-blue-400 hover:underline">Privacy Policy</a>
+                </p>
                 <div class="flex gap-3">
                     <button id="cookie-decline" class="px-4 py-2 text-sm border border-gray-600 rounded-lg hover:bg-gray-800 transition">Decline</button>
                     <button id="cookie-accept" class="px-4 py-2 text-sm bg-blue-900 rounded-lg hover:bg-blue-800 transition">Accept</button>

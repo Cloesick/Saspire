@@ -540,6 +540,35 @@ img {
     }
 }
 
+/* Skip to content link (accessibility) */
+.skip-to-content {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e3a8a;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+    font-weight: 600;
+    z-index: 9999;
+    transition: top 0.2s;
+}
+.skip-to-content:focus {
+    top: 0;
+}
+
+/* Enhanced focus states (accessibility) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid #1e40af;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
 /* Reduced motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
     *,
