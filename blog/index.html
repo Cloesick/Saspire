@@ -12,7 +12,10 @@
         <meta http-equiv="X-Content-Type-Options" content="nosniff" />
         <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
         <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; frame-src https://www.googletagmanager.com;" />
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://embed.tawk.to; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://*.tawk.to; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://*.tawk.to wss://*.tawk.to; frame-src https://www.googletagmanager.com https://*.tawk.to;"
+        />
 
         <link rel="canonical" href="https://saspire.org/blog/" />
         <link rel="icon" href="/images/Sgrowth5.webp" type="image/webp" />
@@ -27,7 +30,9 @@
         <!-- Google Consent Mode v2 -->
         <script>
             window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
+            function gtag() {
+                dataLayer.push(arguments);
+            }
             gtag("consent", "default", { analytics_storage: "denied", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied" });
             if (localStorage.getItem("cookieConsent") === "accepted") {
                 gtag("consent", "update", { analytics_storage: "granted", ad_storage: "granted", ad_user_data: "granted", ad_personalization: "granted" });
@@ -35,7 +40,16 @@
         </script>
         <!-- Google Tag Manager -->
         <script>
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-59MQCMPB");
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != "dataLayer" ? "&l=" + l : "";
+                j.async = true;
+                j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, "script", "dataLayer", "GTM-59MQCMPB");
         </script>
     </head>
     <body class="antialiased">
@@ -45,7 +59,7 @@
         <header id="main-header" class="py-4 transition-all duration-300 sticky top-0 z-50 bg-slate-50/90 backdrop-blur-lg shadow-sm">
             <nav class="container mx-auto px-6 flex justify-between items-center">
                 <a href="/" class="flex flex-col items-start group">
-                    <div class="text-3xl font-bold text-gray-800" style="font-family: 'Playfair Display', serif">Saspire</div>
+                    <div class="text-3xl font-bold text-gray-800" style="font-family: &quot;Playfair Display&quot;, serif">Saspire</div>
                     <span class="text-xs text-blue-800/80 font-semibold tracking-wider -mt-1 ml-px group-hover:text-blue-900 transition-colors">Service to aspire</span>
                 </a>
                 <ul class="hidden lg:flex items-center space-x-8 font-medium">
@@ -78,7 +92,7 @@
 
         <main>
             <!-- Hero -->
-            <section class="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+            <section class="py-20 bg-linear-to-br from-slate-50 to-blue-50">
                 <div class="container mx-auto px-6 text-center">
                     <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">Insights & Resources</h1>
                     <p class="text-lg text-gray-600 max-w-2xl mx-auto">Expert tips on digital transformation, e-commerce, and business automation.</p>
@@ -89,10 +103,9 @@
             <section class="py-24">
                 <div class="container mx-auto px-6">
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
                         <!-- Post 1 -->
                         <article class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition">
-                            <div class="h-48 bg-gradient-to-br from-blue-900 to-blue-700 flex items-center justify-center">
+                            <div class="h-48 bg-linear-to-br from-blue-900 to-blue-700 flex items-center justify-center">
                                 <span class="text-6xl">🛒</span>
                             </div>
                             <div class="p-6">
@@ -108,7 +121,7 @@
 
                         <!-- Post 2 -->
                         <article class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition">
-                            <div class="h-48 bg-gradient-to-br from-purple-900 to-purple-700 flex items-center justify-center">
+                            <div class="h-48 bg-linear-to-br from-purple-900 to-purple-700 flex items-center justify-center">
                                 <span class="text-6xl">📄</span>
                             </div>
                             <div class="p-6">
@@ -124,7 +137,7 @@
 
                         <!-- Post 3 -->
                         <article class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition">
-                            <div class="h-48 bg-gradient-to-br from-green-900 to-green-700 flex items-center justify-center">
+                            <div class="h-48 bg-linear-to-br from-green-900 to-green-700 flex items-center justify-center">
                                 <span class="text-6xl">⚡</span>
                             </div>
                             <div class="p-6">
@@ -140,7 +153,7 @@
 
                         <!-- Post 4 -->
                         <article class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition">
-                            <div class="h-48 bg-gradient-to-br from-orange-800 to-orange-600 flex items-center justify-center">
+                            <div class="h-48 bg-linear-to-br from-orange-800 to-orange-600 flex items-center justify-center">
                                 <span class="text-6xl">🔐</span>
                             </div>
                             <div class="p-6">
@@ -156,7 +169,7 @@
 
                         <!-- Post 5 -->
                         <article class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition">
-                            <div class="h-48 bg-gradient-to-br from-teal-900 to-teal-700 flex items-center justify-center">
+                            <div class="h-48 bg-linear-to-br from-teal-900 to-teal-700 flex items-center justify-center">
                                 <span class="text-6xl">🏢</span>
                             </div>
                             <div class="p-6">
@@ -172,7 +185,7 @@
 
                         <!-- Post 6 -->
                         <article class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition">
-                            <div class="h-48 bg-gradient-to-br from-rose-900 to-rose-700 flex items-center justify-center">
+                            <div class="h-48 bg-linear-to-br from-rose-900 to-rose-700 flex items-center justify-center">
                                 <span class="text-6xl">📈</span>
                             </div>
                             <div class="p-6">
@@ -185,7 +198,6 @@
                                 </div>
                             </div>
                         </article>
-
                     </div>
                 </div>
             </section>
@@ -209,7 +221,7 @@
             <div class="container mx-auto px-6">
                 <div class="grid md:grid-cols-4 gap-8 mb-8">
                     <div>
-                        <div class="text-2xl font-bold mb-2" style="font-family: 'Playfair Display', serif">Saspire</div>
+                        <div class="text-2xl font-bold mb-2" style="font-family: &quot;Playfair Display&quot;, serif">Saspire</div>
                         <p class="text-blue-200 text-sm">Service to aspire</p>
                     </div>
                     <div>
@@ -247,7 +259,10 @@
         <!-- Cookie Banner -->
         <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 z-50 transform translate-y-full transition-transform duration-300">
             <div class="container mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p class="text-sm text-gray-300">We use cookies to improve your experience. <a href="/privacy.html" class="text-blue-400 hover:underline">Privacy Policy</a></p>
+                <p class="text-sm text-gray-300">
+                    We use cookies to improve your experience.
+                    <a href="/privacy.html" class="text-blue-400 hover:underline">Privacy Policy</a>
+                </p>
                 <div class="flex gap-3">
                     <button id="cookie-decline" class="px-4 py-2 text-sm border border-gray-600 rounded-lg hover:bg-gray-800 transition">Decline</button>
                     <button id="cookie-accept" class="px-4 py-2 text-sm bg-blue-900 rounded-lg hover:bg-blue-800 transition">Accept</button>

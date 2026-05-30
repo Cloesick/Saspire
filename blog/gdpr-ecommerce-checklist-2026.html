@@ -11,7 +11,10 @@
         <meta http-equiv="X-Content-Type-Options" content="nosniff" />
         <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
         <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; frame-src https://www.googletagmanager.com;" />
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://embed.tawk.to; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://*.tawk.to; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://*.tawk.to wss://*.tawk.to; frame-src https://www.googletagmanager.com https://*.tawk.to;"
+        />
 
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://saspire.org/blog/gdpr-ecommerce-checklist-2026.html" />
@@ -32,27 +35,38 @@
 
         <script>
             window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
+            function gtag() {
+                dataLayer.push(arguments);
+            }
             gtag("consent", "default", { analytics_storage: "denied", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied" });
             if (localStorage.getItem("cookieConsent") === "accepted") {
                 gtag("consent", "update", { analytics_storage: "granted", ad_storage: "granted", ad_user_data: "granted", ad_personalization: "granted" });
             }
         </script>
         <script>
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-59MQCMPB");
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != "dataLayer" ? "&l=" + l : "";
+                j.async = true;
+                j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, "script", "dataLayer", "GTM-59MQCMPB");
         </script>
 
         <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "GDPR for E-Commerce: A 2026 Checklist",
-            "description": "Everything Belgian businesses need to know about GDPR compliance when selling online.",
-            "author": { "@type": "Organization", "name": "Saspire" },
-            "publisher": { "@type": "Organization", "name": "Saspire", "url": "https://saspire.org" },
-            "datePublished": "2026-05-15",
-            "mainEntityOfPage": "https://saspire.org/blog/gdpr-ecommerce-checklist-2026.html"
-        }
+            {
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "headline": "GDPR for E-Commerce: A 2026 Checklist",
+                "description": "Everything Belgian businesses need to know about GDPR compliance when selling online.",
+                "author": { "@type": "Organization", "name": "Saspire" },
+                "publisher": { "@type": "Organization", "name": "Saspire", "url": "https://saspire.org" },
+                "datePublished": "2026-05-15",
+                "mainEntityOfPage": "https://saspire.org/blog/gdpr-ecommerce-checklist-2026.html"
+            }
         </script>
     </head>
     <body class="antialiased">
@@ -61,7 +75,7 @@
         <header class="py-4 sticky top-0 z-50 bg-slate-50/90 backdrop-blur-lg shadow-sm">
             <nav class="container mx-auto px-6 flex justify-between items-center">
                 <a href="/" class="flex flex-col items-start group">
-                    <div class="text-3xl font-bold text-gray-800" style="font-family: 'Playfair Display', serif">Saspire</div>
+                    <div class="text-3xl font-bold text-gray-800" style="font-family: &quot;Playfair Display&quot;, serif">Saspire</div>
                     <span class="text-xs text-blue-800/80 font-semibold tracking-wider -mt-1 ml-px">Service to aspire</span>
                 </a>
                 <a href="/blog/" class="text-blue-900 font-semibold hover:underline">&larr; Back to Blog</a>
@@ -84,15 +98,34 @@
                     </div>
 
                     <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
-                        <p>Running an online store in Belgium (or anywhere in the EU) means you must comply with GDPR. Fines can reach up to <strong>€20 million or 4% of annual turnover</strong>. Here's your practical compliance checklist for 2026.</p>
+                        <p>
+                            Running an online store in Belgium (or anywhere in the EU) means you must comply with GDPR. Fines can reach up to
+                            <strong>€20 million or 4% of annual turnover</strong>
+                            . Here's your practical compliance checklist for 2026.
+                        </p>
 
                         <h2 class="text-2xl font-bold text-gray-800 mt-10 mb-4">Cookie Consent (The #1 Issue)</h2>
                         <ul class="list-disc pl-6 space-y-2">
-                            <li><strong>No pre-ticked boxes</strong> — All non-essential cookies must be opt-in</li>
-                            <li><strong>Clear categories</strong> — Separate analytics, marketing, and functional cookies</li>
-                            <li><strong>Equal prominence</strong> — "Decline" must be as easy to click as "Accept"</li>
-                            <li><strong>No cookie walls</strong> — Don't block content until cookies are accepted</li>
-                            <li><strong>Consent Mode v2</strong> — Required by Google since March 2024 for EU traffic</li>
+                            <li>
+                                <strong>No pre-ticked boxes</strong>
+                                — All non-essential cookies must be opt-in
+                            </li>
+                            <li>
+                                <strong>Clear categories</strong>
+                                — Separate analytics, marketing, and functional cookies
+                            </li>
+                            <li>
+                                <strong>Equal prominence</strong>
+                                — "Decline" must be as easy to click as "Accept"
+                            </li>
+                            <li>
+                                <strong>No cookie walls</strong>
+                                — Don't block content until cookies are accepted
+                            </li>
+                            <li>
+                                <strong>Consent Mode v2</strong>
+                                — Required by Google since March 2024 for EU traffic
+                            </li>
                         </ul>
 
                         <h2 class="text-2xl font-bold text-gray-800 mt-10 mb-4">Privacy Policy Requirements</h2>
@@ -107,27 +140,66 @@
 
                         <h2 class="text-2xl font-bold text-gray-800 mt-10 mb-4">Customer Data Handling</h2>
                         <ul class="list-disc pl-6 space-y-2">
-                            <li><strong>Data minimization</strong> — Only collect what you actually need</li>
-                            <li><strong>Purpose limitation</strong> — Don't use order data for marketing without separate consent</li>
-                            <li><strong>Storage limitation</strong> — Delete or anonymize data you no longer need</li>
-                            <li><strong>Right to erasure</strong> — Have a process for "delete my account" requests (30-day deadline)</li>
-                            <li><strong>Data portability</strong> — Be able to export a customer's data in machine-readable format</li>
+                            <li>
+                                <strong>Data minimization</strong>
+                                — Only collect what you actually need
+                            </li>
+                            <li>
+                                <strong>Purpose limitation</strong>
+                                — Don't use order data for marketing without separate consent
+                            </li>
+                            <li>
+                                <strong>Storage limitation</strong>
+                                — Delete or anonymize data you no longer need
+                            </li>
+                            <li>
+                                <strong>Right to erasure</strong>
+                                — Have a process for "delete my account" requests (30-day deadline)
+                            </li>
+                            <li>
+                                <strong>Data portability</strong>
+                                — Be able to export a customer's data in machine-readable format
+                            </li>
                         </ul>
 
                         <h2 class="text-2xl font-bold text-gray-800 mt-10 mb-4">Email Marketing</h2>
                         <ul class="list-disc pl-6 space-y-2">
-                            <li><strong>Explicit opt-in</strong> — No pre-checked newsletter boxes at checkout</li>
-                            <li><strong>Easy unsubscribe</strong> — One-click, no login required</li>
-                            <li><strong>Record of consent</strong> — Store when and how each person subscribed</li>
-                            <li><strong>Soft opt-in exception</strong> — Existing customers can receive emails about similar products (Belgian law)</li>
+                            <li>
+                                <strong>Explicit opt-in</strong>
+                                — No pre-checked newsletter boxes at checkout
+                            </li>
+                            <li>
+                                <strong>Easy unsubscribe</strong>
+                                — One-click, no login required
+                            </li>
+                            <li>
+                                <strong>Record of consent</strong>
+                                — Store when and how each person subscribed
+                            </li>
+                            <li>
+                                <strong>Soft opt-in exception</strong>
+                                — Existing customers can receive emails about similar products (Belgian law)
+                            </li>
                         </ul>
 
                         <h2 class="text-2xl font-bold text-gray-800 mt-10 mb-4">Third-Party Services</h2>
                         <ul class="list-disc pl-6 space-y-2">
-                            <li><strong>Data Processing Agreements (DPAs)</strong> — Required with every service that handles customer data</li>
-                            <li><strong>EU data residency</strong> — Prefer services that store data in the EU</li>
-                            <li><strong>Sub-processors</strong> — Know who your vendors share data with</li>
-                            <li><strong>US transfers</strong> — Ensure EU-US Data Privacy Framework compliance or Standard Contractual Clauses</li>
+                            <li>
+                                <strong>Data Processing Agreements (DPAs)</strong>
+                                — Required with every service that handles customer data
+                            </li>
+                            <li>
+                                <strong>EU data residency</strong>
+                                — Prefer services that store data in the EU
+                            </li>
+                            <li>
+                                <strong>Sub-processors</strong>
+                                — Know who your vendors share data with
+                            </li>
+                            <li>
+                                <strong>US transfers</strong>
+                                — Ensure EU-US Data Privacy Framework compliance or Standard Contractual Clauses
+                            </li>
                         </ul>
 
                         <h2 class="text-2xl font-bold text-gray-800 mt-10 mb-4">Technical Security</h2>
@@ -168,7 +240,10 @@
 
         <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 z-50 transform translate-y-full transition-transform duration-300">
             <div class="container mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p class="text-sm text-gray-300">We use cookies to improve your experience. <a href="/privacy.html" class="text-blue-400 hover:underline">Privacy Policy</a></p>
+                <p class="text-sm text-gray-300">
+                    We use cookies to improve your experience.
+                    <a href="/privacy.html" class="text-blue-400 hover:underline">Privacy Policy</a>
+                </p>
                 <div class="flex gap-3">
                     <button id="cookie-decline" class="px-4 py-2 text-sm border border-gray-600 rounded-lg hover:bg-gray-800 transition">Decline</button>
                     <button id="cookie-accept" class="px-4 py-2 text-sm bg-blue-900 rounded-lg hover:bg-blue-800 transition">Accept</button>

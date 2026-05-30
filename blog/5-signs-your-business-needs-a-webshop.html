@@ -12,7 +12,10 @@
         <meta http-equiv="X-Content-Type-Options" content="nosniff" />
         <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
         <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; frame-src https://www.googletagmanager.com;" />
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://embed.tawk.to; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://*.tawk.to; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://*.tawk.to wss://*.tawk.to; frame-src https://www.googletagmanager.com https://*.tawk.to;"
+        />
 
         <!-- Open Graph -->
         <meta property="og:type" content="article" />
@@ -36,28 +39,39 @@
         <!-- Google Consent Mode v2 -->
         <script>
             window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
+            function gtag() {
+                dataLayer.push(arguments);
+            }
             gtag("consent", "default", { analytics_storage: "denied", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied" });
             if (localStorage.getItem("cookieConsent") === "accepted") {
                 gtag("consent", "update", { analytics_storage: "granted", ad_storage: "granted", ad_user_data: "granted", ad_personalization: "granted" });
             }
         </script>
         <script>
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-59MQCMPB");
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != "dataLayer" ? "&l=" + l : "";
+                j.async = true;
+                j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, "script", "dataLayer", "GTM-59MQCMPB");
         </script>
 
         <!-- Article Structured Data -->
         <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "5 Signs Your Business Needs a Webshop in 2026",
-            "description": "Still relying on phone orders and PDF catalogs? Here are the 5 key indicators that it's time to invest in e-commerce.",
-            "author": { "@type": "Organization", "name": "Saspire" },
-            "publisher": { "@type": "Organization", "name": "Saspire", "url": "https://saspire.org" },
-            "datePublished": "2026-05-29",
-            "mainEntityOfPage": "https://saspire.org/blog/5-signs-your-business-needs-a-webshop.html"
-        }
+            {
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "headline": "5 Signs Your Business Needs a Webshop in 2026",
+                "description": "Still relying on phone orders and PDF catalogs? Here are the 5 key indicators that it's time to invest in e-commerce.",
+                "author": { "@type": "Organization", "name": "Saspire" },
+                "publisher": { "@type": "Organization", "name": "Saspire", "url": "https://saspire.org" },
+                "datePublished": "2026-05-29",
+                "mainEntityOfPage": "https://saspire.org/blog/5-signs-your-business-needs-a-webshop.html"
+            }
         </script>
     </head>
     <body class="antialiased">
@@ -67,7 +81,7 @@
         <header class="py-4 sticky top-0 z-50 bg-slate-50/90 backdrop-blur-lg shadow-sm">
             <nav class="container mx-auto px-6 flex justify-between items-center">
                 <a href="/" class="flex flex-col items-start group">
-                    <div class="text-3xl font-bold text-gray-800" style="font-family: 'Playfair Display', serif">Saspire</div>
+                    <div class="text-3xl font-bold text-gray-800" style="font-family: &quot;Playfair Display&quot;, serif">Saspire</div>
                     <span class="text-xs text-blue-800/80 font-semibold tracking-wider -mt-1 ml-px">Service to aspire</span>
                 </a>
                 <a href="/blog/" class="text-blue-900 font-semibold hover:underline">&larr; Back to Blog</a>
@@ -92,28 +106,57 @@
 
                     <!-- Article Body -->
                     <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
-                        <p>The world has gone digital, yet many Belgian B2B companies still process orders via phone calls, email threads, and fax machines. If any of the following signs sound familiar, it's time to invest in a proper webshop.</p>
+                        <p>
+                            The world has gone digital, yet many Belgian B2B companies still process orders via phone calls, email threads, and fax machines. If any of the following signs sound
+                            familiar, it's time to invest in a proper webshop.
+                        </p>
 
                         <h2 class="text-2xl font-bold text-gray-800 mt-10 mb-4">1. Your Sales Team Spends More Time on Admin Than Selling</h2>
-                        <p>If your reps are manually entering orders, looking up stock levels, or re-sending price lists, they're not selling. A webshop automates order entry, stock visibility, and pricing — freeing your team to focus on relationships and upselling.</p>
+                        <p>
+                            If your reps are manually entering orders, looking up stock levels, or re-sending price lists, they're not selling. A webshop automates order entry, stock visibility, and
+                            pricing — freeing your team to focus on relationships and upselling.
+                        </p>
 
                         <h2 class="text-2xl font-bold text-gray-800 mt-10 mb-4">2. Customers Ask "Can I Just Order Online?"</h2>
-                        <p>When your buyers — especially younger procurement managers — start asking for online ordering, that's a signal you're losing ground to competitors who already offer it. In 2026, B2B buyers expect the same convenience they get as B2C consumers.</p>
+                        <p>
+                            When your buyers — especially younger procurement managers — start asking for online ordering, that's a signal you're losing ground to competitors who already offer it. In
+                            2026, B2B buyers expect the same convenience they get as B2C consumers.
+                        </p>
 
                         <h2 class="text-2xl font-bold text-gray-800 mt-10 mb-4">3. Your PDF Catalog Is Outdated Before It's Printed</h2>
-                        <p>Physical catalogs are expensive and static. By the time they reach your customer, prices may have changed or products gone out of stock. A digital product catalog updates in real-time and can be searched, filtered, and ordered from directly.</p>
+                        <p>
+                            Physical catalogs are expensive and static. By the time they reach your customer, prices may have changed or products gone out of stock. A digital product catalog updates
+                            in real-time and can be searched, filtered, and ordered from directly.
+                        </p>
 
                         <h2 class="text-2xl font-bold text-gray-800 mt-10 mb-4">4. You're Losing Orders Outside Business Hours</h2>
-                        <p>A webshop works 24/7. If your customers operate in different time zones, or simply want to reorder at 9 PM, they can — without waiting for your office to open. Studies show that <strong>67% of B2B purchases</strong> happen outside traditional working hours.</p>
+                        <p>
+                            A webshop works 24/7. If your customers operate in different time zones, or simply want to reorder at 9 PM, they can — without waiting for your office to open. Studies show
+                            that
+                            <strong>67% of B2B purchases</strong>
+                            happen outside traditional working hours.
+                        </p>
 
                         <h2 class="text-2xl font-bold text-gray-800 mt-10 mb-4">5. You Can't Track What's Working</h2>
-                        <p>Without digital infrastructure, you have no visibility into which products are trending, which customers are about to churn, or where your revenue actually comes from. A webshop with analytics gives you a dashboard of your entire commercial operation.</p>
+                        <p>
+                            Without digital infrastructure, you have no visibility into which products are trending, which customers are about to churn, or where your revenue actually comes from. A
+                            webshop with analytics gives you a dashboard of your entire commercial operation.
+                        </p>
 
                         <h2 class="text-2xl font-bold text-gray-800 mt-10 mb-4">What Does It Cost?</h2>
-                        <p>A professional B2B webshop doesn't have to break the bank. At Saspire, our Growth package starts at <strong>€7,500</strong> and includes product catalog digitalization, payment integration, and a customer portal. <a href="/pricing.html" class="text-blue-900 font-semibold hover:underline">See our pricing →</a></p>
+                        <p>
+                            A professional B2B webshop doesn't have to break the bank. At Saspire, our Growth package starts at
+                            <strong>€7,500</strong>
+                            and includes product catalog digitalization, payment integration, and a customer portal.
+                            <a href="/pricing.html" class="text-blue-900 font-semibold hover:underline">See our pricing →</a>
+                        </p>
 
                         <h2 class="text-2xl font-bold text-gray-800 mt-10 mb-4">Ready to Make the Move?</h2>
-                        <p>If you recognized yourself in any of these signs, let's talk. We offer a <strong>free 30-minute consultation</strong> to assess your situation and outline a concrete plan.</p>
+                        <p>
+                            If you recognized yourself in any of these signs, let's talk. We offer a
+                            <strong>free 30-minute consultation</strong>
+                            to assess your situation and outline a concrete plan.
+                        </p>
                     </div>
 
                     <!-- CTA -->
@@ -136,7 +179,10 @@
 
         <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 z-50 transform translate-y-full transition-transform duration-300">
             <div class="container mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p class="text-sm text-gray-300">We use cookies to improve your experience. <a href="/privacy.html" class="text-blue-400 hover:underline">Privacy Policy</a></p>
+                <p class="text-sm text-gray-300">
+                    We use cookies to improve your experience.
+                    <a href="/privacy.html" class="text-blue-400 hover:underline">Privacy Policy</a>
+                </p>
                 <div class="flex gap-3">
                     <button id="cookie-decline" class="px-4 py-2 text-sm border border-gray-600 rounded-lg hover:bg-gray-800 transition">Decline</button>
                     <button id="cookie-accept" class="px-4 py-2 text-sm bg-blue-900 rounded-lg hover:bg-blue-800 transition">Accept</button>

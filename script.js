@@ -278,6 +278,19 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
+    // --- Tawk.to Live Chat ---
+    var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"),
+            s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/6a19cc06be64d31c346104f3/1jpqc9unj";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+
     // --- GTM Conversion Events ---
     // Track "Schedule Call" clicks
     document.querySelectorAll('a[href*="calendly"], a[href*="#schedule"]').forEach((link) => {

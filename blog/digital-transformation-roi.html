@@ -11,7 +11,10 @@
         <meta http-equiv="X-Content-Type-Options" content="nosniff" />
         <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
         <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; frame-src https://www.googletagmanager.com;" />
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://embed.tawk.to; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://*.tawk.to; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://*.tawk.to wss://*.tawk.to; frame-src https://www.googletagmanager.com https://*.tawk.to;"
+        />
 
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://saspire.org/blog/digital-transformation-roi.html" />
@@ -32,27 +35,38 @@
 
         <script>
             window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
+            function gtag() {
+                dataLayer.push(arguments);
+            }
             gtag("consent", "default", { analytics_storage: "denied", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied" });
             if (localStorage.getItem("cookieConsent") === "accepted") {
                 gtag("consent", "update", { analytics_storage: "granted", ad_storage: "granted", ad_user_data: "granted", ad_personalization: "granted" });
             }
         </script>
         <script>
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-59MQCMPB");
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != "dataLayer" ? "&l=" + l : "";
+                j.async = true;
+                j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, "script", "dataLayer", "GTM-59MQCMPB");
         </script>
 
         <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "Digital Transformation ROI: What to Expect",
-            "description": "Real numbers and timelines for Belgian SMEs investing in digitalization projects.",
-            "author": { "@type": "Organization", "name": "Saspire" },
-            "publisher": { "@type": "Organization", "name": "Saspire", "url": "https://saspire.org" },
-            "datePublished": "2026-05-05",
-            "mainEntityOfPage": "https://saspire.org/blog/digital-transformation-roi.html"
-        }
+            {
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "headline": "Digital Transformation ROI: What to Expect",
+                "description": "Real numbers and timelines for Belgian SMEs investing in digitalization projects.",
+                "author": { "@type": "Organization", "name": "Saspire" },
+                "publisher": { "@type": "Organization", "name": "Saspire", "url": "https://saspire.org" },
+                "datePublished": "2026-05-05",
+                "mainEntityOfPage": "https://saspire.org/blog/digital-transformation-roi.html"
+            }
         </script>
     </head>
     <body class="antialiased">
@@ -61,7 +75,7 @@
         <header class="py-4 sticky top-0 z-50 bg-slate-50/90 backdrop-blur-lg shadow-sm">
             <nav class="container mx-auto px-6 flex justify-between items-center">
                 <a href="/" class="flex flex-col items-start group">
-                    <div class="text-3xl font-bold text-gray-800" style="font-family: 'Playfair Display', serif">Saspire</div>
+                    <div class="text-3xl font-bold text-gray-800" style="font-family: &quot;Playfair Display&quot;, serif">Saspire</div>
                     <span class="text-xs text-blue-800/80 font-semibold tracking-wider -mt-1 ml-px">Service to aspire</span>
                 </a>
                 <a href="/blog/" class="text-blue-900 font-semibold hover:underline">&larr; Back to Blog</a>
@@ -84,73 +98,174 @@
                     </div>
 
                     <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
-                        <p>The most common question we hear from Belgian SMEs considering digitalization: <strong>"What will my return on investment actually be?"</strong> Here are real numbers from our 60+ completed projects.</p>
+                        <p>
+                            The most common question we hear from Belgian SMEs considering digitalization:
+                            <strong>"What will my return on investment actually be?"</strong>
+                            Here are real numbers from our 60+ completed projects.
+                        </p>
 
                         <h2 class="text-2xl font-bold text-gray-800 mt-10 mb-4">Typical ROI by Project Type</h2>
 
                         <h3 class="text-xl font-bold text-gray-800 mt-8 mb-3">E-Commerce Webshop (€7,500-€15,000 investment)</h3>
                         <ul class="list-disc pl-6 space-y-2">
-                            <li><strong>Break-even:</strong> 4-8 months</li>
-                            <li><strong>Year 1 ROI:</strong> 150-300%</li>
-                            <li><strong>Revenue drivers:</strong> 24/7 ordering, reduced order errors, cross-selling, new customer acquisition</li>
-                            <li><strong>Cost savings:</strong> €2,000-5,000/month in reduced admin labor</li>
+                            <li>
+                                <strong>Break-even:</strong>
+                                4-8 months
+                            </li>
+                            <li>
+                                <strong>Year 1 ROI:</strong>
+                                150-300%
+                            </li>
+                            <li>
+                                <strong>Revenue drivers:</strong>
+                                24/7 ordering, reduced order errors, cross-selling, new customer acquisition
+                            </li>
+                            <li>
+                                <strong>Cost savings:</strong>
+                                €2,000-5,000/month in reduced admin labor
+                            </li>
                         </ul>
 
                         <h3 class="text-xl font-bold text-gray-800 mt-8 mb-3">Catalog Digitalization (€3,000-€8,000 investment)</h3>
                         <ul class="list-disc pl-6 space-y-2">
-                            <li><strong>Break-even:</strong> 2-4 months</li>
-                            <li><strong>Year 1 ROI:</strong> 400-800%</li>
-                            <li><strong>Revenue drivers:</strong> Faster product discovery, SEO traffic, reduced print costs</li>
-                            <li><strong>Cost savings:</strong> €1,500-3,000/month vs. manual catalog management</li>
+                            <li>
+                                <strong>Break-even:</strong>
+                                2-4 months
+                            </li>
+                            <li>
+                                <strong>Year 1 ROI:</strong>
+                                400-800%
+                            </li>
+                            <li>
+                                <strong>Revenue drivers:</strong>
+                                Faster product discovery, SEO traffic, reduced print costs
+                            </li>
+                            <li>
+                                <strong>Cost savings:</strong>
+                                €1,500-3,000/month vs. manual catalog management
+                            </li>
                         </ul>
 
                         <h3 class="text-xl font-bold text-gray-800 mt-8 mb-3">Business Automation (€2,000-€5,000 investment)</h3>
                         <ul class="list-disc pl-6 space-y-2">
-                            <li><strong>Break-even:</strong> 1-3 months</li>
-                            <li><strong>Year 1 ROI:</strong> 500-1200%</li>
-                            <li><strong>Revenue drivers:</strong> Faster lead response, fewer missed opportunities</li>
-                            <li><strong>Cost savings:</strong> €2,000-4,000/month in recovered labor hours</li>
+                            <li>
+                                <strong>Break-even:</strong>
+                                1-3 months
+                            </li>
+                            <li>
+                                <strong>Year 1 ROI:</strong>
+                                500-1200%
+                            </li>
+                            <li>
+                                <strong>Revenue drivers:</strong>
+                                Faster lead response, fewer missed opportunities
+                            </li>
+                            <li>
+                                <strong>Cost savings:</strong>
+                                €2,000-4,000/month in recovered labor hours
+                            </li>
                         </ul>
 
                         <h3 class="text-xl font-bold text-gray-800 mt-8 mb-3">Customer Portal (€10,000-€20,000 investment)</h3>
                         <ul class="list-disc pl-6 space-y-2">
-                            <li><strong>Break-even:</strong> 6-12 months</li>
-                            <li><strong>Year 1 ROI:</strong> 100-200%</li>
-                            <li><strong>Revenue drivers:</strong> Customer retention, self-service reducing support costs</li>
-                            <li><strong>Cost savings:</strong> €3,000-8,000/month in support labor</li>
+                            <li>
+                                <strong>Break-even:</strong>
+                                6-12 months
+                            </li>
+                            <li>
+                                <strong>Year 1 ROI:</strong>
+                                100-200%
+                            </li>
+                            <li>
+                                <strong>Revenue drivers:</strong>
+                                Customer retention, self-service reducing support costs
+                            </li>
+                            <li>
+                                <strong>Cost savings:</strong>
+                                €3,000-8,000/month in support labor
+                            </li>
                         </ul>
 
                         <h2 class="text-2xl font-bold text-gray-800 mt-10 mb-4">The Hidden ROI: What Numbers Don't Show</h2>
                         <p>Beyond direct financial returns, our clients consistently report:</p>
                         <ul class="list-disc pl-6 space-y-2">
-                            <li><strong>Employee satisfaction</strong> — Staff freed from repetitive tasks are more engaged</li>
-                            <li><strong>Customer experience</strong> — Faster response times and self-service improve NPS scores</li>
-                            <li><strong>Data-driven decisions</strong> — Digital systems provide insights that manual processes never could</li>
-                            <li><strong>Scalability</strong> — Grow revenue without linearly growing headcount</li>
-                            <li><strong>Competitive advantage</strong> — First-movers in B2B digitalization capture market share</li>
+                            <li>
+                                <strong>Employee satisfaction</strong>
+                                — Staff freed from repetitive tasks are more engaged
+                            </li>
+                            <li>
+                                <strong>Customer experience</strong>
+                                — Faster response times and self-service improve NPS scores
+                            </li>
+                            <li>
+                                <strong>Data-driven decisions</strong>
+                                — Digital systems provide insights that manual processes never could
+                            </li>
+                            <li>
+                                <strong>Scalability</strong>
+                                — Grow revenue without linearly growing headcount
+                            </li>
+                            <li>
+                                <strong>Competitive advantage</strong>
+                                — First-movers in B2B digitalization capture market share
+                            </li>
                         </ul>
 
                         <h2 class="text-2xl font-bold text-gray-800 mt-10 mb-4">When Will You See Results?</h2>
                         <p>Based on our project data:</p>
                         <ul class="list-disc pl-6 space-y-2">
-                            <li><strong>Week 1-4:</strong> Project kickoff, discovery, and architecture</li>
-                            <li><strong>Month 2-3:</strong> Development and testing</li>
-                            <li><strong>Month 3-4:</strong> Launch and initial adoption</li>
-                            <li><strong>Month 4-6:</strong> Optimization based on real usage data</li>
-                            <li><strong>Month 6+:</strong> Steady-state ROI with compounding benefits</li>
+                            <li>
+                                <strong>Week 1-4:</strong>
+                                Project kickoff, discovery, and architecture
+                            </li>
+                            <li>
+                                <strong>Month 2-3:</strong>
+                                Development and testing
+                            </li>
+                            <li>
+                                <strong>Month 3-4:</strong>
+                                Launch and initial adoption
+                            </li>
+                            <li>
+                                <strong>Month 4-6:</strong>
+                                Optimization based on real usage data
+                            </li>
+                            <li>
+                                <strong>Month 6+:</strong>
+                                Steady-state ROI with compounding benefits
+                            </li>
                         </ul>
 
                         <h2 class="text-2xl font-bold text-gray-800 mt-10 mb-4">How to Build Your Business Case</h2>
                         <ol class="list-decimal pl-6 space-y-2">
-                            <li><strong>Measure current costs</strong> — Track hours spent on manual processes for 2 weeks</li>
-                            <li><strong>Identify revenue leaks</strong> — Lost orders, slow response times, missed opportunities</li>
-                            <li><strong>Calculate labor cost</strong> — Hours × fully-loaded hourly rate (typically €35-55 for Belgian SMEs)</li>
-                            <li><strong>Project conservative gains</strong> — Assume 50% of theoretical savings in year 1</li>
-                            <li><strong>Compare to investment</strong> — Most projects pay for themselves within 6 months</li>
+                            <li>
+                                <strong>Measure current costs</strong>
+                                — Track hours spent on manual processes for 2 weeks
+                            </li>
+                            <li>
+                                <strong>Identify revenue leaks</strong>
+                                — Lost orders, slow response times, missed opportunities
+                            </li>
+                            <li>
+                                <strong>Calculate labor cost</strong>
+                                — Hours × fully-loaded hourly rate (typically €35-55 for Belgian SMEs)
+                            </li>
+                            <li>
+                                <strong>Project conservative gains</strong>
+                                — Assume 50% of theoretical savings in year 1
+                            </li>
+                            <li>
+                                <strong>Compare to investment</strong>
+                                — Most projects pay for themselves within 6 months
+                            </li>
                         </ol>
 
                         <h2 class="text-2xl font-bold text-gray-800 mt-10 mb-4">The Cost of Doing Nothing</h2>
-                        <p>Every month you delay digitalization, you're paying the "manual tax" — the hidden cost of inefficiency. For a typical Belgian SME, this ranges from <strong>€3,000 to €10,000 per month</strong> in lost productivity, missed sales, and competitive erosion.</p>
+                        <p>
+                            Every month you delay digitalization, you're paying the "manual tax" — the hidden cost of inefficiency. For a typical Belgian SME, this ranges from
+                            <strong>€3,000 to €10,000 per month</strong>
+                            in lost productivity, missed sales, and competitive erosion.
+                        </p>
                     </div>
 
                     <div class="mt-12 p-8 bg-rose-50 rounded-2xl text-center">
@@ -171,7 +286,10 @@
 
         <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 z-50 transform translate-y-full transition-transform duration-300">
             <div class="container mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p class="text-sm text-gray-300">We use cookies to improve your experience. <a href="/privacy.html" class="text-blue-400 hover:underline">Privacy Policy</a></p>
+                <p class="text-sm text-gray-300">
+                    We use cookies to improve your experience.
+                    <a href="/privacy.html" class="text-blue-400 hover:underline">Privacy Policy</a>
+                </p>
                 <div class="flex gap-3">
                     <button id="cookie-decline" class="px-4 py-2 text-sm border border-gray-600 rounded-lg hover:bg-gray-800 transition">Decline</button>
                     <button id="cookie-accept" class="px-4 py-2 text-sm bg-blue-900 rounded-lg hover:bg-blue-800 transition">Accept</button>
