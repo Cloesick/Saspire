@@ -157,10 +157,7 @@ html {
     scroll-padding-top: 80px;
 }
 
-/* Generous white space - Slash Agency style */
-section {
-    padding: clamp(3rem, 8vw, 6rem) 0;
-}
+/* Section padding is set per-section via Tailwind */
 
 /* Container max-width for readability */
 .container {
