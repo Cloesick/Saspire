@@ -277,4 +277,44 @@ document.addEventListener("DOMContentLoaded", function () {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({ event: "blog_post_view", blog_path: window.location.pathname });
     }
+
+    // ── PoC card hover-video ──────────────────────────────────────────────────
+    // For each card in the cases grid that has an /images/poc/*.jpeg,
+    // inject a <video> overlay. Video plays on hover, pauses+resets on leave.
+    // Videos live at /videos/poc/{slug}.mp4 — cards degrade silently if missing.
+    document.querySelectorAll('a.group[href*="antwerp-poc-portfolio"]').forEach(function(card) {
+        var img = card.querySelector('img[src*="/images/poc/"]');
+        if (!img) return;
+
+        // derive slug from image filename, e.g. /images/poc/helios.jpeg → helios
+        var slug = img.src.split('/images/poc/')[1].replace(/\.[^.]+$/, '');
+
+        var wrap = img.parentElement;
+        wrap.style.position = 'relative';
+
+        var vid = document.createElement('video');
+        vid.src = '/videos/poc/' + slug + '.mp4';
+        vid.muted = true;
+        vid.loop = true;
+        vid.playsInline = true;
+        vid.preload = 'none';
+        vid.setAttribute('aria-hidden', 'true');
+        vid.style.cssText = [
+            'position:absolute', 'inset:0', 'width:100%', 'height:100%',
+            'object-fit:cover', 'opacity:0',
+            'transition:opacity 0.35s ease', 'pointer-events:none'
+        ].join(';');
+        wrap.appendChild(vid);
+
+        card.addEventListener('mouseenter', function() {
+            vid.style.opacity = '1';
+            vid.play().catch(function(){});
+        });
+        card.addEventListener('mouseleave', function() {
+            vid.style.opacity = '0';
+            vid.pause();
+            vid.currentTime = 0;
+        });
+    });
+    // ── end hover-video ───────────────────────────────────────────────────────
 });
