@@ -30,10 +30,12 @@
         <meta property="og:description" content="We build webshops, digitalize catalogs, and create customer portals. Transform your business operations today." />
         <meta property="og:image" content="https://saspire.org/images/Sgrowth5.png" />
 
-        <!-- Twitter Card -->
+        <!-- Twitter / X Card -->
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@saspire_org" />
         <meta name="twitter:title" content="Saspire | Digitalization Consultancy" />
         <meta name="twitter:description" content="We build webshops, digitalize catalogs, and create customer portals." />
+        <meta name="twitter:image" content="https://saspire.org/images/Sgrowth5.png" />
 
         <!-- Canonical URL -->
         <link rel="canonical" href="https://saspire.org/" />
@@ -42,6 +44,9 @@
         <link rel="alternate" hreflang="en" href="https://saspire.org/" />
         <link rel="alternate" hreflang="fr" href="https://saspire.org/fr/" />
         <link rel="alternate" hreflang="nl" href="https://saspire.org/nl/" />
+        <link rel="alternate" hreflang="de" href="https://saspire.org/de/" />
+        <link rel="alternate" hreflang="es" href="https://saspire.org/es/" />
+        <link rel="alternate" hreflang="pt" href="https://saspire.org/pt/" />
         <link rel="alternate" hreflang="x-default" href="https://saspire.org/" />
 
         <link rel="icon" href="/images/Sgrowth5.webp" type="image/webp" />
@@ -95,6 +100,42 @@
         </script>
         <!-- End Google Tag Manager -->
 
+        <!-- Meta Pixel — TODO: replace YOUR_PIXEL_ID with your Facebook Pixel ID from business.facebook.com -->
+        <!-- To activate: uncomment the block below and replace YOUR_PIXEL_ID -->
+        <!--
+        <script>
+            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+            n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+            document,'script','https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', 'YOUR_PIXEL_ID');
+            fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+        -->
+
+        <!-- LinkedIn Insight Tag — TODO: replace YOUR_PARTNER_ID from linkedin.com/campaignmanager -->
+        <!-- To activate: uncomment the block below and replace YOUR_PARTNER_ID -->
+        <!--
+        <script type="text/javascript">
+            _linkedin_partner_id = "YOUR_PARTNER_ID";
+            window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+            window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+        </script>
+        <script type="text/javascript">
+            (function(l) {
+                if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+                window.lintrk.q=[]}
+                var s = document.getElementsByTagName("script")[0];
+                var b = document.createElement("script");
+                b.type = "text/javascript";b.async = true;
+                b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+                s.parentNode.insertBefore(b, s);})(window.lintrk);
+        </script>
+        <noscript><img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=YOUR_PARTNER_ID&fmt=gif" /></noscript>
+        -->
+
         <!-- Structured Data -->
         <script type="application/ld+json">
             {
@@ -107,9 +148,13 @@
                 "email": "nicolas@saspire.org",
                 "address": {
                     "@type": "PostalAddress",
-                    "addressLocality": "Brussels, Antwerp, Roeselare",
+                    "streetAddress": "Hoogstraat 7",
+                    "postalCode": "2000",
+                    "addressLocality": "Antwerpen",
                     "addressCountry": "BE"
                 },
+                "vatID": "BE1032952802",
+                "legalName": "Saspire BV",
                 "serviceType": [
                     "Webshop Development",
                     "Multi-Tenant E-commerce",
@@ -170,22 +215,20 @@
                     <li><a href="/blog/" class="text-gray-600 hover:text-gray-900 transition">// BLOG</a></li>
                     <li><a href="#contact" class="text-gray-600 hover:text-gray-900 transition">// MEET US</a></li>
                 </ul>
-                <!-- Language Switcher -->
-                <div class="hidden lg:flex items-center gap-2 mr-4">
-                    <a href="/" class="flex items-center gap-1 text-sm font-semibold text-blue-900 border-b-2 border-blue-900">
-                        <span class="text-base">🇬🇧</span>
-                        EN
-                    </a>
-                    <span class="text-gray-300">|</span>
-                    <a href="/fr/" class="flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-blue-900 transition">
-                        <span class="text-base">🇫🇷</span>
-                        FR
-                    </a>
-                    <span class="text-gray-300">|</span>
-                    <a href="/nl/" class="flex items-center gap-1 text-sm font-medium text-gray-500 hover:text-blue-900 transition">
-                        <span class="text-base">🇳🇱</span>
-                        NL
-                    </a>
+                <!-- Language Switcher (reactive dropdown) -->
+                <div class="relative hidden lg:flex mr-4" id="langSwitcher">
+                    <button id="langBtn" class="flex items-center gap-1.5 text-sm font-semibold text-blue-900 border border-blue-200 rounded-lg px-3 py-1.5 hover:bg-blue-50 transition" aria-haspopup="listbox" aria-expanded="false">
+                        <span>🇬🇧</span><span>EN</span>
+                        <svg class="w-3 h-3 ml-0.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="langMenu" class="hidden absolute right-0 top-full mt-1 bg-white border border-gray-200 rounded-xl shadow-xl py-1 w-44 z-50" role="listbox">
+                        <a href="/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-blue-50 font-semibold text-blue-900">🇬🇧 English</a>
+                        <a href="/fr/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-blue-50 text-gray-700">🇫🇷 Français</a>
+                        <a href="/nl/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-blue-50 text-gray-700">🇳🇱 Nederlands</a>
+                        <a href="/de/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-blue-50 text-gray-700">🇩🇪 Deutsch</a>
+                        <a href="/es/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-blue-50 text-gray-700">🇪🇸 Español</a>
+                        <a href="/pt/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-blue-50 text-gray-700">🇵🇹 Português</a>
+                    </div>
                 </div>
                 <a href="#schedule" class="hidden lg:inline-block bg-blue-900 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-blue-800 transition">Schedule Call</a>
                 <button id="mobile-menu-button" class="lg:hidden p-2">
@@ -206,19 +249,15 @@
                     <li><a href="#contact" class="block text-gray-600 hover:text-gray-900 transition">// MEET US</a></li>
                     <li><a href="#schedule" class="block bg-blue-900 text-white font-semibold px-6 py-3 rounded-lg text-center hover:bg-blue-800 transition">Schedule Call</a></li>
                     <!-- Mobile Language Switcher -->
-                    <li class="flex justify-center gap-4 pt-2 border-t border-gray-200">
-                        <a href="/" class="flex items-center gap-1 text-sm font-semibold text-blue-900">
-                            <span>🇬🇧</span>
-                            EN
-                        </a>
-                        <a href="/fr/" class="flex items-center gap-1 text-sm text-gray-500 hover:text-blue-900">
-                            <span>🇫🇷</span>
-                            FR
-                        </a>
-                        <a href="/nl/" class="flex items-center gap-1 text-sm text-gray-500 hover:text-blue-900">
-                            <span>🇳🇱</span>
-                            NL
-                        </a>
+                    <li class="pt-2 border-t border-gray-200">
+                        <div class="grid grid-cols-3 gap-2">
+                            <a href="/" class="flex items-center justify-center gap-1 text-sm py-2 rounded-lg bg-blue-900 text-white font-semibold">🇬🇧 EN</a>
+                            <a href="/fr/" class="flex items-center justify-center gap-1 text-sm py-2 rounded-lg bg-gray-100 text-gray-600 hover:bg-blue-50">🇫🇷 FR</a>
+                            <a href="/nl/" class="flex items-center justify-center gap-1 text-sm py-2 rounded-lg bg-gray-100 text-gray-600 hover:bg-blue-50">🇳🇱 NL</a>
+                            <a href="/de/" class="flex items-center justify-center gap-1 text-sm py-2 rounded-lg bg-gray-100 text-gray-600 hover:bg-blue-50">🇩🇪 DE</a>
+                            <a href="/es/" class="flex items-center justify-center gap-1 text-sm py-2 rounded-lg bg-gray-100 text-gray-600 hover:bg-blue-50">🇪🇸 ES</a>
+                            <a href="/pt/" class="flex items-center justify-center gap-1 text-sm py-2 rounded-lg bg-gray-100 text-gray-600 hover:bg-blue-50">🇵🇹 PT</a>
+                        </div>
                     </li>
                 </ul>
             </div>

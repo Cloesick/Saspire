@@ -1,4 +1,33 @@
 
+// Language dropdown toggle
+(function(){
+    var btn=document.getElementById('langBtn'),menu=document.getElementById('langMenu');
+    if(btn&&menu){
+        btn.addEventListener('click',function(e){
+            e.stopPropagation();
+            var open=!menu.classList.contains('hidden');
+            menu.classList.toggle('hidden');
+            btn.setAttribute('aria-expanded', String(!open));
+        });
+        document.addEventListener('click',function(){
+            menu.classList.add('hidden');
+            btn&&btn.setAttribute('aria-expanded','false');
+        });
+    }
+})();
+
+// Browser language auto-detection (first visit only, sessionStorage-gated)
+if(!sessionStorage.getItem('langDetected')){
+    sessionStorage.setItem('langDetected','1');
+    var _lang=(navigator.language||'').toLowerCase();
+    var _path=window.location.pathname;
+    if(_lang.startsWith('nl')&&!_path.startsWith('/nl'))window.location.href='/nl/';
+    else if(_lang.startsWith('fr')&&!_path.startsWith('/fr'))window.location.href='/fr/';
+    else if(_lang.startsWith('de')&&!_path.startsWith('/de'))window.location.href='/de/';
+    else if(_lang.startsWith('es')&&!_path.startsWith('/es'))window.location.href='/es/';
+    else if(_lang.startsWith('pt')&&!_path.startsWith('/pt'))window.location.href='/pt/';
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     // --- Cookie Consent Banner ---
     const cookieBanner = document.getElementById("cookie-banner");
