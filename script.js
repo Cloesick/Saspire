@@ -279,14 +279,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // ── PoC card hover-video ──────────────────────────────────────────────────
-    // For each card in the cases grid that has an /images/poc/*.jpeg,
-    // inject a <video> overlay. Video plays on hover, pauses+resets on leave.
-    // Videos live at /videos/poc/{slug}.mp4 — cards degrade silently if missing.
-    document.querySelectorAll('a.group[href*="antwerp-poc-portfolio"]').forEach(function(card) {
+    // Desktop: video fades in on mouseenter, pauses+resets on mouseleave.
+    // Mobile/touch: IntersectionObserver autoplays when card is ≥60% visible,
+    //   pauses when it leaves. Videos at /videos/poc/{slug}.mp4.
+    var isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+
+    var pocCards = document.querySelectorAll('a.group[href*="antwerp-poc-portfolio"]');
+
+    var ioOptions = { threshold: 0.6 };
+    var io = ('IntersectionObserver' in window)
+        ? new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                var vid = entry.target.querySelector('video');
+                if (!vid) return;
+                if (entry.isIntersecting) {
+                    vid.style.opacity = '1';
+                    vid.play().catch(function(){});
+                } else {
+                    vid.style.opacity = '0';
+                    vid.pause();
+                    vid.currentTime = 0;
+                }
+            });
+          }, ioOptions)
+        : null;
+
+    pocCards.forEach(function(card) {
         var img = card.querySelector('img[src*="/images/poc/"]');
         if (!img) return;
 
-        // derive slug from image filename, e.g. /images/poc/helios.jpeg → helios
         var slug = img.src.split('/images/poc/')[1].replace(/\.[^.]+$/, '');
 
         var wrap = img.parentElement;
@@ -306,15 +327,21 @@ document.addEventListener("DOMContentLoaded", function () {
         ].join(';');
         wrap.appendChild(vid);
 
-        card.addEventListener('mouseenter', function() {
-            vid.style.opacity = '1';
-            vid.play().catch(function(){});
-        });
-        card.addEventListener('mouseleave', function() {
-            vid.style.opacity = '0';
-            vid.pause();
-            vid.currentTime = 0;
-        });
+        if (isTouch && io) {
+            // mobile: autoplay on scroll-into-view
+            io.observe(card);
+        } else {
+            // desktop: play on hover
+            card.addEventListener('mouseenter', function() {
+                vid.style.opacity = '1';
+                vid.play().catch(function(){});
+            });
+            card.addEventListener('mouseleave', function() {
+                vid.style.opacity = '0';
+                vid.pause();
+                vid.currentTime = 0;
+            });
+        }
     });
     // ── end hover-video ───────────────────────────────────────────────────────
 });

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Saspire — van toetsaanslag tot digitale beleving</title>
+<meta name="description" content="Saspire bouwt webshops, portalen en digitale belevingen. Van één toetsaanslag tot een levende website." />
+<style>
+  :root{--bg:#08080c;--ink:#f4f1ea;--muted:#9a96a8;--accent:#7c5cff;--accent2:#ff7a59;--lime:#c6ff4a;--key:#1e1c27;--keytop:#2a2735}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,Segoe UI,sans-serif;overflow:hidden;height:100vh}
+  .stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;perspective:1400px}
+  .layer{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;
+    transition:transform 1.15s cubic-bezier(.7,0,.2,1),opacity .9s ease}
+
+  .key{width:200px;height:200px;border-radius:26px;background:linear-gradient(160deg,var(--keytop),var(--key));
+    display:flex;align-items:center;justify-content:center;font-size:74px;font-weight:800;color:var(--lime);
+    box-shadow:0 30px 60px -20px #000,inset 0 2px 0 rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.06)}
+  .key.press{animation:press .5s ease}
+  @keyframes press{40%{transform:translateY(16px) scale(.97)}}
+
+  .kb{width:680px;background:linear-gradient(160deg,#1a1822,#121017);border-radius:20px;padding:18px;
+    box-shadow:0 40px 80px -30px #000;border:1px solid rgba(255,255,255,.05);display:flex;flex-direction:column;gap:8px}
+  .kbrow{display:flex;gap:8px;justify-content:center}
+  .kbkey{height:42px;flex:1;border-radius:8px;background:linear-gradient(160deg,var(--keytop),var(--key));border:1px solid rgba(255,255,255,.04)}
+  .kbkey.wide{flex:2.4}.kbkey.space{flex:7}.kbkey.hot{background:linear-gradient(160deg,#3a2f6e,#241d44)}
+
+  .rig{display:flex;flex-direction:column;align-items:center}
+  .monitor{width:760px;height:460px;border-radius:18px;background:#0c0b11;border:14px solid #16141d;
+    box-shadow:0 50px 90px -30px #000;position:relative;overflow:hidden}
+  .stand{width:90px;height:60px;background:linear-gradient(#16141d,#0d0c12);clip-path:polygon(30% 0,70% 0,100% 100%,0 100%)}
+  .base{width:240px;height:14px;border-radius:8px;background:#16141d;margin-top:-2px}
+  .deskkb{width:520px;height:60px;border-radius:12px;background:linear-gradient(160deg,#1a1822,#121017);margin-top:26px;border:1px solid rgba(255,255,255,.05)}
+
+  .code{position:absolute;inset:0;padding:24px 28px;font-family:ui-monospace,Consolas,monospace;font-size:14px;line-height:1.85;opacity:0;transition:opacity .5s}
+  .cl{white-space:pre;opacity:0;transform:translateX(-10px);transition:all .4s ease}
+  .cl.in{opacity:1;transform:none}
+  .tok-k{color:#c792ea}.tok-s{color:var(--lime)}.tok-f{color:#82aaff}.tok-c{color:#5a5766}.tok-t{color:var(--accent2)}
+
+  .site{position:absolute;inset:0;opacity:0;transition:opacity .8s;background:radial-gradient(900px 500px at 70% -10%,#2a2350,#0d0c12)}
+  .sitenav{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;font-size:12px;color:var(--muted)}
+  .sitebrand{font-weight:800;color:var(--ink);letter-spacing:1px}
+  .sitehero{padding:14px 28px;max-width:58%}
+  .sitehero h3{font-size:34px;font-weight:800;letter-spacing:-1px;line-height:1.08;margin-bottom:10px}
+  .grad{background:linear-gradient(100deg,var(--accent),var(--accent2),var(--lime));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sitehero p{color:var(--muted);font-size:13px}
+  .sitebtn{display:inline-block;margin-top:14px;background:linear-gradient(100deg,var(--accent),#9d7bff);color:#fff;padding:9px 18px;border-radius:10px;font-size:13px;font-weight:700}
+
+  .scene3d{position:absolute;right:60px;top:120px;width:150px;height:150px;perspective:600px}
+  .cube{width:150px;height:150px;position:relative;transform-style:preserve-3d;animation:spin 9s linear infinite}
+  .face{position:absolute;width:150px;height:150px;border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:800;color:#fff}
+  .f1{background:rgba(124,92,255,.55);transform:translateZ(75px)}
+  .f2{background:rgba(255,122,89,.55);transform:rotateY(180deg) translateZ(75px)}
+  .f3{background:rgba(198,255,74,.45);transform:rotateY(90deg) translateZ(75px)}
+  .f4{background:rgba(124,92,255,.35);transform:rotateY(-90deg) translateZ(75px)}
+  .f5{background:rgba(255,122,89,.35);transform:rotateX(90deg) translateZ(75px)}
+  .f6{background:rgba(198,255,74,.30);transform:rotateX(-90deg) translateZ(75px)}
+  @keyframes spin{to{transform:rotateX(360deg) rotateY(360deg)}}
+
+  .cap{position:fixed;bottom:7vh;left:0;right:0;text-align:center;z-index:20;pointer-events:none}
+  .cap span{position:absolute;left:0;right:0;font-size:clamp(20px,3vw,32px);font-weight:800;letter-spacing:-.5px;opacity:0;transition:opacity .6s,transform .6s;transform:translateY(16px)}
+  .cap span.show{opacity:1;transform:none}
+  .grad2{background:linear-gradient(100deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .skip{position:fixed;bottom:22px;right:22px;z-index:30;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--ink);padding:9px 16px;border-radius:999px;font:inherit;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none}
+  .skip:hover{background:rgba(255,255,255,.12)}
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+  <div class="layer" id="L_key"><div class="key" id="key">&lt;/&gt;</div></div>
+
+  <div class="layer" id="L_kb"><div class="kb">
+    <div class="kbrow"><div class="kbkey"></div><div class="kbkey"></div><div class="kbkey"></div><div class="kbkey hot"></div><div class="kbkey"></div><div class="kbkey"></div><div class="kbkey"></div><div class="kbkey"></div><div class="kbkey"></div><div class="kbkey"></div></div>
+    <div class="kbrow"><div class="kbkey"></div><div class="kbkey"></div><div class="kbkey"></div><div class="kbkey"></div><div class="kbkey"></div><div class="kbkey"></div><div class="kbkey"></div><div class="kbkey"></div><div class="kbkey"></div><div class="kbkey wide"></div></div>
+    <div class="kbrow"><div class="kbkey wide"></div><div class="kbkey"></div><div class="kbkey"></div><div class="kbkey"></div><div class="kbkey"></div><div class="kbkey"></div><div class="kbkey"></div><div class="kbkey"></div><div class="kbkey wide"></div></div>
+    <div class="kbrow"><div class="kbkey wide"></div><div class="kbkey space"></div><div class="kbkey wide"></div></div>
+  </div></div>
+
+  <div class="layer" id="L_rig"><div class="rig">
+    <div class="monitor">
+      <div class="code" id="code">
+<div class="cl"><span class="tok-c">// Saspire — digitale beleving</span></div>
+<div class="cl"><span class="tok-k">export default function</span> <span class="tok-f">Site</span>() {</div>
+<div class="cl">  <span class="tok-k">const</span> <span class="tok-f">idee</span> = <span class="tok-s">'jouw merk'</span></div>
+<div class="cl">  <span class="tok-k">return</span> (</div>
+<div class="cl">    &lt;<span class="tok-t">Hero</span> <span class="tok-f">titel</span>={idee} <span class="tok-f">in3D</span> /&gt;</div>
+<div class="cl">  )</div>
+<div class="cl">}</div>
+      </div>
+      <div class="site" id="site">
+        <div class="sitenav"><span class="sitebrand">SASPIRE</span><span>webshops · portalen · automatisatie</span></div>
+        <div class="sitehero">
+          <h3>Wij maken van jouw idee<br><span class="grad">een digitale beleving.</span></h3>
+          <p>Eén toetsaanslag werd code. Code werd dit — een levende, geanimeerde website in 3D.</p>
+          <span class="sitebtn">Plan een gesprek</span>
+        </div>
+        <div class="scene3d"><div class="cube">
+          <div class="face f1">&lt;/&gt;</div><div class="face f2">3D</div><div class="face f3"></div><div class="face f4"></div><div class="face f5"></div><div class="face f6"></div>
+        </div></div>
+      </div>
+    </div>
+    <div class="stand"></div><div class="base"></div><div class="deskkb"></div>
+  </div></div>
+</div>
+
+<div class="cap">
+  <span id="c1">elke website begint met één toetsaanslag</span>
+  <span id="c2" class="grad2">een toetsenbord. een scherm. een machine.</span>
+  <span id="c3">dan wordt het code…</span>
+  <span id="c4" class="grad2">…en code wordt beleving.</span>
+</div>
+<a class="skip" href="/index.html">overslaan →</a>
+
+<script>
+  var $=function(id){return document.getElementById(id);};
+  var lines=[].slice.call(document.querySelectorAll('#code .cl'));
+  var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var timers=[];
+  function at(ms,fn){timers.push(setTimeout(fn,ms));}
+  function L(id,o,s){var e=$(id);e.style.opacity=o;if(s!=null)e.style.transform='scale('+s+')';}
+  function cap(id){[].forEach.call(document.querySelectorAll('.cap span'),function(x){x.classList.remove('show');});if(id)$(id).classList.add('show');}
+  var beats={
+    0:function(){L('L_key',1,1);L('L_kb',0,.4);L('L_rig',0,.5);$('code').style.opacity=0;$('site').style.opacity=0;cap();lines.forEach(function(l){l.classList.remove('in');});},
+    1:function(){cap('c1');$('key').classList.add('press');},
+    2:function(){L('L_key',0,.15);L('L_kb',1,1);},
+    3:function(){L('L_kb',0,.45);L('L_rig',1,1);cap('c2');},
+    4:function(){L('L_rig',1,2.3);$('code').style.opacity=1;cap('c3');lines.forEach(function(l,i){at(300+i*180,function(){l.classList.add('in');});});},
+    5:function(){$('code').style.opacity=0;$('site').style.opacity=1;cap('c4');}
+  };
+  function play(){
+    timers.forEach(clearTimeout);timers=[];
+    beats[0]();
+    if(rm){beats[5]();L('L_key',0,.15);L('L_kb',0,.45);L('L_rig',1,2.3);$('code').style.opacity=0;lines.forEach(function(l){l.classList.add('in');});return;}
+    at(400,beats[1]);at(1900,beats[2]);at(3500,beats[3]);at(5300,beats[4]);at(8200,beats[5]);
+  }
+  play();
+</script>
+</body>
+</html>
