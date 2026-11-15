@@ -15,7 +15,8 @@ service-account*.json
 node_modules/
 .next/
 .next-*/
-dist/
+dist/*
+!dist/tailwind.css
 out/
 coverage/
 .turbo/
