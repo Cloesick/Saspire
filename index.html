@@ -201,6 +201,17 @@
         .book-box h3 { font-family: "Fraunces", serif; font-size: 1.3rem; margin-bottom: 8px; }
         .book-box p { color: var(--on-cobalt-dim); font-size: 0.94rem; margin-bottom: 18px; }
 
+
+        /* Model band */
+        .model-band { background: var(--ink); color: #fff; }
+        .model-band h2 { color: #fff; }
+        .model-band .lede2 { margin-top: 16px; max-width: 58ch; color: #aab0c0; font-size: 1.05rem; }
+        .model-band .lede2 strong { color: #fff; }
+        .agent-grid { margin-top: 44px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .agent { border-top: 3px solid var(--cobalt); padding-top: 18px; }
+        .agent strong { display: block; font-family: "Fraunces", serif; font-size: 1.55rem; font-weight: 600; color: #fff; }
+        .agent span { display: block; margin-top: 8px; color: #aab0c0; font-size: 0.93rem; }
+        @media (max-width: 880px) { .agent-grid { grid-template-columns: 1fr; } }
         /* Footer */
         footer { background: var(--ink); color: #aab0c0; padding: 56px 0 40px; font-size: 0.9rem; }
         footer .cols { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
@@ -229,6 +240,19 @@
         }
     </style>
 
+
+    <script>
+    (function(){var p=window.location.pathname;
+    if((p==='/'||p==='/index.html')&&!sessionStorage.getItem('langDetected')){
+        sessionStorage.setItem('langDetected','1');
+        var l=(navigator.language||'').toLowerCase();
+        if(l.indexOf('nl')===0)window.location.href='/nl/';
+        else if(l.indexOf('fr')===0)window.location.href='/fr/';
+        else if(l.indexOf('de')===0)window.location.href='/de/';
+        else if(l.indexOf('es')===0)window.location.href='/es/';
+        else if(l.indexOf('pt')===0)window.location.href='/pt/';
+    }})();
+    </script>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-59MQCMPB');</script>
     <!-- End Google Tag Manager -->
@@ -320,6 +344,19 @@
             </div>
         </section>
 
+        <section class="model-band" id="model">
+            <div class="wrap">
+                <h2>One consultant. A fleet of AI agents.</h2>
+                <p class="lede2"><strong>Saspire is Nicolas Cloet plus the agents he builds:</strong> extraction, monitoring, content and build pipelines that keep working after hours. You get agency output at fixed prices, in days instead of months, from one person who knows your file end to end.</p>
+                <div class="agent-grid">
+                    <div class="agent"><strong>3,044 pages</strong><span>of supplier documentation read and mapped to structured product data in four working days.</span></div>
+                    <div class="agent"><strong>25 catalogs</strong><span>of local businesses scanned and scored for digitalization gaps in one afternoon.</span></div>
+                    <div class="agent"><strong>Daily pipelines</strong><span>running unattended: market monitoring, multilingual content production, inbox triage.</span></div>
+                </div>
+            </div>
+        </section>
+
+
         <section id="solutions">
             <div class="wrap">
                 <h2>Solutions for larger businesses</h2>
@@ -330,6 +367,24 @@
                     <div class="solution"><h3>Customer portals</h3><p>Self-service portals for orders, invoices and support — fewer calls, faster customers.</p></div>
                 </div>
                 <p class="also"><b>Also:</b> business automation with Make.com, AI/ML integration, trading &amp; analytics systems, GDPR &amp; compliance, lead generation, and data processing &amp; ETL. Something custom — contract drafting, auctions, bookings? <a href="#contact">Tell us what you need.</a></p>
+            </div>
+        </section>
+
+        
+        <section id="audit">
+            <div class="wrap">
+                <div class="case">
+                    <div>
+                        <h2>Your catalog, turned into usable data</h2>
+                        <p class="section-intro">Distributors sit on hundreds of technical data sheets, or sell products with none attached at all. We audit what you have, pull the official TDS and MSDS per product from the manufacturers, and extract the values your customers actually ask for: mixing ratios, pot life, recoat intervals, coverage.</p>
+                        <p style="margin-top:18px; font-weight:600">Documentation audit: one week, fixed price. <a href="#contact">Request an audit</a></p>
+                    </div>
+                    <div class="case-facts">
+                        <div><strong>3,044</strong><span>pages analyzed in a recent audit for an Antwerp wholesaler</span></div>
+                        <div><strong>357</strong><span>technical data sheets mapped, per brand and product</span></div>
+                        <div><strong>4</strong><span>working days from start to report</span></div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -415,7 +470,7 @@
             </div>
             <div class="legal">
                 <span>&copy; 2026 Saspire BV &middot; BTW BE 1032.952.802 &middot; Hoogstraat 7, 2000 Antwerpen</span>
-                <span style="white-space:nowrap"><a href="/privacy.html">Privacy</a> <span><a href="/privacy.html">Privacy</a> &nbsp;&middot;&nbsp; <a href="/terms.html">Terms</a></span>middot; <a href="/terms.html">Terms</a></span>
+                <span style="white-space:nowrap"><a href="/privacy.html">Privacy</a> &middot; <a href="/terms.html">Terms</a></span>
             </div>
         </div>
     </footer>
