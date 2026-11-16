@@ -1,1382 +1,473 @@
 <!doctype html>
 <html lang="nl">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Saspire | Digitalisering Consultancy - Webshops, Catalogi & Klantenportalen</title>
-        <meta name="description" content="Saspire helpt bedrijven digitaliseren. Wij bouwen webshops, digitaliseren PDF-catalogi en creëren klantenportalen. Transformeer uw bedrijf vandaag nog." />
-        <meta name="keywords" content="digitalization, webshop development, catalog digitalization, PDF to digital, customer portal, business transformation, Belgium" />
-        <meta name="author" content="Saspire" />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saspire | Digitaliseringsconsultancy - Webshops, Catalogi & Klantenportalen</title>
+    <meta name="description" content="Saspire: digitalisering met AI, multi-tenant e-commerce, ERP-integratie, PDF-extractie, GDPR en automatisering. 60+ projecten opgeleverd. Antwerpen, Brussel, Roeselare." />
+    <meta name="keywords" content="digitalization, AI PDF extraction, multi-tenant e-commerce, ERP integration, Make.com automation, trading algorithms, GDPR compliance, lead generation, data processing, React, Node.js, TensorFlow, Belgium, Brussels, Antwerp, Roeselare" />
+    <meta name="author" content="Saspire" />
 
-        <!-- Security Headers -->
-        <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-        <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-        <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
-        <meta
-            http-equiv="Content-Security-Policy"
-            content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://embed.tawk.to; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://*.tawk.to; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://*.tawk.to wss://*.tawk.to; frame-src https://www.googletagmanager.com https://*.tawk.to;"
-        />
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://region1.google-analytics.com https://formspree.io; frame-src https://www.googletagmanager.com https://calendly.com; form-action 'self' https://formspree.io;" />
 
-        <!-- Open Graph / Social Media -->
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://saspire.org/" />
-        <meta property="og:title" content="Saspire | Digitalization Consultancy" />
-        <meta property="og:description" content="We build webshops, digitalize catalogs, and create customer portals. Transform your business operations today." />
-        <meta property="og:image" content="https://saspire.org/images/Sgrowth5.png" />
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://saspire.org/" />
+    <meta property="og:title" content="Saspire | Digitaliseringsconsultancy" />
+    <meta property="og:description" content="Wij bouwen webshops, digitaliseren catalogi en maken klantenportalen." />
+    <meta property="og:image" content="https://saspire.org/images/Sgrowth5.png" />
 
-        <!-- Twitter Card -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Saspire | Digitalization Consultancy" />
-        <meta name="twitter:description" content="We build webshops, digitalize catalogs, and create customer portals." />
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@saspire_org" />
+    <meta name="twitter:title" content="Saspire | Digitaliseringsconsultancy" />
+    <meta name="twitter:description" content="Wij bouwen webshops, digitaliseren catalogi en maken klantenportalen." />
+    <meta name="twitter:image" content="https://saspire.org/images/Sgrowth5.png" />
 
-        <!-- Canonical URL -->
-        <link rel="canonical" href="https://saspire.org/nl/" />
+    <link rel="canonical" href="https://saspire.org/nl/" />
 
-        <!-- Hreflang for multi-language SEO -->
-        <link rel="alternate" hreflang="en" href="https://saspire.org/" />
-        <link rel="alternate" hreflang="fr" href="https://saspire.org/fr/" />
-        <link rel="alternate" hreflang="nl" href="https://saspire.org/nl/" />
-        <link rel="alternate" hreflang="de" href="https://saspire.org/de/" />
-        <link rel="alternate" hreflang="es" href="https://saspire.org/es/" />
-        <link rel="alternate" hreflang="pt" href="https://saspire.org/pt/" />
-        <link rel="alternate" hreflang="x-default" href="https://saspire.org/" />
+    <!-- Hreflang for multi-language SEO -->
+    <link rel="alternate" hreflang="en" href="https://saspire.org/" />
+    <link rel="alternate" hreflang="fr" href="https://saspire.org/fr/" />
+    <link rel="alternate" hreflang="nl" href="https://saspire.org/nl/" />
+    <link rel="alternate" hreflang="de" href="https://saspire.org/de/" />
+    <link rel="alternate" hreflang="es" href="https://saspire.org/es/" />
+    <link rel="alternate" hreflang="pt" href="https://saspire.org/pt/" />
+    <link rel="alternate" hreflang="x-default" href="https://saspire.org/" />
 
-        <link rel="icon" href="/images/Sgrowth5.webp" type="image/webp" />
-        <link rel="icon" href="/images/Sgrowth5.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/images/Sgrowth5.png" />
+    <link rel="icon" href="/images/Sgrowth5.webp" type="image/webp" />
+    <link rel="icon" href="/images/Sgrowth5.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/images/Sgrowth5.png" />
 
-        <!-- Tailwind CSS -->
-        <link rel="stylesheet" href="../dist/tailwind.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-        <!-- Google Fonts: Inter & Playfair Display for Logo -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+    <!-- JSON-LD injected below (kept from previous version) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Saspire",
+      "description": "Digitalization consultancy specializing in webshops, catalog digitalization, customer portals, and business automation",
+      "url": "https://saspire.org",
+      "telephone": "+32471261475",
+      "email": "nicolas@saspire.org",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Hoogstraat 7",
+        "postalCode": "2000",
+        "addressLocality": "Antwerpen",
+        "addressCountry": "BE"
+      },
+      "vatID": "BE1032952802",
+      "legalName": "Saspire BV",
+      "serviceType": ["Webshop Development","Multi-Tenant E-commerce","ERP Integration","Catalog Digitalization","AI-Powered PDF Extraction","Customer Portal Development","Business Process Automation","Make.com Integration","AI/ML Solutions","Trading & Financial Analytics","GDPR Compliance","Lead Generation Systems","Data Processing & ETL","Digital Transformation","Website Development","System Integration"],
+      "areaServed": { "@type": "Country", "name": "Belgium" }
+    }
+    </script>
 
-        <!-- Custom Stylesheet -->
-        <link rel="stylesheet" href="../style.css" />
+    <style>
+        :root {
+            --ink: #181c28;
+            --ink-soft: #4a5062;
+            --paper: #ffffff;
+            --cobalt: #2338e6;
+            --cobalt-deep: #1a2ab8;
+            --mist: #f1f3f8;
+            --line: #dce0ea;
+            --on-cobalt-dim: #b9c1ff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Inter", system-ui, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--ink);
+            background: var(--paper);
+        }
+        h1, h2, .display {
+            font-family: "Fraunces", Georgia, serif;
+            font-weight: 600;
+            line-height: 1.04;
+            letter-spacing: -0.015em;
+        }
+        a { color: var(--cobalt); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        img { display: block; max-width: 100%; }
+        .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+        :focus-visible { outline: 3px solid var(--cobalt); outline-offset: 2px; border-radius: 2px; }
+        .hero :focus-visible, .marquee-band :focus-visible { outline-color: #fff; }
 
-        <!-- Google Consent Mode v2 (defaults before GTM) -->
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag("consent", "default", {
-                analytics_storage: "denied",
-                ad_storage: "denied",
-                ad_user_data: "denied",
-                ad_personalization: "denied",
-            });
-            if (localStorage.getItem("cookieConsent") === "accepted") {
-                gtag("consent", "update", {
-                    analytics_storage: "granted",
-                    ad_storage: "granted",
-                    ad_user_data: "granted",
-                    ad_personalization: "granted",
-                });
-            }
-        </script>
-        <!-- Google Tag Manager -->
-        <script>
-            (function (w, d, s, l, i) {
-                w[l] = w[l] || [];
-                w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-                var f = d.getElementsByTagName(s)[0],
-                    j = d.createElement(s),
-                    dl = l != "dataLayer" ? "&l=" + l : "";
-                j.async = true;
-                j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-                f.parentNode.insertBefore(j, f);
-            })(window, document, "script", "dataLayer", "GTM-59MQCMPB");
-        </script>
-        <!-- End Google Tag Manager -->
+        /* ---------- Nav ---------- */
+        .topbar { border-bottom: 1px solid var(--line); background: var(--paper); position: sticky; top: 0; z-index: 50; }
+        .topbar .wrap { display: flex; align-items: center; gap: 28px; height: 64px; }
+        .brand { display: flex; align-items: baseline; gap: 10px; color: var(--ink); font-family: "Fraunces", serif; font-size: 1.35rem; font-weight: 600; }
+        .brand:hover { text-decoration: none; }
+        .brand small { font-family: "Inter", sans-serif; font-size: 0.72rem; font-weight: 500; color: var(--ink-soft); }
+        .nav-links { display: flex; gap: 22px; margin-left: auto; align-items: center; }
+        .nav-links a { color: var(--ink); font-size: 0.92rem; font-weight: 500; }
+        .nav-links a:hover { color: var(--cobalt); text-decoration: none; }
+        .lang { position: relative; }
+        .lang summary { list-style: none; cursor: pointer; font-size: 0.92rem; font-weight: 500; color: var(--ink); padding: 4px 8px; border: 1px solid var(--line); border-radius: 6px; }
+        .lang summary::-webkit-details-marker { display: none; }
+        .lang[open] summary { border-color: var(--cobalt); }
+        .lang-menu { position: absolute; right: 0; top: calc(100% + 6px); background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 6px; display: grid; min-width: 150px; box-shadow: 0 8px 24px rgba(24,28,40,0.12); }
+        .lang-menu a { padding: 7px 10px; border-radius: 5px; color: var(--ink); font-size: 0.9rem; }
+        .lang-menu a:hover { background: var(--mist); text-decoration: none; }
+        .btn { display: inline-block; padding: 11px 20px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; border: 1px solid transparent; cursor: pointer; }
+        .btn:hover { text-decoration: none; }
+        .btn-cobalt { background: var(--cobalt); color: #fff; }
+        .btn-cobalt:hover { background: var(--cobalt-deep); }
+        .btn-ghost-light { border-color: rgba(255,255,255,0.45); color: #fff; }
+        .btn-ghost-light:hover { border-color: #fff; }
+        .btn-white { background: #fff; color: var(--cobalt); }
+        .btn-white:hover { background: var(--mist); }
+        .nav-toggle { display: none; margin-left: auto; background: none; border: 1px solid var(--line); border-radius: 6px; padding: 8px 12px; font: inherit; cursor: pointer; }
 
-        <!-- Structured Data -->
-        <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "ProfessionalService",
-                "name": "Saspire",
-                "description": "Digitalization consultancy specializing in webshops, catalog digitalization, and customer portals",
-                "url": "https://saspire.org",
-                "telephone": "+32471261475",
-                "email": "nicolas.cloet@gmail.com",
-                "address": {
-                    "@type": "PostalAddress",
-                    "addressLocality": "Brussels, Antwerp, Roeselare",
-                    "addressCountry": "BE"
-                },
-                "serviceType": ["Webshop Development", "Catalog Digitalization", "Customer Portal Development", "Digital Transformation"]
-            }
-        </script>
-    </head>
-    <body class="antialiased">
-        <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59MQCMPB" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
+        /* ---------- Hero ---------- */
+        .hero { background: var(--cobalt); color: #fff; padding: 84px 0 40px; }
+        .hero h1 { font-size: clamp(2.6rem, 6.4vw, 4.9rem); max-width: 15ch; }
+        .hero .lede { margin-top: 26px; max-width: 54ch; font-size: 1.08rem; color: var(--on-cobalt-dim); }
+        .hero .lede strong { color: #fff; font-weight: 600; }
+        .hero-actions { margin-top: 34px; display: flex; gap: 14px; flex-wrap: wrap; }
+        .hero-meta { margin-top: 44px; font-size: 0.85rem; color: var(--on-cobalt-dim); }
 
-        <!-- Header & Navigation -->
-        <header id="main-header" class="py-4 transition-all duration-300 sticky top-0 z-50 bg-slate-50/90 backdrop-blur-lg shadow-sm">
-            <nav class="container mx-auto px-6 flex justify-between items-center">
-                <a href="#" class="flex flex-col items-start group">
-                    <div class="text-3xl font-bold text-gray-800" style="font-family: &quot;Playfair Display&quot;, serif">Saspire</div>
-                    <span class="text-xs text-blue-800/80 font-semibold tracking-wider -mt-1 ml-px group-hover:text-blue-900 transition-colors">Service to aspire</span>
-                </a>
-                <ul class="hidden lg:flex items-center space-x-8 font-medium">
-                    <li><a href="#about-us" class="text-gray-600 hover:text-gray-900 transition">Over Ons</a></li>
-                    <li><a href="#webshops" class="text-gray-600 hover:text-gray-900 transition">Webshops</a></li>
-                    <li><a href="#services" class="text-gray-600 hover:text-gray-900 transition">Diensten</a></li>
-                    <li><a href="#portfolio" class="text-gray-600 hover:text-gray-900 transition">Portfolio</a></li>
-                    <li><a href="/pricing.html" class="text-gray-600 hover:text-gray-900 transition">Prijzen</a></li>
-                    <li><a href="/blog/" class="text-gray-600 hover:text-gray-900 transition">Blog</a></li>
-                    <li><a href="#contact" class="text-gray-600 hover:text-gray-900 transition">Contact</a></li>
-                </ul>
-                <!-- Language Switcher (reactive dropdown) -->
-                <div class="relative hidden lg:flex mr-4" id="langSwitcher">
-                    <button id="langBtn" class="flex items-center gap-1.5 text-sm font-semibold text-blue-900 border border-blue-200 rounded-lg px-3 py-1.5 hover:bg-blue-50 transition" aria-haspopup="listbox" aria-expanded="false">
-                        <span>🇳🇱</span><span>NL</span>
-                        <svg class="w-3 h-3 ml-0.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div id="langMenu" class="hidden absolute right-0 top-full mt-1 bg-white border border-gray-200 rounded-xl shadow-xl py-1 w-44 z-50" role="listbox">
-                        <a href="/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-blue-50 text-gray-700">🇬🇧 English</a>
-                        <a href="/fr/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-blue-50 text-gray-700">🇫🇷 Français</a>
-                        <a href="/nl/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-blue-50 font-semibold text-blue-900">🇳🇱 Nederlands</a>
-                        <a href="/de/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-blue-50 text-gray-700">🇩🇪 Deutsch</a>
-                        <a href="/es/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-blue-50 text-gray-700">🇪🇸 Español</a>
-                        <a href="/pt/" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-blue-50 text-gray-700">🇵🇹 Português</a>
+        /* ---------- Shop marquee ---------- */
+        .marquee-band { background: linear-gradient(to bottom, var(--cobalt) 0%, var(--cobalt) 52%, var(--paper) 52%); padding-bottom: 28px; }
+        .marquee-head { color: #fff; font-size: 0.95rem; font-weight: 600; padding-bottom: 14px; }
+        .marquee { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+        .marquee-track { display: flex; gap: 18px; padding: 2px 24px 14px; width: max-content; margin: 0 auto; }
+        .shop-card { width: 236px; flex: none; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; color: var(--ink); transition: border-color 0.15s ease; }
+        .shop-card:hover { text-decoration: none; border-color: var(--cobalt); }
+        .shop-card img { width: 100%; height: 140px; object-fit: cover; }
+        .shop-card .pad { padding: 12px 14px 14px; }
+        .shop-card strong { display: block; font-size: 0.98rem; }
+        .shop-card span { font-size: 0.82rem; color: var(--ink-soft); }
+        .shop-card em { display: block; margin-top: 8px; font-style: normal; font-size: 0.82rem; font-weight: 600; color: var(--cobalt); }
+
+        /* ---------- Sections ---------- */
+        section { padding: 88px 0; }
+        section h2 { font-size: clamp(1.9rem, 3.6vw, 2.7rem); max-width: 22ch; }
+        .section-intro { margin-top: 16px; max-width: 58ch; color: var(--ink-soft); }
+        .tinted { background: var(--mist); }
+
+        /* Features */
+        .feature-grid { margin-top: 44px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px 48px; }
+        .feature-grid strong { display: block; font-size: 1.02rem; margin-bottom: 4px; }
+        .feature-grid p { color: var(--ink-soft); font-size: 0.94rem; }
+
+        /* Steps (real sequence) */
+        .steps { margin-top: 44px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: step; }
+        .step { border-top: 3px solid var(--cobalt); padding-top: 18px; counter-increment: step; }
+        .step h3::before { content: counter(step) ". "; color: var(--cobalt); }
+        .step h3 { font-size: 1.05rem; margin-bottom: 6px; }
+        .step p { color: var(--ink-soft); font-size: 0.94rem; }
+
+        /* Solutions */
+        .solutions-grid { margin-top: 44px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .solution { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 26px; }
+        .solution h3 { font-size: 1.12rem; margin-bottom: 10px; }
+        .solution p { color: var(--ink-soft); font-size: 0.94rem; }
+        .also { margin-top: 36px; font-size: 0.95rem; color: var(--ink-soft); max-width: 70ch; }
+        .also b { color: var(--ink); font-weight: 600; }
+
+        /* Case */
+        .case { margin-top: 44px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px; align-items: start; }
+        .case h3 { font-family: "Fraunces", serif; font-size: 1.7rem; font-weight: 600; line-height: 1.15; }
+        .case .client { margin-top: 6px; color: var(--ink-soft); font-size: 0.95rem; }
+        .case p.body { margin-top: 18px; color: var(--ink-soft); }
+        .case-facts { border-left: 3px solid var(--cobalt); padding-left: 22px; display: grid; gap: 18px; }
+        .case-facts strong { display: block; font-family: "Fraunces", serif; font-size: 1.6rem; font-weight: 600; }
+        .case-facts span { font-size: 0.88rem; color: var(--ink-soft); }
+        .stack { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; }
+        .stack li { list-style: none; font-size: 0.78rem; font-weight: 500; border: 1px solid var(--line); border-radius: 999px; padding: 4px 11px; color: var(--ink-soft); }
+
+        /* Contact */
+        .contact-grid { margin-top: 44px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+        form label { display: block; font-size: 0.88rem; font-weight: 600; margin: 18px 0 6px; }
+        form input, form textarea { width: 100%; padding: 11px 12px; border: 1px solid var(--line); border-radius: 8px; font: inherit; background: var(--paper); }
+        form input:focus, form textarea:focus { outline: 2px solid var(--cobalt); border-color: var(--cobalt); }
+        form button { margin-top: 22px; }
+        .contact-direct dt { font-size: 0.82rem; font-weight: 600; color: var(--ink-soft); margin-top: 20px; }
+        .contact-direct dd { font-size: 1.02rem; }
+        .book-box { margin-top: 34px; background: var(--cobalt); color: #fff; border-radius: 12px; padding: 26px; }
+        .book-box h3 { font-family: "Fraunces", serif; font-size: 1.3rem; margin-bottom: 8px; }
+        .book-box p { color: var(--on-cobalt-dim); font-size: 0.94rem; margin-bottom: 18px; }
+
+
+        /* Model band */
+        .model-band { background: var(--ink); color: #fff; }
+        .model-band h2 { color: #fff; }
+        .model-band .lede2 { margin-top: 16px; max-width: 58ch; color: #aab0c0; font-size: 1.05rem; }
+        .model-band .lede2 strong { color: #fff; }
+        .agent-grid { margin-top: 44px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .agent { border-top: 3px solid var(--cobalt); padding-top: 18px; }
+        .agent strong { display: block; font-family: "Fraunces", serif; font-size: 1.55rem; font-weight: 600; color: #fff; }
+        .agent span { display: block; margin-top: 8px; color: #aab0c0; font-size: 0.93rem; }
+        @media (max-width: 880px) { .agent-grid { grid-template-columns: 1fr; } }
+        /* Footer */
+        footer { background: var(--ink); color: #aab0c0; padding: 56px 0 40px; font-size: 0.9rem; }
+        footer .cols { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+        footer h4 { color: #fff; font-size: 0.92rem; margin-bottom: 14px; }
+        footer a { color: #aab0c0; display: block; padding: 3px 0; }
+        footer a:hover { color: #fff; }
+        footer .brandline { font-family: "Fraunces", serif; color: #fff; font-size: 1.3rem; }
+        footer .legal { margin-top: 40px; padding-top: 20px; border-top: 1px solid #2a2f3e; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 0.82rem; }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 880px) {
+            .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; padding: 16px 24px 22px; gap: 14px; }
+            .nav-links.open { display: flex; }
+            .nav-toggle { display: block; }
+            .feature-grid, .steps, .solutions-grid { grid-template-columns: 1fr 1fr; }
+            .case, .contact-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 560px) {
+            .feature-grid, .steps, .solutions-grid { grid-template-columns: 1fr; }
+            section { padding: 64px 0; }
+            .hero { padding-top: 56px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            * { transition: none !important; }
+        }
+    </style>
+
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-59MQCMPB');</script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-59MQCMPB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="topbar">
+        <div class="wrap">
+            <a class="brand" href="/">Saspire <small>Service to aspire</small></a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" onclick="var n=document.getElementById('nav-links');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'));">Menu</button>
+            <nav class="nav-links" id="nav-links" aria-label="Main">
+                <a href="#webshops">Webshops</a>
+                <a href="#solutions">Oplossingen</a>
+                <a href="#cases">Cases</a>
+                <a href="/pricing.html">Prijzen</a>
+                <a href="/blog/">Blog</a>
+                <a href="#contact">Contact</a>
+                <details class="lang">
+                    <summary>NL</summary>
+                    <div class="lang-menu">
+                        <a href="/" hreflang="en">English</a>
+                        <a href="/fr/" hreflang="fr">Français</a>
+                        <a href="/de/" hreflang="de">Deutsch</a>
+                        <a href="/es/" hreflang="es">Español</a>
+                        <a href="/pt/" hreflang="pt">Português</a>
                     </div>
-                </div>
-                <a href="#schedule" class="hidden lg:inline-block bg-blue-900 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-blue-800 transition">Gesprek Plannen</a>
-                <button id="mobile-menu-button" class="lg:hidden p-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
-                </button>
+                </details>
+                <a class="btn btn-cobalt" href="https://calendly.com/saspire-nicolas" target="_blank" rel="noopener">Boek een gratis gesprek</a>
             </nav>
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden lg:hidden container mx-auto px-6 mt-4">
-                <ul class="flex flex-col space-y-4">
-                    <li><a href="#about-us" class="block text-gray-600 hover:text-gray-900 transition">Over Ons</a></li>
-                    <li><a href="#webshops" class="block text-gray-600 hover:text-gray-900 transition">Webshops</a></li>
-                    <li><a href="#services" class="block text-gray-600 hover:text-gray-900 transition">Diensten</a></li>
-                    <li><a href="#portfolio" class="block text-gray-600 hover:text-gray-900 transition">Portfolio</a></li>
-                    <li><a href="/pricing.html" class="block text-gray-600 hover:text-gray-900 transition">Prijzen</a></li>
-                    <li><a href="/blog/" class="block text-gray-600 hover:text-gray-900 transition">Blog</a></li>
-                    <li><a href="#contact" class="block text-gray-600 hover:text-gray-900 transition">Contact</a></li>
-                    <li><a href="#schedule" class="block bg-blue-900 text-white font-semibold px-6 py-3 rounded-lg text-center hover:bg-blue-800 transition">Gesprek Plannen</a></li>
-                    <!-- Mobile Language Switcher -->
-                    <li class="pt-2 border-t border-gray-200">
-                        <div class="grid grid-cols-3 gap-2">
-                            <a href="/" class="flex items-center justify-center gap-1 text-sm py-2 rounded-lg bg-gray-100 text-gray-600 hover:bg-blue-50">🇬🇧 EN</a>
-                            <a href="/fr/" class="flex items-center justify-center gap-1 text-sm py-2 rounded-lg bg-gray-100 text-gray-600 hover:bg-blue-50">🇫🇷 FR</a>
-                            <a href="/nl/" class="flex items-center justify-center gap-1 text-sm py-2 rounded-lg bg-blue-900 text-white font-semibold">🇳🇱 NL</a>
-                            <a href="/de/" class="flex items-center justify-center gap-1 text-sm py-2 rounded-lg bg-gray-100 text-gray-600 hover:bg-blue-50">🇩🇪 DE</a>
-                            <a href="/es/" class="flex items-center justify-center gap-1 text-sm py-2 rounded-lg bg-gray-100 text-gray-600 hover:bg-blue-50">🇪🇸 ES</a>
-                            <a href="/pt/" class="flex items-center justify-center gap-1 text-sm py-2 rounded-lg bg-gray-100 text-gray-600 hover:bg-blue-50">🇵🇹 PT</a>
-                        </div>
-                    </li>
-                </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="hero">
+            <div class="wrap">
+                <h1>De nieuwe website van uw winkel is al gebouwd.</h1>
+                <p class="lede"><strong>Wij bouwen gratis werkende conceptsites voor zelfstandige winkels rond Antwerpen, nog voor u beslist.</strong> Bekijk de negen hieronder, of vraag die van u aan. Voor grotere bedrijven bouwen we webshops, klantenportalen en AI&#8209;gestuurde catalogusdigitalisering.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-white" href="https://calendly.com/saspire-nicolas" target="_blank" rel="noopener">Boek een gratis gesprek</a>
+                    <a class="btn btn-ghost-light" href="#how">Zo werkt het</a>
+                </div>
+                <p class="hero-meta">Saspire BV &middot; Antwerpen &middot; 60+ projecten opgeleverd</p>
             </div>
-        </header>
+        </section>
 
-        <main>
-            <!-- Hero Section -->
-            <section id="hero" class="relative py-12 md:py-12 overflow-hidden">
-                <div class="hero-background"></div>
-                <div class="container mx-auto px-6">
-                    <div class="grid md:grid-cols-2 gap-12 items-center">
-                        <div class="text-center md:text-left slide-in-left">
-                            <span class="inline-block bg-blue-100 text-blue-900 text-sm font-semibold px-4 py-1 rounded-full mb-4">Digitalisering Consultancy</span>
-                            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-800 leading-tight mb-6">Transformeer Uw Bedrijf Tot Een Digitale Krachtpatser</h1>
-                            <p class="text-lg md:text-xl text-gray-600 mb-10">
-                                <span class="hidden sm:inline">
-                                    Wij digitaliseren uw activiteiten—van papieren catalogi naar online webshops, van verspreide documenten naar gestroomlijnde klantenportalen.
-                                </span>
-                                <span class="sm:hidden">Wij digitaliseren uw activiteiten tot concurrentievoordelen.</span>
-                                <strong>60+ projecten opgeleverd.</strong>
-                                <span class="hidden sm:inline">Uw digitale transformatie begint hier.</span>
-                            </p>
-                            <p class="text-base text-gray-700 mb-6 -mt-4">
-                                🛍️ <strong>Lokale zaak?</strong> Wij bouwen je webshop — en maken eerst een
-                                <a href="#webshops" class="text-blue-900 font-semibold underline hover:text-blue-700">gratis concept</a>.
-                            </p>
-                            <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4 flex-wrap">
-                                <a href="#schedule" class="bg-blue-900 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-800 transform hover:scale-105 transition text-center">
-                                    Consultatie Boeken
-                                </a>
-                                <a href="#services" class="bg-white text-blue-900 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-100 transform hover:scale-105 transition text-center">
-                                    Bekijk Onze Diensten
-                                </a>
-                                <a
-                                    href="#contact"
-                                    class="bg-transparent text-blue-900 font-bold py-3 px-8 rounded-lg border-2 border-blue-900 hover:bg-blue-900 hover:text-white transform hover:scale-105 transition text-center"
-                                >
-                                    Neem Contact Op
-                                </a>
-                            </div>
-                        </div>
-                        <div class="relative hidden md:block slide-in-right">
-                            <div class="bg-white/50 p-6 rounded-3xl shadow-2xl backdrop-blur-md">
-                                <picture>
-                                    <source srcset="/images/businessgrowth1.webp" type="image/webp" />
-                                    <img
-                                        src="/images/businessgrowth1.png"
-                                        alt="Digital transformation illustration showing business growth"
-                                        class="relative rounded-3xl shadow-2xl backdrop-blur-md"
-                                        loading="lazy"
-                                        width="600"
-                                        height="400"
-                                    />
-                                </picture>
-                            </div>
-                            <div class="absolute -top-10 -left-10 text-5xl animate-float-1">🛒</div>
-                            <div class="absolute -bottom-10 -right-10 text-5xl animate-float-2">📄</div>
-                            <div class="absolute top-1/2 -right-16 text-5xl animate-float-3">💻</div>
-                            <div class="absolute top-0 right-10 text-4xl animate-float-2">📈</div>
-                            <div class="absolute bottom-20 -left-8 text-4xl animate-float-3">⚙️</div>
-                            <div class="absolute top-1/3 left-0 text-3xl animate-float-1">🔒</div>
-                            <div class="absolute bottom-0 right-1/4 text-4xl animate-float-2">🌐</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="absolute bottom-10 left-1/2 -translate-x-1/2">
-                    <div class="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center pt-2">
-                        <div class="w-1 h-2 bg-gray-400 rounded-full scroll-indicator-arrow"></div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- LOKALE HANDELAARS / WEBSHOPS Section -->
-            <section id="webshops" class="py-14 bg-linear-to-br from-slate-50 to-blue-50 scroll-mt-24">
-                <div class="container mx-auto px-6">
-                    <!-- Intro -->
-                    <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up-on-scroll">
-                        <span class="inline-block bg-blue-100 text-blue-900 text-sm font-semibold px-4 py-1 rounded-full mb-4">Voor lokale handelaars in en rond Antwerpen</span>
-                        <h2 class="text-4xl font-bold text-gray-800">Een moderne website &amp; webshop voor jouw zaak</h2>
-                        <p class="text-lg text-gray-600 mt-4">
-                            Slager, bloemist, boetiek, wijnhandel, chocolatier, opticien — jouw zaak verdient het om online gevonden te worden én te verkopen buiten de toonbank.
-                            We maken eerst een <strong class="text-blue-900">gratis, vrijblijvend concept</strong> voor jouw zaak, zodat je precies ziet hoe het eruitziet vóór je iets beslist.
-                        </p>
-                        <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8 flex-wrap">
-                            <a href="#contact" class="bg-blue-900 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-800 transform hover:scale-105 transition text-center">
-                                Vraag je gratis concept
-                            </a>
-                            <a href="https://cloesick.github.io/antwerp-poc-portfolio/" target="_blank" rel="noopener noreferrer" class="bg-white text-blue-900 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-100 transform hover:scale-105 transition text-center">
-                                Bekijk 50+ live concepten →
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Wat je krijgt -->
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-                        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition fade-in-up-on-scroll">
-                            <div class="text-3xl mb-3">🎨</div>
-                            <h3 class="font-bold text-lg text-gray-800 mb-1">Een frisse, moderne look</h3>
-                            <p class="text-sm text-gray-600">Een strak, mobiel-eerst herontwerp dat eindelijk past bij de kwaliteit van wat je in de winkel verkoopt.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition fade-in-up-on-scroll">
-                            <div class="text-3xl mb-3">🛒</div>
-                            <h3 class="font-bold text-lg text-gray-800 mb-1">Verkoop online</h3>
-                            <p class="text-sm text-gray-600">Een echte webshop met producten, voorraad en bestellingen — of een eenvoudig "vooraf bestellen"-formulier als een volledige shop nu te veel is.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition fade-in-up-on-scroll">
-                            <div class="text-3xl mb-3">📦</div>
-                            <h3 class="font-bold text-lg text-gray-800 mb-1">Click &amp; collect / reserveren</h3>
-                            <p class="text-sm text-gray-600">Laat klanten een stuk reserveren of bestellen voor afhaling — je persoonlijke service in de winkel blijft centraal staan.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition fade-in-up-on-scroll">
-                            <div class="text-3xl mb-3">📍</div>
-                            <h3 class="font-bold text-lg text-gray-800 mb-1">Gevonden op Google &amp; Maps</h3>
-                            <p class="text-sm text-gray-600">Lokale SEO, openingsuren en Google Bedrijfsprofiel zodat klanten in de buurt je écht vinden.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition fade-in-up-on-scroll">
-                            <div class="text-3xl mb-3">💳</div>
-                            <h3 class="font-bold text-lg text-gray-800 mb-1">Bancontact &amp; Mollie</h3>
-                            <p class="text-sm text-gray-600">Belgische betaalmethodes die je klanten al vertrouwen — Bancontact, kaarten en meer via Mollie of Stripe.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition fade-in-up-on-scroll">
-                            <div class="text-3xl mb-3">🔒</div>
-                            <h3 class="font-bold text-lg text-gray-800 mb-1">GDPR-correct &amp; veilig</h3>
-                            <p class="text-sm text-gray-600">Geldige HTTPS, een nette cookiebanner en consent goed geregeld — geen schrikwekkende browserwaarschuwingen.</p>
-                        </div>
-                    </div>
-
-                    <!-- Bewijsgalerij -->
-                    <div class="text-center mb-10 fade-in-up-on-scroll">
-                        <h3 class="text-3xl font-bold text-gray-800">We bouwden al een gratis concept voor 50+ zaken</h3>
-                        <p class="text-gray-600 mt-3 max-w-2xl mx-auto">Echte, live conceptsites voor onafhankelijke handelaars rond Antwerpen, Mechelen en Lier. Klik op één om de live demo te openen.</p>
-                    </div>
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                        <a href="https://cloesick.github.io/antwerp-poc-portfolio/helios/" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition fade-in-up-on-scroll">
-                            <div class="overflow-hidden"><img src="/images/poc/helios.jpeg" alt="Conceptwebshop voor Helios Berchem, koffiebranderij" loading="lazy" class="w-full h-48 object-cover object-top group-hover:scale-105 transition duration-300" /></div>
-                            <div class="p-5"><div class="flex items-center justify-between"><h4 class="font-bold text-gray-800">Helios Berchem</h4><span class="text-xs text-blue-900 font-semibold opacity-0 group-hover:opacity-100 transition">Bekijk live →</span></div><p class="text-sm text-gray-500 mt-1">Koffiebranderij &amp; delicatessen, sinds 1925</p></div>
-                        </a>
-                        <a href="https://cloesick.github.io/antwerp-poc-portfolio/la-praline/" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition fade-in-up-on-scroll">
-                            <div class="overflow-hidden"><img src="/images/poc/la-praline.jpeg" alt="Conceptwebshop voor La Praline, chocolatier" loading="lazy" class="w-full h-48 object-cover object-top group-hover:scale-105 transition duration-300" /></div>
-                            <div class="p-5"><div class="flex items-center justify-between"><h4 class="font-bold text-gray-800">La Praline</h4><span class="text-xs text-blue-900 font-semibold opacity-0 group-hover:opacity-100 transition">Bekijk live →</span></div><p class="text-sm text-gray-500 mt-1">Chocolatier &amp; cadeaudozen</p></div>
-                        </a>
-                        <a href="https://cloesick.github.io/antwerp-poc-portfolio/floriplant/" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition fade-in-up-on-scroll">
-                            <div class="overflow-hidden"><img src="/images/poc/floriplant.jpeg" alt="Conceptwebshop voor Floriplant, tuincentrum" loading="lazy" class="w-full h-48 object-cover object-top group-hover:scale-105 transition duration-300" /></div>
-                            <div class="p-5"><div class="flex items-center justify-between"><h4 class="font-bold text-gray-800">Floriplant</h4><span class="text-xs text-blue-900 font-semibold opacity-0 group-hover:opacity-100 transition">Bekijk live →</span></div><p class="text-sm text-gray-500 mt-1">Tuincentrum &amp; plantenwinkel</p></div>
-                        </a>
-                        <a href="https://cloesick.github.io/antwerp-poc-portfolio/harlekijn/" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition fade-in-up-on-scroll">
-                            <div class="overflow-hidden"><img src="/images/poc/harlekijn.jpeg" alt="Conceptwebshop voor Harlekijn, designkleding" loading="lazy" class="w-full h-48 object-cover object-top group-hover:scale-105 transition duration-300" /></div>
-                            <div class="p-5"><div class="flex items-center justify-between"><h4 class="font-bold text-gray-800">Harlekijn</h4><span class="text-xs text-blue-900 font-semibold opacity-0 group-hover:opacity-100 transition">Bekijk live →</span></div><p class="text-sm text-gray-500 mt-1">Designkleding boetiek</p></div>
-                        </a>
-                        <a href="https://cloesick.github.io/antwerp-poc-portfolio/larose/" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition fade-in-up-on-scroll">
-                            <div class="overflow-hidden"><img src="/images/poc/larose.jpeg" alt="Conceptwebshop voor Larose, damesmode" loading="lazy" class="w-full h-48 object-cover object-top group-hover:scale-105 transition duration-300" /></div>
-                            <div class="p-5"><div class="flex items-center justify-between"><h4 class="font-bold text-gray-800">Larose</h4><span class="text-xs text-blue-900 font-semibold opacity-0 group-hover:opacity-100 transition">Bekijk live →</span></div><p class="text-sm text-gray-500 mt-1">Damesmode, Brasschaat</p></div>
-                        </a>
-                        <a href="https://cloesick.github.io/antwerp-poc-portfolio/kikker-en-ko/" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition fade-in-up-on-scroll">
-                            <div class="overflow-hidden"><img src="/images/poc/kikker-en-ko.jpeg" alt="Conceptwebshop voor Kikker &amp; Ko, speelgoedwinkel" loading="lazy" class="w-full h-48 object-cover object-top group-hover:scale-105 transition duration-300" /></div>
-                            <div class="p-5"><div class="flex items-center justify-between"><h4 class="font-bold text-gray-800">Kikker &amp; Ko</h4><span class="text-xs text-blue-900 font-semibold opacity-0 group-hover:opacity-100 transition">Bekijk live →</span></div><p class="text-sm text-gray-500 mt-1">Speelgoedwinkel</p></div>
-                        </a>
-                        <a href="https://cloesick.github.io/antwerp-poc-portfolio/amaral/" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition fade-in-up-on-scroll">
-                            <div class="overflow-hidden"><img src="/images/poc/amaral.jpeg" alt="Conceptwebshop voor Amaral, slagerij" loading="lazy" class="w-full h-48 object-cover object-top group-hover:scale-105 transition duration-300" /></div>
-                            <div class="p-5"><div class="flex items-center justify-between"><h4 class="font-bold text-gray-800">Amaral</h4><span class="text-xs text-blue-900 font-semibold opacity-0 group-hover:opacity-100 transition">Bekijk live →</span></div><p class="text-sm text-gray-500 mt-1">Slagerij &amp; Portugese specialiteiten</p></div>
-                        </a>
-                        <a href="https://cloesick.github.io/antwerp-poc-portfolio/bourgogne-wijnen/" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition fade-in-up-on-scroll">
-                            <div class="overflow-hidden"><img src="/images/poc/bourgogne-wijnen.jpeg" alt="Conceptwebshop voor Bourgogne Wijnen, wijnhandel" loading="lazy" class="w-full h-48 object-cover object-top group-hover:scale-105 transition duration-300" /></div>
-                            <div class="p-5"><div class="flex items-center justify-between"><h4 class="font-bold text-gray-800">Bourgogne Wijnen</h4><span class="text-xs text-blue-900 font-semibold opacity-0 group-hover:opacity-100 transition">Bekijk live →</span></div><p class="text-sm text-gray-500 mt-1">Wijnhandel, Edegem</p></div>
-                        </a>
-                        <a href="https://cloesick.github.io/antwerp-poc-portfolio/wit-zwart-deli/" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition fade-in-up-on-scroll">
-                            <div class="overflow-hidden"><img src="/images/poc/wit-zwart-deli.jpeg" alt="Conceptwebshop voor Wit Zwart Deli, Italiaanse deli" loading="lazy" class="w-full h-48 object-cover object-top group-hover:scale-105 transition duration-300" /></div>
-                            <div class="p-5"><div class="flex items-center justify-between"><h4 class="font-bold text-gray-800">Wit Zwart Deli</h4><span class="text-xs text-blue-900 font-semibold opacity-0 group-hover:opacity-100 transition">Bekijk live →</span></div><p class="text-sm text-gray-500 mt-1">Italiaanse deli &amp; traiteur</p></div>
-                        </a>
-                    </div>
-
-                    <!-- Hoe het werkt -->
-                    <div class="bg-white rounded-3xl shadow-lg p-10 md:p-12 fade-in-up-on-scroll">
-                        <div class="text-center mb-10">
-                            <h3 class="text-3xl font-bold text-gray-800">Hoe het werkt</h3>
-                            <p class="text-gray-600 mt-3">Geen kosten vooraf, geen risico — je betaalt pas als je het goed vindt.</p>
-                        </div>
-                        <div class="grid md:grid-cols-3 gap-8">
-                            <div class="text-center">
-                                <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-blue-900 text-white font-bold text-lg flex items-center justify-center">1</div>
-                                <h4 class="font-bold text-lg text-gray-800 mb-2">We bouwen een gratis concept</h4>
-                                <p class="text-sm text-gray-600">Met je echte producten en huisstijl maken we een live voorbeeld van je nieuwe site — volledig gratis.</p>
-                            </div>
-                            <div class="text-center">
-                                <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-blue-900 text-white font-bold text-lg flex items-center justify-center">2</div>
-                                <h4 class="font-bold text-lg text-gray-800 mb-2">Jij bekijkt het live</h4>
-                                <p class="text-sm text-gray-600">Je ziet het op je telefoon, deelt het met familie of personeel, en zegt wat er moet veranderen. Nog steeds vrijblijvend.</p>
-                            </div>
-                            <div class="text-center">
-                                <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-blue-900 text-white font-bold text-lg flex items-center justify-center">3</div>
-                                <h4 class="font-bold text-lg text-gray-800 mb-2">We gaan live in weken</h4>
-                                <p class="text-sm text-gray-600">Keur je het goed, dan koppelen we je domein, betalingen en webshop. Online in weken, niet maanden.</p>
-                            </div>
-                        </div>
-                        <div class="text-center mt-10">
-                            <a href="#contact" class="inline-block bg-blue-900 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-blue-800 transform hover:scale-105 transition">Vraag mijn gratis concept aan</a>
-                            <p class="text-xs text-gray-400 mt-3">Bekijk de <a href="/pricing.html" class="underline hover:text-blue-900">prijzen</a> · Starter-sites vanaf een kleine vaste prijs · Volledige webshops op maat geoffreerd.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- About Us Section -->
-            <section id="about-us" class="py-14 bg-white">
-                <div class="container mx-auto px-6">
-                    <div class="text-center mb-16 fade-in-up-on-scroll">
-                        <h2 class="text-4xl font-bold text-gray-800">Waarom Kiezen voor Saspire?</h2>
-                        <p class="text-lg text-gray-600 mt-4">Wij zijn digitaliseringsspecialisten die analoge chaos omzetten in digitale efficiëntie.</p>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-16 items-center">
-                        <div class="fade-in-up-on-scroll">
-                            <h3 class="text-3xl font-bold text-gray-800 mb-4">Uw Partner voor Digitale Transformatie</h3>
-                            <p class="text-gray-600 mb-4">
-                                Beheert u nog steeds voorraden in spreadsheets? Stuurt u PDF-catalogi per email? Verliest u klanten omdat u niet online bent? Wij lossen dat op.
-                            </p>
-                            <p class="text-gray-600 mb-4">
-                                Saspire is gespecialiseerd in het begeleiden van traditionele bedrijven naar het digitale tijdperk. We bouwen niet alleen websites—we creëren complete digitale
-                                ecosystemen die uw workflows automatiseren, uw bereik vergroten en uw klanten verrassen.
-                            </p>
-                            <p class="text-gray-600 mb-8">Gevestigd in Brussel, Antwerpen en Roeselare, bedienen we bedrijven in België en Europa die klaar zijn voor digitale transformatie.</p>
-                            <a href="#services" class="bg-blue-900 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-800 transition">Ontdek Onze Diensten</a>
-                        </div>
-                        <div class="grid grid-cols-2 gap-6 fade-in-up-on-scroll">
-                            <div class="bg-blue-50 p-6 rounded-xl text-center hover:shadow-lg transition">
-                                <div class="text-4xl mb-3">🛒</div>
-                                <h4 class="font-bold text-lg">Webshop Experts</h4>
-                                <p class="text-sm text-gray-600">E-commerce oplossingen die verkopen.</p>
-                            </div>
-                            <div class="bg-blue-50 p-6 rounded-xl text-center hover:shadow-lg transition">
-                                <div class="text-4xl mb-3">📄</div>
-                                <h4 class="font-bold text-lg">PDF Digitalisering</h4>
-                                <p class="text-sm text-gray-600">Catalogi die online tot leven komen.</p>
-                            </div>
-                            <div class="bg-blue-50 p-6 rounded-xl text-center hover:shadow-lg transition">
-                                <div class="text-4xl mb-3">🏠</div>
-                                <h4 class="font-bold text-lg">Klantenportalen</h4>
-                                <p class="text-sm text-gray-600">Selfservice platforms voor klanten.</p>
-                            </div>
-                            <div class="bg-blue-50 p-6 rounded-xl text-center hover:shadow-lg transition">
-                                <div class="text-4xl mb-3">⚡</div>
-                                <h4 class="font-bold text-lg">Snelle Levering</h4>
-                                <p class="text-sm text-gray-600">Lancering in weken, niet maanden.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Services Section -->
-            <section id="services" class="py-14">
-                <div class="container mx-auto px-6">
-                    <div class="text-center mb-16 fade-in-up-on-scroll">
-                        <h2 class="text-4xl font-bold text-gray-800">Onze Diensten</h2>
-                        <p class="text-lg text-gray-600 mt-4">Complete digitaliseringsoplossingen op maat van uw bedrijfsbehoeften.</p>
-                    </div>
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <!-- Webshop Development -->
-                        <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col fade-in-up-on-scroll hover:shadow-xl transition">
-                            <div class="text-5xl mb-4 text-center">🛒</div>
-                            <h3 class="text-2xl font-bold text-center text-gray-800">Webshop Ontwikkeling</h3>
-                            <p class="text-gray-500 text-center mt-2 mb-6">Verkoop online met een professioneel e-commerce platform</p>
-                            <ul class="space-y-4 grow">
-                                <li class="flex items-center">
-                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    Aangepast webshop design
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    Productcatalogus beheer
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    Veilige betaalintegratie
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    Voorraad tracking
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    Mobiel geoptimaliseerde checkout
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    Verzending & belasting configuratie
-                                </li>
-                            </ul>
-                            <div class="mt-8 pt-6 border-t border-gray-100">
-                                <p class="text-sm text-gray-500 text-center mb-4">Vanaf</p>
-                                <p class="text-3xl font-bold text-center text-gray-900">€2,499</p>
-                            </div>
-                            <a href="#contact" class="mt-6 w-full text-center bg-blue-900 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-800 transition">Offerte Aanvragen</a>
-                        </div>
-                        <!-- Catalog Digitalization -->
-                        <div class="bg-blue-900 text-white p-8 rounded-2xl shadow-2xl flex flex-col transform md:scale-105 fade-in-up-on-scroll" style="animation-delay: 0.1s">
-                            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-500 text-blue-900 text-xs font-bold px-3 py-1 rounded-full">MEEST POPULAIR</div>
-                            <div class="text-5xl mb-4 text-center">📄</div>
-                            <h3 class="text-2xl font-bold text-center">Catalogus Digitalisering</h3>
-                            <p class="text-blue-200 text-center mt-2 mb-6">Transformeer PDF's naar interactieve digitale ervaringen</p>
-                            <ul class="space-y-4 grow">
-                                <li class="flex items-center">
-                                    <svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    PDF naar web conversie
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    Doorzoekbare productdatabase
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    Interactieve flipbook catalogi
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    Eenvoudige content updates
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    SEO-geoptimaliseerde pagina's
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-5 h-5 text-blue-300 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    Analytics & tracking
-                                </li>
-                            </ul>
-                            <div class="mt-8 pt-6 border-t border-blue-800">
-                                <p class="text-sm text-blue-200 text-center mb-4">Vanaf</p>
-                                <p class="text-3xl font-bold text-center">€1,499</p>
-                            </div>
-                            <a href="#contact" class="mt-6 w-full text-center bg-white text-blue-900 font-bold py-3 px-6 rounded-lg hover:bg-blue-100 transition">Offerte Aanvragen</a>
-                        </div>
-                        <!-- Customer Portal -->
-                        <div class="bg-white p-8 rounded-2xl shadow-lg flex flex-col fade-in-up-on-scroll hover:shadow-xl transition" style="animation-delay: 0.2s">
-                            <div class="text-5xl mb-4 text-center">🏠</div>
-                            <h3 class="text-2xl font-bold text-center text-gray-800">Klantenportaal</h3>
-                            <p class="text-gray-500 text-center mt-2 mb-6">Selfservice platforms voor uw klanten</p>
-                            <ul class="space-y-4 grow">
-                                <li class="flex items-center">
-                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    Veilig inlogsysteem
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    Bestelgeschiedenis & tracking
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    Documentbeheer
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    Factuur & betaalportaal
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    Support ticket systeem
-                                </li>
-                                <li class="flex items-center">
-                                    <svg class="w-5 h-5 text-green-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    Aangepaste huisstijl
-                                </li>
-                            </ul>
-                            <div class="mt-8 pt-6 border-t border-gray-100">
-                                <p class="text-sm text-gray-500 text-center mb-4">Vanaf</p>
-                                <p class="text-3xl font-bold text-center text-gray-900">€3,999</p>
-                            </div>
-                            <a href="#contact" class="mt-6 w-full text-center bg-blue-900 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-800 transition">Offerte Aanvragen</a>
-                        </div>
-                    </div>
-                    <!-- Additional Services Banner -->
-                    <div class="mt-16 bg-linear-to-r from-blue-50 to-sky-50 p-8 rounded-2xl fade-in-up-on-scroll">
-                        <div class="text-center">
-                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Iets Op Maat Nodig?</h3>
-                            <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
-                                We bieden ook website ontwikkeling, bedrijfsproces automatisering, CRM integratie en doorlopende onderhoudspakketten. Elk bedrijf is uniek—laten we uw specifieke
-                                behoeften bespreken.
-                            </p>
-                            <a href="#schedule" class="inline-block bg-blue-900 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-800 transition">Plan een Gratis Consultatie</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Portfolio Section -->
-            <section id="portfolio" class="py-14 bg-white">
-                <div class="container mx-auto px-6">
-                    <div class="text-center mb-16 fade-in-up-on-scroll">
-                        <h2 class="text-4xl font-bold text-gray-800">Ons Portfolio</h2>
-                        <p class="text-lg text-gray-600 mt-4">Een selectie van projecten die we voor onze klanten hebben gerealiseerd.</p>
-                    </div>
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <!-- Project 1 -->
-                        <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll">
-                            <div class="aspect-video bg-linear-to-br from-blue-500 to-blue-700 flex items-center justify-center">
-                                <span class="text-6xl">🏗️</span>
-                            </div>
-                            <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <h3 class="text-xl font-bold text-white mb-2">Multi-Company E-commerce Platform</h3>
-                                <p class="text-blue-200 text-sm text-center mb-4">Turborepo monorepo voor 5 B2B webshops met gedeelde UI, authenticatie en 30+ tabel database.</p>
-                                <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">Enterprise E-commerce</span>
-                            </div>
-                            <div class="p-4 bg-white">
-                                <h3 class="font-bold text-gray-800">Multi-Company E-commerce Platform</h3>
-                                <p class="text-sm text-gray-500">DEMA Group — Industriële Distributie</p>
-                            </div>
-                        </div>
-                        <!-- Project 2 -->
-                        <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.1s">
-                            <div class="aspect-video bg-linear-to-br from-emerald-500 to-emerald-700 flex items-center justify-center">
-                                <span class="text-6xl">📄</span>
-                            </div>
-                            <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <h3 class="text-xl font-bold text-white mb-2">Digitale Productcatalogus</h3>
-                                <p class="text-blue-200 text-sm text-center mb-4">500+ pagina PDF-catalogus omgezet naar doorzoekbare online database met filtering en snelbestelling.</p>
-                                <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">Catalogus Digitalisering</span>
-                            </div>
-                            <div class="p-4 bg-white">
-                                <h3 class="font-bold text-gray-800">Digitale Productcatalogus</h3>
-                                <p class="text-sm text-gray-500">Productiebedrijf</p>
-                            </div>
-                        </div>
-                        <!-- Project 3 -->
-                        <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.2s">
-                            <div class="aspect-video bg-linear-to-br from-purple-500 to-purple-700 flex items-center justify-center">
-                                <span class="text-6xl">🏠</span>
-                            </div>
-                            <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <h3 class="text-xl font-bold text-white mb-2">Klant Self-Service Portaal</h3>
-                                <p class="text-blue-200 text-sm text-center mb-4">Aangepast portaal met ordertracking, factuurbeheer en support ticketsysteem.</p>
-                                <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">Klantenportaal</span>
-                            </div>
-                            <div class="p-4 bg-white">
-                                <h3 class="font-bold text-gray-800">Klant Self-Service Portaal</h3>
-                                <p class="text-sm text-gray-500">Dienstverlenend Bedrijf</p>
-                            </div>
-                        </div>
-                        <!-- Project 4 -->
-                        <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.3s">
-                            <div class="aspect-video bg-linear-to-br from-orange-500 to-orange-700 flex items-center justify-center">
-                                <span class="text-6xl">🛍️</span>
-                            </div>
-                            <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <h3 class="text-xl font-bold text-white mb-2">Mode Boutique Webshop</h3>
-                                <p class="text-blue-200 text-sm text-center mb-4">Stijlvolle online winkel met maatgidsen, verlanglijst en geïntegreerde betaaloplossingen.</p>
-                                <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">E-commerce</span>
-                            </div>
-                            <div class="p-4 bg-white">
-                                <h3 class="font-bold text-gray-800">Mode Boutique Webshop</h3>
-                                <p class="text-sm text-gray-500">Retail Mode</p>
-                            </div>
-                        </div>
-                        <!-- Project 5 -->
-                        <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.4s">
-                            <div class="aspect-video bg-linear-to-br from-cyan-500 to-cyan-700 flex items-center justify-center">
-                                <span class="text-6xl">📊</span>
-                            </div>
-                            <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <h3 class="text-xl font-bold text-white mb-2">Voorraadbeheersysteem</h3>
-                                <p class="text-blue-200 text-sm text-center mb-4">Real-time voorraadtracking met geautomatiseerde herbestelalerts en leveranciersintegratie.</p>
-                                <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">Bedrijfsautomatisering</span>
-                            </div>
-                            <div class="p-4 bg-white">
-                                <h3 class="font-bold text-gray-800">Voorraadbeheersysteem</h3>
-                                <p class="text-sm text-gray-500">Groothandel Distributeur</p>
-                            </div>
-                        </div>
-                        <!-- Project 6 -->
-                        <div class="group relative overflow-hidden rounded-2xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.5s">
-                            <div class="aspect-video bg-linear-to-br from-pink-500 to-pink-700 flex items-center justify-center">
-                                <span class="text-6xl">🌐</span>
-                            </div>
-                            <div class="absolute inset-0 bg-blue-900/90 flex flex-col justify-center items-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <h3 class="text-xl font-bold text-white mb-2">Meertalige Bedrijfswebsite</h3>
-                                <p class="text-blue-200 text-sm text-center mb-4">Professionele website met CMS, blog en leadgeneratieformulieren in 3 talen.</p>
-                                <span class="text-xs text-blue-300 bg-blue-800 px-3 py-1 rounded-full">Website Ontwikkeling</span>
-                            </div>
-                            <div class="p-4 bg-white">
-                                <h3 class="font-bold text-gray-800">Meertalige Bedrijfswebsite</h3>
-                                <p class="text-sm text-gray-500">Adviesbureau</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-center mt-12 fade-in-up-on-scroll">
-                        <p class="text-gray-600 mb-6">Wilt u meer voorbeelden zien of een soortgelijk project bespreken?</p>
-                        <a href="#schedule" class="inline-block bg-blue-900 text-white font-semibold py-3 px-8 rounded-lg hover:bg-blue-800 transition">Laten We Uw Project Bespreken</a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Success Stories Section -->
-            <section id="success-stories" class="py-14 bg-gray-50">
-                <div class="container mx-auto px-6">
-                    <div class="text-center mb-16 fade-in-up-on-scroll">
-                        <h2 class="text-4xl font-bold text-gray-800">Resultaten Digitale Transformatie</h2>
-                        <p class="text-lg text-gray-600 mt-4">Echte bedrijven, echte resultaten. Ontdek wat digitalisering kan doen.</p>
-                    </div>
-                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden md:grid md:grid-cols-3 fade-in-up-on-scroll">
-                        <div class="p-8 md:p-12 bg-blue-900 text-white flex flex-col justify-center items-center text-center">
-                            <div class="text-7xl font-extrabold">5</div>
-                            <div class="text-xl font-semibold mt-2">Bedrijven, Eén Platform</div>
-                        </div>
-                        <div class="p-8 md:p-12 md:col-span-2">
-                            <h3 class="text-2xl font-bold text-gray-800">Multi-Company B2B E-commerce Platform</h3>
-                            <div class="flex items-center my-6">
-                                <div class="w-16 h-16 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold text-2xl mr-4">DG</div>
-                                <div>
-                                    <h4 class="font-bold text-lg">DEMA Group</h4>
-                                    <p class="text-gray-500">Industriële apparatuur — pompen, kleppen, transportbanden, irrigatie</p>
-                                </div>
-                            </div>
-                            <p class="text-gray-600 mb-6">
-                                Een uniform e-commerce platform gebouwd voor 5 industriële toeleveringsbedrijven met een Turborepo monorepo architectuur. Elk merk (DEMA, Fluxer, Beltz247, De
-                                Visschere, Accu) draait zijn eigen Next.js 14 storefront op een gedeelde PostgreSQL database met 30+ tabellen, gedeelde UI-componenten en gecentraliseerde authenticatie
-                                — allemaal verbonden met Odoo en Exact Online ERP-systemen.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Next.js 14</span>
-                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">TypeScript</span>
-                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Prisma</span>
-                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">PostgreSQL</span>
-                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">tRPC</span>
-                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Turborepo</span>
-                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Stripe</span>
-                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Tailwind CSS</span>
-                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">NextAuth</span>
-                                <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">Vercel</span>
-                            </div>
-                            <div class="flex gap-4 flex-wrap">
-                                <div class="bg-blue-50 px-4 py-2 rounded-lg">
-                                    <span class="text-sm text-gray-600">Database Tabellen:</span>
-                                    <span class="font-bold text-blue-900 ml-1">30+</span>
-                                </div>
-                                <div class="bg-blue-50 px-4 py-2 rounded-lg">
-                                    <span class="text-sm text-gray-600">Producten Gedigitaliseerd:</span>
-                                    <span class="font-bold text-blue-900 ml-1">2.500+</span>
-                                </div>
-                                <div class="bg-blue-50 px-4 py-2 rounded-lg">
-                                    <span class="text-sm text-gray-600">Business Features:</span>
-                                    <span class="font-bold text-blue-900 ml-1">84</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Stats Row -->
-                    <div class="grid md:grid-cols-3 gap-8 mt-12 fade-in-up-on-scroll">
-                        <div class="bg-blue-50 p-8 rounded-xl text-center">
-                            <div class="text-4xl font-bold text-blue-900 mb-2">
-                                <span class="counter" data-target="50">0</span>
-                                +
-                            </div>
-                            <p class="text-gray-600">Projecten Opgeleverd</p>
-                        </div>
-                        <div class="bg-blue-50 p-8 rounded-xl text-center">
-                            <div class="text-4xl font-bold text-blue-900 mb-2">
-                                <span class="counter" data-target="98">0</span>
-                                %
-                            </div>
-                            <p class="text-gray-600">Klanttevredenheid</p>
-                        </div>
-                        <div class="bg-blue-50 p-8 rounded-xl text-center">
-                            <div class="text-4xl font-bold text-blue-900 mb-2">
-                                <span class="counter" data-target="5">0</span>
-                                +
-                            </div>
-                            <p class="text-gray-600">Jaar Ervaring</p>
-                        </div>
-                    </div>
-
-                    <!-- Additional Testimonials -->
-                    <div class="mt-16">
-                        <h3 class="text-2xl font-bold text-gray-800 text-center mb-10 fade-in-up-on-scroll">Wat Onze Klanten Zeggen</h3>
-                        <div class="grid md:grid-cols-3 gap-8">
-                            <div class="bg-white p-6 rounded-xl shadow-lg fade-in-up-on-scroll">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold text-lg mr-3">SV</div>
-                                    <div>
-                                        <h4 class="font-semibold">Sophie Vermeersch</h4>
-                                        <p class="text-sm text-gray-500">Boutique Eigenaar</p>
-                                    </div>
-                                </div>
-                                <div class="flex text-yellow-500 mb-3">★★★★★</div>
-                                <p class="text-gray-600 text-sm">
-                                    "Eindelijk een webshop die echt werkt! Mijn klanten zijn dol op de eenvoudige checkout en ik kan alles zelf beheren. De verkoop steeg 150% in het eerste kwartaal."
-                                </p>
-                            </div>
-                            <div class="bg-white p-6 rounded-xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.1s">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-green-100 text-green-700 rounded-full flex items-center justify-center font-bold text-lg mr-3">PD</div>
-                                    <div>
-                                        <h4 class="font-semibold">Peter De Smedt</h4>
-                                        <p class="text-sm text-gray-500">Productie Directeur</p>
-                                    </div>
-                                </div>
-                                <div class="flex text-yellow-500 mb-3">★★★★★</div>
-                                <p class="text-gray-600 text-sm">
-                                    "Onze 500 pagina productcatalogus is nu volledig doorzoekbaar online. Klanten vinden direct wat ze nodig hebben. De ROI was binnen weken zichtbaar."
-                                </p>
-                            </div>
-                            <div class="bg-white p-6 rounded-xl shadow-lg fade-in-up-on-scroll" style="animation-delay: 0.2s">
-                                <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-purple-100 text-purple-700 rounded-full flex items-center justify-center font-bold text-lg mr-3">LM</div>
-                                    <div>
-                                        <h4 class="font-semibold">Lisa Martens</h4>
-                                        <p class="text-sm text-gray-500">CEO Dienstverlenend Bedrijf</p>
-                                    </div>
-                                </div>
-                                <div class="flex text-yellow-500 mb-3">★★★★★</div>
-                                <p class="text-gray-600 text-sm">
-                                    "Het klantenportaal verminderde onze support telefoontjes met 60%. Klanten kunnen nu bestellingen volgen, facturen downloaden en zelf tickets indienen. Een echte
-                                    game changer."
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- FAQ Section -->
-            <section id="faq" class="py-14 bg-gray-50">
-                <div class="container mx-auto px-6">
-                    <div class="text-center mb-16 fade-in-up-on-scroll">
-                        <h2 class="text-4xl font-bold text-gray-800">Veelgestelde Vragen</h2>
-                        <p class="text-lg text-gray-600 mt-4">Snelle antwoorden op veelgestelde vragen over onze diensten.</p>
-                    </div>
-                    <div class="max-w-3xl mx-auto space-y-4">
-                        <!-- FAQ Item 1 -->
-                        <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden fade-in-up-on-scroll">
-                            <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
-                                <span class="font-semibold text-gray-800">Hoe lang duurt het om een webshop te bouwen?</span>
-                                <svg class="faq-icon w-5 h-5 text-blue-900 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div class="faq-answer hidden px-6 pb-4">
-                                <p class="text-gray-600">
-                                    Een standaard webshop duurt doorgaans 2-4 weken van start tot lancering. Dit omvat ontwerp, ontwikkeling, productconfiguratie en testen. Complexere projecten met
-                                    aangepaste functies kunnen 4-8 weken duren.
-                                </p>
-                            </div>
-                        </div>
-                        <!-- FAQ Item 2 -->
-                        <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden fade-in-up-on-scroll" style="animation-delay: 0.1s">
-                            <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
-                                <span class="font-semibold text-gray-800">Wat omvat catalogus digitalisering?</span>
-                                <svg class="faq-icon w-5 h-5 text-blue-900 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div class="faq-answer hidden px-6 pb-4">
-                                <p class="text-gray-600">
-                                    We converteren uw PDF-catalogi naar doorzoekbare, interactieve webpagina's. Dit omvat productdata-extractie, beeldoptimalisatie, zoekfunctionaliteit, filteropties
-                                    en een contentmanagementsysteem zodat u zelf producten kunt bijwerken.
-                                </p>
-                            </div>
-                        </div>
-                        <!-- FAQ Item 3 -->
-                        <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden fade-in-up-on-scroll" style="animation-delay: 0.2s">
-                            <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
-                                <span class="font-semibold text-gray-800">Bieden jullie doorlopende ondersteuning en onderhoud?</span>
-                                <svg class="faq-icon w-5 h-5 text-blue-900 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div class="faq-answer hidden px-6 pb-4">
-                                <p class="text-gray-600">
-                                    Ja! We bieden maandelijkse onderhoudspakketten vanaf €99/maand inclusief beveiligingsupdates, back-ups, kleine contentwijzigingen en prioritaire ondersteuning. We
-                                    bieden ook training zodat uw team dagelijkse updates kan afhandelen.
-                                </p>
-                            </div>
-                        </div>
-                        <!-- FAQ Item 4 -->
-                        <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden fade-in-up-on-scroll" style="animation-delay: 0.3s">
-                            <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
-                                <span class="font-semibold text-gray-800">Welke betaalmethoden kunnen jullie integreren?</span>
-                                <svg class="faq-icon w-5 h-5 text-blue-900 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div class="faq-answer hidden px-6 pb-4">
-                                <p class="text-gray-600">
-                                    We integreren alle grote betaalproviders inclusief Stripe, PayPal, Mollie (populair in België/Nederland), Bancontact, iDEAL, creditcards en bankoverschrijvingen. We
-                                    adviseren de beste opties voor uw doelmarkt.
-                                </p>
-                            </div>
-                        </div>
-                        <!-- FAQ Item 5 -->
-                        <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden fade-in-up-on-scroll" style="animation-delay: 0.4s">
-                            <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
-                                <span class="font-semibold text-gray-800">Kan ik de website zelf bijwerken na lancering?</span>
-                                <svg class="faq-icon w-5 h-5 text-blue-900 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div class="faq-answer hidden px-6 pb-4">
-                                <p class="text-gray-600">
-                                    Absoluut! Al onze oplossingen komen met een gebruiksvriendelijk beheerpaneel. We bieden training en documentatie zodat u producten kunt toevoegen, content kunt
-                                    bijwerken en bestellingen kunt beheren zonder technische kennis.
-                                </p>
-                            </div>
-                        </div>
-                        <!-- FAQ Item 6 -->
-                        <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden fade-in-up-on-scroll" style="animation-delay: 0.5s">
-                            <button class="faq-question w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition">
-                                <span class="font-semibold text-gray-800">Werken jullie met klanten buiten België?</span>
-                                <svg class="faq-icon w-5 h-5 text-blue-900 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div class="faq-answer hidden px-6 pb-4">
-                                <p class="text-gray-600">
-                                    Ja! We zijn gevestigd in Brussel, Antwerpen en Roeselare en werken met klanten in heel Europa. Alle communicatie en projectmanagement gebeurt online via
-                                    videogesprekken, email en samenwerkingstools. Taal is geen barrière—we werken in het Engels, Nederlands en Frans.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contact Section -->
-            <section id="contact" class="py-14">
-                <div class="container mx-auto px-6">
-                    <div class="text-center mb-16 fade-in-up-on-scroll">
-                        <h2 class="text-4xl font-bold text-gray-800">Start Uw Digitale Reis</h2>
-                        <p class="text-lg text-gray-600 mt-4">Vertel ons over uw project en we nemen binnen 24 uur contact met u op.</p>
-                    </div>
-                    <div class="grid md:grid-cols-5 gap-10">
-                        <div class="md:col-span-3 bg-white p-8 rounded-2xl shadow-lg fade-in-up-on-scroll">
-                            <h3 class="text-2xl font-bold mb-6">Vraag een Offerte Aan</h3>
-                            <form id="contact-form" action="https://formspree.io/f/xrbnaanw" method="POST">
-                                <input type="hidden" name="_subject" value="New Saspire Contact Form Submission" />
-                                <input type="hidden" name="_template" value="table" />
-
-                                <!-- Name Fields -->
-                                <div class="grid md:grid-cols-2 gap-6 mb-6">
-                                    <div>
-                                        <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">Voornaam *</label>
-                                        <input
-                                            type="text"
-                                            id="firstName"
-                                            name="firstName"
-                                            required
-                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition"
-                                            placeholder="Jan"
-                                        />
-                                    </div>
-                                    <div>
-                                        <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Achternaam *</label>
-                                        <input
-                                            type="text"
-                                            id="lastName"
-                                            name="lastName"
-                                            required
-                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition"
-                                            placeholder="Jansen"
-                                        />
-                                    </div>
-                                </div>
-
-                                <!-- Contact Fields -->
-                                <div class="grid md:grid-cols-2 gap-6 mb-6">
-                                    <div>
-                                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            name="email"
-                                            required
-                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition"
-                                            placeholder="jan@bedrijf.nl"
-                                        />
-                                    </div>
-                                    <div>
-                                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefoonnummer</label>
-                                        <input
-                                            type="tel"
-                                            id="phone"
-                                            name="phone"
-                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition"
-                                            placeholder="+32 471 00 00 00"
-                                        />
-                                    </div>
-                                </div>
-
-                                <!-- Company Fields -->
-                                <div class="grid md:grid-cols-2 gap-6 mb-6">
-                                    <div>
-                                        <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Bedrijfsnaam</label>
-                                        <input
-                                            type="text"
-                                            id="company"
-                                            name="company"
-                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition"
-                                            placeholder="Uw Bedrijfsnaam"
-                                        />
-                                    </div>
-                                    <div>
-                                        <label for="website" class="block text-sm font-medium text-gray-700 mb-1">Huidige Website (indien aanwezig)</label>
-                                        <input
-                                            type="url"
-                                            id="website"
-                                            name="website"
-                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition"
-                                            placeholder="https://yourcompany.com"
-                                        />
-                                    </div>
-                                </div>
-
-                                <!-- Service Selection -->
-                                <div class="mb-6">
-                                    <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Geïnteresseerde Dienst *</label>
-                                    <select
-                                        id="service"
-                                        name="service"
-                                        required
-                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition"
-                                    >
-                                        <option value="">Selecteer een dienst...</option>
-                                        <option value="Webshop Development">Webshop Ontwikkeling</option>
-                                        <option value="Catalog Digitalization">Catalogus Digitalisering (PDF naar Web)</option>
-                                        <option value="Customer Portal">Klantenportaal</option>
-                                        <option value="Website Development">Website Ontwikkeling</option>
-                                        <option value="Business Process Automation">Bedrijfsproces Automatisering</option>
-                                        <option value="Multiple Services">Meerdere Diensten</option>
-                                        <option value="Other">Anders / Niet Zeker</option>
-                                    </select>
-                                </div>
-
-                                <!-- Budget & Timeline -->
-                                <div class="grid md:grid-cols-2 gap-6 mb-6">
-                                    <div>
-                                        <label for="budget" class="block text-sm font-medium text-gray-700 mb-1">Budget Bereik</label>
-                                        <select id="budget" name="budget" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition">
-                                            <option value="">Selecteer budget bereik...</option>
-                                            <option value="Under €500">Onder €500</option>
-                                            <option value="€500 - €1,000">€500 - €1,000</option>
-                                            <option value="€1,000 - €2,500">€1,000 - €2,500</option>
-                                            <option value="€2,500 - €5,000">€2,500 - €5,000</option>
-                                            <option value="€5,000 - €10,000">€5,000 - €10,000</option>
-                                            <option value="€10,000+">€10,000+</option>
-                                            <option value="Not sure yet">Nog niet zeker</option>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <label for="timeline" class="block text-sm font-medium text-gray-700 mb-1">Project Tijdlijn</label>
-                                        <select
-                                            id="timeline"
-                                            name="timeline"
-                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition"
-                                        >
-                                            <option value="">Selecteer tijdlijn...</option>
-                                            <option value="ASAP">Zo snel mogelijk - Urgent</option>
-                                            <option value="1-2 weeks">1-2 weken</option>
-                                            <option value="1 month">Binnen 1 maand</option>
-                                            <option value="1-3 months">1-3 maanden</option>
-                                            <option value="3-6 months">3-6 maanden</option>
-                                            <option value="Flexible">Flexibel / Geen haast</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <!-- How did you hear about us -->
-                                <div class="mb-6">
-                                    <label for="referral" class="block text-sm font-medium text-gray-700 mb-1">Hoe heeft u ons gevonden?</label>
-                                    <select id="referral" name="referral" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition">
-                                        <option value="">Selecteer een optie...</option>
-                                        <option value="Google Search">Google Zoeken</option>
-                                        <option value="Social Media">Social Media</option>
-                                        <option value="Referral">Aanbeveling / Mond-tot-mond</option>
-                                        <option value="LinkedIn">LinkedIn</option>
-                                        <option value="Previous Client">Vorige Klant</option>
-                                        <option value="Other">Anders</option>
-                                    </select>
-                                </div>
-
-                                <!-- Project Details -->
-                                <div class="mb-6">
-                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Project Details *</label>
-                                    <textarea
-                                        id="message"
-                                        name="message"
-                                        rows="5"
-                                        required
-                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-800 transition"
-                                        placeholder="Vertel ons over uw huidige situatie, uitdagingen en wat u wilt bereiken. Hoe meer details, hoe beter we kunnen helpen!"
-                                    ></textarea>
-                                </div>
-
-                                <!-- Preferred Contact Method -->
-                                <div class="mb-6">
-                                    <label class="block text-sm font-medium text-gray-700 mb-2">Voorkeur Contactmethode</label>
-                                    <div class="flex flex-wrap gap-4">
-                                        <label class="flex items-center cursor-pointer">
-                                            <input type="radio" name="contactMethod" value="Email" checked class="w-4 h-4 text-blue-900 focus:ring-blue-600" />
-                                            <span class="ml-2 text-gray-700">Email</span>
-                                        </label>
-                                        <label class="flex items-center cursor-pointer">
-                                            <input type="radio" name="contactMethod" value="Phone" class="w-4 h-4 text-blue-900 focus:ring-blue-600" />
-                                            <span class="ml-2 text-gray-700">Telefoon</span>
-                                        </label>
-                                        <label class="flex items-center cursor-pointer">
-                                            <input type="radio" name="contactMethod" value="Video Call" class="w-4 h-4 text-blue-900 focus:ring-blue-600" />
-                                            <span class="ml-2 text-gray-700">Videogesprek</span>
-                                        </label>
-                                        <label class="flex items-center cursor-pointer">
-                                            <input type="radio" name="contactMethod" value="WhatsApp" class="w-4 h-4 text-blue-900 focus:ring-blue-600" />
-                                            <span class="ml-2 text-gray-700">WhatsApp</span>
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <!-- Privacy Consent -->
-                                <div class="mb-6">
-                                    <label class="flex items-start cursor-pointer">
-                                        <input type="checkbox" name="consent" value="Yes" required class="w-4 h-4 mt-1 text-blue-900 focus:ring-blue-600 rounded" />
-                                        <span class="ml-2 text-sm text-gray-600">
-                                            Ik ga akkoord om gecontacteerd te worden over mijn aanvraag. Mijn gegevens worden behandeld volgens de privacyregelgeving en worden niet gedeeld met derden.
-                                            *
-                                        </span>
-                                    </label>
-                                </div>
-
-                                <button
-                                    type="submit"
-                                    class="w-full bg-blue-900 text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-blue-800 transform hover:scale-[1.02] transition flex items-center justify-center gap-2"
-                                >
-                                    <span>Bericht Versturen</span>
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                    </svg>
-                                </button>
-                                <p class="text-xs text-gray-500 text-center mt-3">We reageren doorgaans binnen 24 uur op werkdagen.</p>
-                            </form>
-                            <div id="form-success-message" class="hidden mt-6 p-4 bg-green-100 text-green-800 rounded-lg text-center">
-                                <strong>Bedankt!</strong>
-                                Uw bericht is succesvol verzonden. We nemen binnen 24 uur contact met u op.
-                            </div>
-                            <div id="form-error-message" class="hidden mt-6 p-4 bg-red-100 text-red-800 rounded-lg text-center">
-                                <strong>Oeps!</strong>
-                                Er is iets misgegaan. Probeer het opnieuw of mail ons direct.
-                            </div>
-                        </div>
-                        <div class="md:col-span-2 bg-blue-50 p-8 rounded-2xl fade-in-up-on-scroll">
-                            <h3 class="text-2xl font-bold mb-6">Direct Contact</h3>
-                            <div class="space-y-6">
-                                <div class="flex items-start">
-                                    <span class="text-2xl mr-4 mt-1" aria-hidden="true">📧</span>
-                                    <div>
-                                        <h4 class="font-semibold">Email</h4>
-                                        <a href="mailto:nicolas.cloet@gmail.com" class="text-blue-900 hover:underline">nicolas.cloet@gmail.com</a>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <span class="text-2xl mr-4 mt-1" aria-hidden="true">📱</span>
-                                    <div>
-                                        <h4 class="font-semibold">Telefoon</h4>
-                                        <a href="tel:+32471261475" class="text-blue-900 hover:underline">+32 471 26 14 75</a>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <span class="text-2xl mr-4 mt-1" aria-hidden="true">📍</span>
-                                    <div>
-                                        <h4 class="font-semibold">Locaties</h4>
-                                        <p class="text-gray-700">Brussel • Antwerpen • Roeselare</p>
-                                        <p class="text-sm text-gray-500">Klanten in heel België & Europa</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-10 border-t border-blue-200 pt-6">
-                                <h4 class="font-bold text-lg">Liever een Videogesprek?</h4>
-                                <p class="text-gray-600 my-2">Boek een gratis 30-minuten consultatie om uw digitaliseringsbehoeften te bespreken.</p>
-                                <a href="#schedule" class="inline-flex items-center text-blue-900 font-bold hover:underline">
-                                    Boek Uw Gesprek
-                                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                    </svg>
-                                </a>
-                            </div>
-                            <div class="mt-6 p-4 bg-white rounded-lg">
-                                <p class="text-sm text-gray-600">
-                                    <strong>Reactietijd:</strong>
-                                    We reageren doorgaans binnen 24 uur op werkdagen.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Google Calendar Schedule Section -->
-            <section id="schedule" class="py-14 bg-white">
-                <div class="container mx-auto px-6">
-                    <div class="text-center mb-16 fade-in-up-on-scroll">
-                        <h2 class="text-4xl font-bold text-gray-800">Boek Uw Gratis Consultatie</h2>
-                        <p class="text-lg text-gray-600 mt-4">Kies een moment dat u uitkomt en laten we uw pad naar versnelde groei bespreken.</p>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-12 items-center">
-                        <div class="bg-white p-6 rounded-2xl shadow-xl fade-in-up-on-scroll text-center">
-                            <div class="mb-6">
-                                <div class="text-6xl mb-4">📅</div>
-                                <h3 class="text-2xl font-bold text-gray-800 mb-2">Plan Uw Gesprek</h3>
-                                <p class="text-gray-600">Kies een moment dat u uitkomt. Het boeken duurt minder dan een minuut.</p>
-                            </div>
-                            <a
-                                href="https://calendly.com/saspire-nicolas"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="inline-block bg-blue-900 text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-blue-800 transform hover:scale-105 transition text-lg"
-                            >
-                                Open Boekingskalender →
-                            </a>
-                            <p class="text-sm text-gray-500 mt-4">Opent in nieuw tabblad • Gratis 30-minuten consultatie</p>
-                        </div>
-                        <div class="fade-in-up-on-scroll">
-                            <h3 class="text-3xl font-bold text-gray-800 mb-6">Wat Te Verwachten Van Ons Gesprek</h3>
-                            <div class="space-y-4">
-                                <div class="flex items-start">
-                                    <span class="text-2xl mr-4">📈</span>
-                                    <div>
-                                        <h4 class="font-semibold">Een Diepgaande Analyse Van Uw Bedrijf</h4>
-                                        <p class="text-gray-600">We verkennen uw huidige situatie om belangrijke uitdagingen en kansen te identificeren.</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <span class="text-2xl mr-4">🔭</span>
-                                    <div>
-                                        <h4 class="font-semibold">Actiegericht, Op Maat Gemaakte Ideeën</h4>
-                                        <p class="text-gray-600">We brainstormen over strategieën specifiek afgestemd op uw markt en doelen.</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <span class="text-2xl mr-4">🤖</span>
-                                    <div>
-                                        <h4 class="font-semibold">Een Duidelijk Pad Vooruit</h4>
-                                        <p class="text-gray-600">U vertrekt met concrete stappen die u kunt nemen om groei te stimuleren.</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <span class="text-2xl mr-4">🤗</span>
-                                    <div>
-                                        <h4 class="font-semibold">Geen Druk, Alleen Waarde</h4>
-                                        <p class="text-gray-600">Dit is een ontspannen, vrijblijvend gesprek om te zien of we bij elkaar passen.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- Footer -->
-        <footer class="bg-blue-900 text-white pt-20 pb-8">
-            <div class="container mx-auto px-6">
-                <div class="grid md:grid-cols-4 gap-12 mb-12">
-                    <div class="md:col-span-1">
-                        <a href="#" class="flex flex-col items-start group">
-                            <div class="text-3xl font-bold text-white" style="font-family: &quot;Playfair Display&quot;, serif">Saspire</div>
-                            <span class="text-xs text-blue-300 font-semibold tracking-wider -mt-1 ml-px group-hover:text-white transition-colors">Service to aspire</span>
-                        </a>
-                        <p class="text-blue-200 text-sm mt-4">Uw visie omzetten in meetbaar succes door innovatieve, op maat gemaakte digitaliseringsstrategieen.</p>
-                        <!-- Social Links -->
-                        <div class="flex gap-4 mt-6">
-                            <a
-                                href="https://linkedin.com/company/saspire"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition"
-                                aria-label="LinkedIn"
-                            >
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-                                    />
-                                </svg>
-                            </a>
-                            <a
-                                href="https://twitter.com/saspire_org"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition"
-                                aria-label="Twitter/X"
-                            >
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-                                    />
-                                </svg>
-                            </a>
-                            <a href="mailto:nicolas.cloet@gmail.com" class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition" aria-label="Email">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                                    />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-lg mb-4">Bedrijf</h4>
-                        <ul class="space-y-2">
-                            <li><a href="#about-us" class="text-blue-200 hover:text-white transition">Over Ons</a></li>
-                            <li><a href="#success-stories" class="text-blue-200 hover:text-white transition">Succesverhalen</a></li>
-                            <li><a href="#" class="text-blue-200 hover:text-white transition">Ons Team</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-lg mb-4">Diensten</h4>
-                        <ul class="space-y-2">
-                            <li><a href="#services" class="text-blue-200 hover:text-white transition">Webshop Ontwikkeling</a></li>
-                            <li><a href="#services" class="text-blue-200 hover:text-white transition">Catalogus Digitalisering</a></li>
-                            <li><a href="#services" class="text-blue-200 hover:text-white transition">Klantenportalen</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-lg mb-4">Contact</h4>
-                        <ul class="space-y-2">
-                            <li><a href="#schedule" class="text-blue-200 hover:text-white transition">Gesprek Plannen</a></li>
-                            <li><a href="#contact" class="text-blue-200 hover:text-white transition">Bericht Sturen</a></li>
-                            <li><a href="mailto:nicolas.cloet@gmail.com" class="text-blue-200 hover:text-white transition">Email Ons</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="border-t border-blue-800 pt-8 text-center text-sm text-blue-200">
-                    <p>&copy; 2026 Saspire. Alle rechten voorbehouden.</p>
-                    <p class="mt-2"><a href="/privacy.html" class="hover:text-white transition">Privacybeleid</a></p>
-                </div>
-            </div>
-        </footer>
-
-        <!-- Cookie Consent Banner -->
-        <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 z-50 transform translate-y-full transition-transform duration-300">
-            <div class="container mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p class="text-sm text-gray-300">
-                    We gebruiken cookies om uw ervaring te verbeteren en siteverkeer te analyseren. Door verder te gaan, gaat u akkoord met ons
-                    <a href="/privacy.html" class="text-blue-400 hover:underline">Privacybeleid</a>
-                    .
-                </p>
-                <div class="flex gap-3">
-                    <button id="cookie-decline" class="px-4 py-2 text-sm border border-gray-600 rounded-lg hover:bg-gray-800 transition">Weigeren</button>
-                    <button id="cookie-accept" class="px-4 py-2 text-sm bg-blue-900 rounded-lg hover:bg-blue-800 transition">Accepteren</button>
+        <div class="marquee-band" id="webshops">
+            <div class="wrap marquee-head">Negen winkels. Negen live concepten. Klik er eentje aan.</div>
+            <div class="marquee">
+                <div class="marquee-track">
+                    <a class="shop-card" href="https://cloesick.github.io/antwerp-poc-portfolio/helios/" target="_blank" rel="noopener"><img src="/images/poc/helios.jpeg" alt="Helios Berchem conceptsite" loading="lazy" width="236" height="140" /><div class="pad"><strong>Helios Berchem</strong><span>Koffiebranderij &amp; deli, sinds 1925</span><em>Bekijk live</em></div></a>
+                    <a class="shop-card" href="https://cloesick.github.io/antwerp-poc-portfolio/la-praline/" target="_blank" rel="noopener"><img src="/images/poc/la-praline.jpeg" alt="La Praline conceptsite" loading="lazy" width="236" height="140" /><div class="pad"><strong>La Praline</strong><span>Chocolatier &amp; geschenkdozen</span><em>Bekijk live</em></div></a>
+                    <a class="shop-card" href="https://cloesick.github.io/antwerp-poc-portfolio/floriplant/" target="_blank" rel="noopener"><img src="/images/poc/floriplant.jpeg" alt="Floriplant conceptsite" loading="lazy" width="236" height="140" /><div class="pad"><strong>Floriplant</strong><span>Tuincentrum &amp; plantenwinkel</span><em>Bekijk live</em></div></a>
+                    <a class="shop-card" href="https://cloesick.github.io/antwerp-poc-portfolio/harlekijn/" target="_blank" rel="noopener"><img src="/images/poc/harlekijn.jpeg" alt="Harlekijn conceptsite" loading="lazy" width="236" height="140" /><div class="pad"><strong>Harlekijn</strong><span>Designermodeboetiek</span><em>Bekijk live</em></div></a>
+                    <a class="shop-card" href="https://cloesick.github.io/antwerp-poc-portfolio/larose/" target="_blank" rel="noopener"><img src="/images/poc/larose.jpeg" alt="Larose conceptsite" loading="lazy" width="236" height="140" /><div class="pad"><strong>Larose</strong><span>Dameskleding, Brasschaat</span><em>Bekijk live</em></div></a>
+                    <a class="shop-card" href="https://cloesick.github.io/antwerp-poc-portfolio/kikker-en-ko/" target="_blank" rel="noopener"><img src="/images/poc/kikker-en-ko.jpeg" alt="Kikker &amp; Ko conceptsite" loading="lazy" width="236" height="140" /><div class="pad"><strong>Kikker &amp; Ko</strong><span>Speelgoedwinkel</span><em>Bekijk live</em></div></a>
+                    <a class="shop-card" href="https://cloesick.github.io/antwerp-poc-portfolio/amaral/" target="_blank" rel="noopener"><img src="/images/poc/amaral.jpeg" alt="Amaral conceptsite" loading="lazy" width="236" height="140" /><div class="pad"><strong>Amaral</strong><span>Slagerij &amp; Portugese specialiteiten</span><em>Bekijk live</em></div></a>
+                    <a class="shop-card" href="https://cloesick.github.io/antwerp-poc-portfolio/bourgogne-wijnen/" target="_blank" rel="noopener"><img src="/images/poc/bourgogne-wijnen.jpeg" alt="Bourgogne Wijnen conceptsite" loading="lazy" width="236" height="140" /><div class="pad"><strong>Bourgogne Wijnen</strong><span>Wijnhandel, Edegem</span><em>Bekijk live</em></div></a>
+                    <a class="shop-card" href="https://cloesick.github.io/antwerp-poc-portfolio/wit-zwart-deli/" target="_blank" rel="noopener"><img src="/images/poc/wit-zwart-deli.jpeg" alt="Wit Zwart Deli conceptsite" loading="lazy" width="236" height="140" /><div class="pad"><strong>Wit Zwart Deli</strong><span>Italiaanse deli &amp; traiteur</span><em>Bekijk live</em></div></a>
                 </div>
             </div>
         </div>
 
-        <!-- Custom JavaScript -->
-        <script src="../script.js"></script>
+        <section id="features">
+            <div class="wrap">
+                <h2>Wat uw winkel krijgt</h2>
+                <p class="section-intro">Een complete, moderne webaanwezigheid, gebouwd voor hoe Belgen echt winkelen.</p>
+                <div class="feature-grid">
+                    <div><strong>Een frisse, moderne look</strong><p>Een site die uw etalage eer aandoet, op elk scherm.</p></div>
+                    <div><strong>Verkoop online</strong><p>Een volwaardige webshop met uw producten, voorraad en bestellingen op één plek.</p></div>
+                    <div><strong>Click &amp; collect</strong><p>Laat klanten online reserveren en afhalen in uw winkel.</p></div>
+                    <div><strong>Vindbaar op Google &amp; Maps</strong><p>Zo opgezet dat buurtbewoners die zoeken wat u verkoopt, u ook vinden.</p></div>
+                    <div><strong>Bancontact &amp; Mollie</strong><p>De betaalmethodes die Belgische klanten verwachten, vanaf dag één.</p></div>
+                    <div><strong>GDPR-correct &amp; veilig</strong><p>Privacybeleid, cookies en gegevensverwerking netjes geregeld.</p></div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Tawk.to Live Chat Widget -->
-        <!-- Get your own widget at: https://www.tawk.to - it's free! -->
-        <!-- Replace the script below with your Tawk.to embed code -->
-        <!--
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/YOUR_TAWK_ID/YOUR_WIDGET_ID';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
+        <section class="tinted" id="how">
+            <div class="wrap">
+                <h2>Zo werkt het</h2>
+                <div class="steps">
+                    <div class="step"><h3>Wij bouwen een gratis concept</h3><p>Geen vergaderingen vooraf, geen verplichtingen. Een echte, werkende conceptsite voor uw winkel.</p></div>
+                    <div class="step"><h3>U bekijkt het live</h3><p>Klik erdoor zoals een klant dat zou doen. Zeg wat anders moet, of haak af zonder kosten.</p></div>
+                    <div class="step"><h3>We gaan live in weken</h3><p>Uw domein, uw producten, betalingen gekoppeld. Gelanceerd en overgedragen.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="model-band" id="model">
+            <div class="wrap">
+                <h2>Eén consultant. Een vloot AI-agents.</h2>
+                <p class="lede2"><strong>Saspire is Nicolas Cloet plus de agents die hij bouwt:</strong> pipelines voor extractie, monitoring, content en development die na de werkuren blijven draaien. U krijgt het resultaat van een bureau, tegen vaste prijzen, in dagen in plaats van maanden, van één persoon die uw dossier van begin tot eind kent.</p>
+                <div class="agent-grid">
+                    <div class="agent"><strong>3.044 pagina&rsquo;s</strong><span>leveranciersdocumentatie gelezen en omgezet naar gestructureerde productdata, in vier werkdagen.</span></div>
+                    <div class="agent"><strong>25 catalogi</strong><span>van lokale bedrijven gescand en gescoord op digitaliseringskansen, in één namiddag.</span></div>
+                    <div class="agent"><strong>Dagelijkse pipelines</strong><span>die zelfstandig draaien: marktmonitoring, meertalige contentproductie, inbox-triage.</span></div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="solutions">
+            <div class="wrap">
+                <h2>Oplossingen voor grotere bedrijven</h2>
+                <p class="section-intro">Naast winkelwebsites bouwt Saspire de systemen achter B2B-commerce.</p>
+                <div class="solutions-grid">
+                    <div class="solution"><h3>Webshopontwikkeling</h3><p>Multi-tenant e-commerceplatformen, ERP-gekoppelde bestellingen, B2B-prijzen en accountstructuren.</p></div>
+                    <div class="solution"><h3>Catalogusdigitalisering</h3><p>AI-extractie zet leveranciers-PDF&rsquo;s en papieren catalogi om in propere, gestructureerde productdata.</p></div>
+                    <div class="solution"><h3>Klantenportalen</h3><p>Selfserviceportalen voor bestellingen, facturen en support. Minder telefoontjes, snellere klanten.</p></div>
+                </div>
+                <p class="also"><b>Ook:</b> bedrijfsautomatisering met Make.com, AI-integratie, trading- en analysesystemen, GDPR en compliance, leadgeneratie, dataverwerking en ETL. Iets op maat, zoals contracten, veilingen of boekingen? <a href="#contact">Vertel ons wat u nodig hebt.</a></p>
+            </div>
+        </section>
+
+        
+        <section id="audit">
+            <div class="wrap">
+                <div class="case">
+                    <div>
+                        <h2>Uw catalogus, omgezet naar bruikbare data</h2>
+                        <p class="section-intro">Verdelers zitten op honderden technische fiches, of verkopen producten zonder één bijlage. Wij auditeren wat u hebt, halen per product de officiële TDS en MSDS bij de fabrikanten op, en extraheren de waarden waar uw klanten echt naar vragen: mengverhoudingen, potlife, overschilderintervallen, rendement.</p>
+                        <p style="margin-top:18px; font-weight:600">Documentatie-audit: één week, vaste prijs. <a href="#contact">Vraag een audit aan</a></p>
+                    </div>
+                    <div class="case-facts">
+                        <div><strong>3.044</strong><span>pagina&rsquo;s geanalyseerd in een recente audit voor een Antwerpse groothandel</span></div>
+                        <div><strong>357</strong><span>technische fiches in kaart gebracht, per merk en product</span></div>
+                        <div><strong>4</strong><span>werkdagen van start tot rapport</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tinted" id="cases">
+            <div class="wrap">
+                <h2>Case: vijf bedrijven, één platform</h2>
+                <div class="case">
+                    <div>
+                        <h3>Multi-company B2B e-commerce voor DEMA Group</h3>
+                        <p class="client">Industriële uitrusting: pompen, kleppen, transportbanden, irrigatie</p>
+                        <p class="body">Eén e-commerceplatform voor vijf industriële toeleveranciers in een Turborepo-monorepo. Elk merk, DEMA, Fluxer, Beltz247, De Visschere en Accu, draait zijn eigen Next.js-storefront op een gedeelde PostgreSQL-database met gedeelde UI-componenten en centrale authenticatie, gekoppeld aan Odoo en Exact Online.</p>
+                        <ul class="stack">
+                            <li>Next.js 14</li><li>TypeScript</li><li>Prisma</li><li>PostgreSQL</li><li>tRPC</li><li>Turborepo</li><li>Stripe</li><li>NextAuth</li><li>Vercel</li>
+                        </ul>
+                    </div>
+                    <div class="case-facts">
+                        <div><strong>5</strong><span>merken op één codebase</span></div>
+                        <div><strong>30+</strong><span>gedeelde databasetabellen</span></div>
+                        <div><strong>2</strong><span>ERP-systemen gekoppeld (Odoo, Exact Online)</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="wrap">
+                <h2>Praat met ons</h2>
+                <p class="section-intro">Vertel ons over uw winkel of project. We antwoorden binnen één werkdag.</p>
+                <div class="contact-grid">
+                    <form action="https://formspree.io/f/xrbnaanw" method="POST">
+                        <label for="f-name">Naam</label>
+                        <input id="f-name" type="text" name="name" required autocomplete="name" />
+                        <label for="f-email">E-mail</label>
+                        <input id="f-email" type="email" name="email" required autocomplete="email" />
+                        <label for="f-msg">Wat hebt u nodig?</label>
+                        <textarea id="f-msg" name="message" rows="6" required></textarea>
+                        <button class="btn btn-cobalt" type="submit">Verstuur bericht</button>
+                    </form>
+                    <div>
+                        <dl class="contact-direct">
+                            <dt>E-mail</dt><dd><a href="mailto:nicolas@saspire.org">nicolas@saspire.org</a></dd>
+                            <dt>Telefoon</dt><dd><a href="tel:+32471261475">+32 471 26 14 75</a></dd>
+                            <dt>Kantoor</dt><dd>Hoogstraat 7, 2000 Antwerpen. Ook actief in Brussel en Roeselare.</dd>
+                        </dl>
+                        <div class="book-box" id="schedule">
+                            <h3>Liever rechtstreeks praten?</h3>
+                            <p>Boek een gratis gesprek van 30 minuten. We bekijken uw zaak, stellen concrete ideeën voor, en u beslist. Nul druk.</p>
+                            <a class="btn btn-white" href="https://calendly.com/saspire-nicolas" target="_blank" rel="noopener">Kies een moment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <div class="cols">
+                <div>
+                    <div class="brandline">Saspire</div>
+                    <p style="margin-top:10px; max-width:34ch;">Digitaliseringsconsultancy in Antwerpen. Webshops, catalogi, portalen en automatisering voor winkels en B2B.</p>
+                </div>
+                <div>
+                    <h4>Diensten</h4>
+                    <a href="#webshops">Webshops voor winkels</a>
+                    <a href="#solutions">B2B-oplossingen</a>
+                    <a href="#cases">Cases</a>
+                </div>
+                <div>
+                    <h4>Bedrijf</h4>
+                    <a href="/pricing.html">Prijzen</a>
+                    <a href="/blog/">Blog</a>
+                    <a href="https://linkedin.com/company/saspire" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+                <div>
+                    <h4>Talen</h4>
+                    <a href="/">English</a>
+                    <a href="/fr/">Français</a>
+                    <a href="/de/">Deutsch</a>
+                    <a href="/es/">Español</a>
+                    <a href="/pt/">Português</a>
+                </div>
+            </div>
+            <div class="legal">
+                <span>&copy; 2026 Saspire BV &middot; BTW BE 1032.952.802 &middot; Hoogstraat 7, 2000 Antwerpen</span>
+                <span style="white-space:nowrap"><a href="/privacy.html">Privacybeleid</a> &middot; <a href="/terms.html">Voorwaarden</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Close language menu when clicking elsewhere
+        document.addEventListener('click', function (e) {
+            var d = document.querySelector('details.lang[open]');
+            if (d && !d.contains(e.target)) d.removeAttribute('open');
+        });
     </script>
-    --><script src="/js/poc-hover-video.js" defer></script>
 </body>
 </html>
